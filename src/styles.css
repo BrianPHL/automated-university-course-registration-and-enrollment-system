@@ -21,6 +21,7 @@ html[data-theme="light"] {
     --tg-secondary: #606060;
     --tg-disabled: #AAAAAA;
     --accent: #6150FF;
+    --accent-hovered: #4A3BD2;
 
 }
 
@@ -34,6 +35,52 @@ html[data-theme="dark"] {
     --tg-secondary: #A0A0A0;
     --tg-disabled: #404040;
     --accent: #6150FF;
+    --accent-hovered: #4A3BD2;
+
+}
+
+button[data-type="primary"] {
+    
+    background-color: var(--accent);
+    justify-content: center;
+    border-radius: 0.25rem;
+    align-items: center;
+    font-weight: 600;
+    transition: 0.2s ease all;
+    padding: 0.5rem 1rem;
+    display: flex;
+    border: 0;
+    color: var(--bg-primary);
+
+    &:hover {
+
+        background-color: var(--accent-hovered);
+        color: var(--tg-primary);
+        cursor: pointer;
+
+    }
+
+}
+
+button[data-type="secondary"] {
+
+    background-color: transparent;
+    justify-content: center;
+    border-radius: 0.25rem;
+    align-items: center;
+    font-weight: 600;
+    transition: 0.2s ease all;
+    padding: 0.5rem 1rem;
+    display: flex;
+    border: 1px solid var(--bg-outline);
+    color: var(--tg-primary);
+
+    &:hover {
+
+        background-color: var(--bg-outline);
+        cursor: pointer;
+
+    }
 
 }
 
@@ -43,3 +90,121 @@ body {
 
 }
 
+.navbar {
+
+    background-color: var(--bg-tertiary);
+    justify-content: space-between;
+    border-bottom: 1px solid var(--bg-outline);
+    align-items: center;
+    align-self: stretch;
+    padding: 1rem 16rem;
+    display: flex;
+
+    .navbar-left {
+
+        align-items: center;
+        display: flex;
+        gap: 2rem;
+
+        .navbar-brand {
+
+            align-items: flex-end;
+            display: flex;
+            gap: 1rem;
+    
+            img {
+    
+                height: 2.5rem;
+                width: 2.5rem;
+    
+            }
+    
+            h2 {
+    
+                font-weight: 800;
+                font-size: 1.5rem;
+                color: var(--tg-primary);
+    
+            }
+    
+        }
+
+        .navbar-nav {
+
+            flex-direction: row;
+            display: flex;
+            gap: 1rem;
+
+            .active a {
+
+                color: var(--accent);
+            
+            }
+
+            li a {
+
+                transition: 0.2s ease all;
+                font-weight: 600;
+                font-size: 1rem;
+                color: var(--tg-primary);
+
+                &:hover {
+
+                    cursor: pointer;
+                    color: var(--accent);
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .navbar-right {
+
+        align-items: center;
+        display: flex;
+        gap: 2rem;
+
+        .controls {
+
+            align-items: center;
+            display: flex;
+            gap: 1rem;
+
+            i {
+
+                transition: 0.2s ease all;
+                font-size: 1.25rem;
+                color: var(--tg-primary);
+
+                &:hover {
+
+                    cursor: pointer;
+                    color: var(--accent);
+
+                }
+
+            }
+
+        }
+
+        .divider {
+
+            background-color: var(--bg-outline);
+            align-self: stretch;
+            width: 0.0625rem;
+
+        }
+
+        .cta {
+
+            display: flex;
+            gap: 1rem;
+
+        }
+
+    }
+
+}
