@@ -1,0 +1,45 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap');
+
+* {
+
+    font-family: "Assistant", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+html[data-theme="light"] {
+
+    --bg-primary: #BBBBBB;
+    --bg-secondary: #DCDCDC;
+    --bg-tertiary: #EAEAEA;
+    --bg-outline: #B0B0B0;
+    --tg-primary: #151515;
+    --tg-secondary: #606060;
+    --tg-disabled: #AAAAAA;
+    --accent: #6150FF;
+
+}
+
+html[data-theme="dark"] {
+
+    --bg-primary: #101010;
+    --bg-secondary: #202020;
+    --bg-tertiary: #303030;
+    --bg-outline: #404040;
+    --tg-primary: #E0E0E0;
+    --tg-secondary: #A0A0A0;
+    --tg-disabled: #404040;
+    --accent: #6150FF;
+
+}
+
+body {
+
+    background-color: var(--bg-primary);
+
+}
+
