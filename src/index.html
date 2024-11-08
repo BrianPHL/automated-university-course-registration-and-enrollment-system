@@ -14,86 +14,83 @@
     
     </head>
     
-    <body>
+    <body data-spy="scroll" data-target=".navbar" data-offset="100">
 
-        <!-- TODO: Fix responsiveness using jQuery. -->
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
 
-            <div class="navbar-left">
+            <div class="container">
 
-                <div class="navbar-brand">
-
+                <a class="navbar-brand" href="#home">
                     <img src="../public/assets/logo-light.svg" alt="aucres logo in light mode">
                     <h2>aucres</h2>
-    
-                </div>
+                </a>
 
-                <ul class="navbar-nav">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    <li class="nav-item active">
-                        <a href="#home" class="nav-link">Home</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a href="#what-we-offer" class="nav-link">What we offer</a>
-                    </li>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#what-we-offer">What we offer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#who-we-are">Who we are</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#get-a-hold-of-us">Get a hold of us</a>
+                        </li>
+                    </ul>
 
-                    <li class="nav-item">
-                        <a href="#who-we-are" class="nav-link">Who we are</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#get-a-hold-of-us" class="nav-link">Get a hold of us</a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-            <div class="navbar-right">
-
-                <div class="controls">
-
-                    <i class="github fa-brands fa-github"></i>
-                    <i class="theme fa-solid fa-moon"></i>
-
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="cta">
-
-                    <button data-type="secondary" type="button">Sign in</button>
-                    <button data-type="primary" type="button">Sign up</button>
+                    <div class="navbar-nav ml-auto">
+                        <div class="nav-item controls">
+                            <i class="github fa-brands fa-github"></i>
+                            <i class="theme fa-solid fa-moon"></i>
+                        </div>
+        
+                        <div class="nav-item divider"></div>
+        
+                        <div class="nav-item cta">
+                            <button data-type="secondary" type="button">Sign in</button>
+                            <button data-type="primary" type="button">Sign up</button>
+                        </div>
+                    </div>
 
                 </div>
 
             </div>
 
         </nav>
-
+   
         <section id="home">
 
-            <div class="info">
+            <div class="container">
 
-                <div class="heading">
+                <div class="info">
 
-                    <h6>Home</h6>
-                    <h1>Enroll with ease</h1>
-                    <h2>Simplify your university journey with us</h2>
-
+                    <div class="heading">
+    
+                        <h6>Home</h6>
+                        <h1>Enroll with ease</h1>
+                        <h2>Simplify your university journey with us</h2>
+    
+                    </div>
+    
+                    <p>
+                        Automated University Course Registration and Enrollment System streamlines course registration and enrollment, making it faster, easier, and more accessible.
+                    </p>
+    
                 </div>
-
-                <p>
-                    Automated University Course Registration and Enrollment System streamlines course registration and enrollment, making it faster, easier, and more accessible.
-                </p>
-
-            </div>
-
-            <div class="cta">
-
-                <button type="button" data-type="secondary">Learn more</button>
-                <button type="button" data-type="primary">Get started</button>
+    
+                <div class="cta">
+    
+                    <button type="button" data-type="secondary">Learn more</button>
+                    <button type="button" data-type="primary">Get started</button>
+    
+                </div>
 
             </div>
 
@@ -102,6 +99,29 @@
         <section id="hero-footer">
 
             <p>Expertly crafted for your ease</p>
+
+        </section>
+
+        <section id="what-we-offer">
+
+
+
+        </section>
+
+        <section id="who-we-are">
+
+
+
+        </section>
+
+        <section id="get-a-hold-of-us">
+
+
+        </section>
+
+        <section id="footer">
+
+
 
         </section>
 

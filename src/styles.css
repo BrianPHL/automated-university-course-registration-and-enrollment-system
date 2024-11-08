@@ -39,12 +39,18 @@ html[data-theme="dark"] {
 
 }
 
+html {
+
+    scroll-behavior: smooth;
+
+}
+
 body {
 
     grid-template-columns: 100%;
-    grid-template-rows: 8vh 84vh 8vh;
+    grid-template-rows: 8vh 84vh 8vh repeat(4, auto);
     background-color: var(--bg-primary);
-    height: 200vh;
+    position: relative;
     display: grid;
 
     h1 {
@@ -132,18 +138,12 @@ body {
     border-bottom: 1px solid var(--bg-outline);
     align-items: center;
     align-self: stretch;
-    position: fixed;
     grid-row: 1;
-    padding: 0rem 16rem;
     display: flex;
     height: 8vh;
     width: 100%;
 
-    .navbar-left {
-
-        align-items: center;
-        display: flex;
-        gap: 2rem;
+    .container {
 
         .navbar-brand {
 
@@ -168,80 +168,86 @@ body {
     
         }
 
-        .navbar-nav {
+        .navbar-collapse {
 
-            flex-direction: row;
-            display: flex;
-            gap: 1rem;
+            background-color: var(--bg-tertiary);
 
-            .active a {
+            .navbar-nav {
 
-                color: var(--accent);
-            
-            }
-
-            li a {
-
-                transition: 0.2s ease all;
-                font-weight: 600;
-                font-size: 1rem;
-                color: var(--tg-primary);
-
-                &:hover {
-
-                    cursor: pointer;
+                flex-direction: row;
+                display: flex;
+                gap: 1rem;
+    
+                li .active { 
+                
                     color: var(--accent);
-
+                
                 }
-
+    
+                li a {
+    
+                    transition: 0.2s ease all;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    color: var(--tg-primary);
+    
+                    &:hover {
+    
+                        cursor: pointer;
+                        color: var(--accent);
+    
+                    }
+    
+                }
+    
             }
 
         }
 
-    }
-
-    .navbar-right {
-
-        align-items: center;
-        display: flex;
-        gap: 2rem;
-
-        .controls {
+        .navbar-nav {
 
             align-items: center;
             display: flex;
-            gap: 1rem;
-
-            i {
-
-                transition: 0.2s ease all;
-                font-size: 1.25rem;
-                color: var(--tg-primary);
-
-                &:hover {
-
-                    cursor: pointer;
-                    color: var(--accent);
-
+            gap: 2rem;
+    
+            .controls {
+    
+                align-items: center;
+                display: flex;
+                gap: 1rem;
+    
+                i {
+    
+                    transition: 0.2s ease all;
+                    font-size: 1.25rem;
+                    color: var(--tg-primary);
+    
+                    &:hover {
+    
+                        cursor: pointer;
+                        color: var(--accent);
+    
+                    }
+    
                 }
-
+    
             }
-
-        }
-
-        .divider {
-
-            background-color: var(--bg-outline);
-            align-self: stretch;
-            width: 0.0625rem;
-
-        }
-
-        .cta {
-
-            display: flex;
-            gap: 1rem;
-
+    
+            .divider {
+    
+                background-color: var(--bg-outline);
+                align-self: stretch;
+                width: 0.0625rem;
+    
+            }
+    
+            .cta {
+    
+                display: flex;
+                gap: 1rem;
+    
+            }
+    
         }
 
     }
@@ -256,7 +262,6 @@ body {
     justify-content: center;
     grid-column: 1;
     grid-row: 2;
-    padding: 0rem 16rem;
     display: flex;
     width: 100%;
 
@@ -290,5 +295,34 @@ body {
         font-size: 0.875rem;
 
     }
+
+}
+
+#what-we-offer {
+
+    grid-row: 4;
+    height: 100vh;
+
+}
+
+#who-we-are {
+
+    grid-row: 5;
+    height: 100vh;
+
+}
+
+#get-a-hold-of-us {
+
+    grid-row: 6;
+    height: 100vh;
+
+}
+
+#footer {
+
+    background-color: var(--bg-tertiary);
+    grid-row: 7;
+    height: 50vh;
 
 }
