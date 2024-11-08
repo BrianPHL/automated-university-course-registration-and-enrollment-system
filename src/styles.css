@@ -277,4 +277,18 @@ body {
 
 }
 
+#hero-footer {
+
+    background-color: var(--bg-secondary);
+    place-content: center;
+    grid-row: 3;
+    display: grid;
+
+    p {
+
+        font-weight: 400;
+        font-size: 0.875rem;
+
+    }
+
 }
