@@ -193,16 +193,32 @@ body {
         }
 
     }
-    
-    .container .navbar-collapse {
 
-        background-color: var(--bg-tertiary);
+    .container .navbar-nav.mr-auto {
+
+        align-items: center;
+        margin-left: 2rem;
+        display: flex;
+        gap: 1rem;
+
+        li a {
+
+            transition: 0.2s ease all;
+            font-weight: 600;
+
+            &:hover, &.active {
+
+                color: var(--accent);
+
+            }
+
+        }
 
     }
 
-    .container .navbar-nav {
+    .container .navbar-nav.ml-auto {
 
-        align-items: center;
+        flex-direction: row;
         display: flex;
         gap: 2rem;
 
@@ -243,6 +259,7 @@ body {
             gap: 1rem;
 
         }
+
 
     }
 
@@ -430,8 +447,15 @@ body {
     height: 50vh;
 @media only screen and (max-width: 1200px) {
 
-    .navbar .container .navbar-nav {
+    .navbar .container .navbar-collapse .navbar-nav.mr-auto {
 
+        margin-left: 1rem;
+
+    }
+
+    .navbar .container .navbar-collapse .navbar-nav.ml-auto {
+
+        display: flex;
         gap: 1rem;
 
     }
