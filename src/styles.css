@@ -502,7 +502,7 @@ body {
         .row {
 
             display: flex;
-            gap: 1rem;
+            gap: 2rem;
 
             .card {
 
