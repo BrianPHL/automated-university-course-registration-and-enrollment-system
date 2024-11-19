@@ -541,13 +541,18 @@ body {
 #newsletter {
 
     background-color: var(--bg-tertiary);
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
     grid-row: 6;
-    padding: 4rem 16rem;
-    display: flex;
-    gap: 4rem;
+    padding: 4rem 0;
+
+    .container {
+
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        gap: 4rem;
+
+    }
 
     .container .info {
 
@@ -555,6 +560,32 @@ body {
         flex-direction: column;
         align-items: center;
         display: flex;
+
+        h6 {
+
+            color: var(--accent);
+
+        }
+
+    }
+
+    .container .input-group {
+
+        width: 32rem;
+
+        .form-control {
+
+            border-radius: 0.25rem 0 0 0.25rem;
+            height: auto;
+
+        }
+
+        .input-group-append button {
+
+            border-radius: 0 0.25rem 0.25rem 0;
+
+        }
+
 
     }
     
