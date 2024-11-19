@@ -516,10 +516,28 @@ body {
 
 }
 
-#get-a-hold-of-us {
+#newsletter {
 
+    background-color: var(--bg-tertiary);
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     grid-row: 6;
-    height: 100vh;
+    padding: 4rem 16rem;
+    display: flex;
+    gap: 4rem;
+
+    .container .info {
+
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+
+    }
+    
+}
+
 #get-a-hold-of-us {
 
     background-color: var(--bg-secondary);
