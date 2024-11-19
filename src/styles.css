@@ -526,8 +526,102 @@ body {
 #footer {
 
     background-color: var(--bg-tertiary);
-    grid-row: 7;
-    height: 50vh;
+    grid-row: 8;
+    padding: 2rem 0;
+
+    .container {
+
+        .row {
+
+            justify-content: space-between;
+            display: flex;
+            gap: 1rem;
+
+            h5 {
+
+                color: var(--tg-primary);
+
+            }
+
+            ul li a {
+
+                transition: 0.2s ease all;
+                color: var(--tg-secondary);
+
+                &:hover {
+
+                    text-decoration: none;
+                    color: var(--accent);
+
+                }
+
+            }
+
+            .right {
+
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-end;
+
+                .navbar-brand {
+
+                    align-items: flex-end;
+                    display: flex;
+                    gap: 1rem;
+            
+                    img {
+            
+                        height: 2.5rem;
+                        width: 2.5rem;
+            
+                    }
+            
+                    h2 {
+            
+                        font-weight: 800;
+                        font-size: 1.5rem;
+                        color: var(--tg-primary);
+            
+                    }
+            
+                }
+
+            }
+
+        }
+
+        .bottom-text {
+
+            justify-content: space-between;
+            display: flex;
+
+        }
+
+        p {
+
+            font-size: 0.875rem;
+
+        }
+
+        i {
+
+            transition: 0.2s ease all;
+            font-size: 1rem;
+            color: var(--tg-primary);
+
+            &:hover {
+
+                cursor: pointer;
+                color: var(--accent);
+
+            }
+
+        }
+
+    }
+
+}
+
 @media only screen and (max-width: 1200px) {
 
     .navbar .container .navbar-collapse .navbar-nav.mr-auto {
