@@ -49,7 +49,7 @@ html {
 body {
 
     grid-template-columns: 100%;
-    grid-template-rows: 8vh 84vh 8vh repeat(4, auto);
+    grid-template-rows: 8vh 84vh 8vh repeat(5, auto);
     background-color: var(--bg-primary);
     position: relative;
     display: grid;
