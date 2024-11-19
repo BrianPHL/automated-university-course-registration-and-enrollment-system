@@ -145,6 +145,27 @@ body {
         
     }
 
+    .form-control {
+
+        background-color: transparent;
+        border: 1px solid var(--bg-outline);
+        color: var(--tg-secondary);
+
+        &:hover, &:focus {
+
+            border: 1px solid var(--accent);
+
+        }
+
+        &:focus {
+
+            background-color: var(--bg-outline);
+            color: var(--tg-primary);
+
+        }
+
+    }
+
 }
 
 .navbar {
