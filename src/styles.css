@@ -220,6 +220,7 @@ body {
 
             transition: 0.2s ease all;
             font-weight: 600;
+            color: var(--tg-primary);
 
             &:hover, &.active {
 
