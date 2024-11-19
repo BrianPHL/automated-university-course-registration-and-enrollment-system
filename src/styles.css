@@ -428,8 +428,75 @@ body {
 
 #who-we-are {
 
+    background-color: var(--bg-secondary);
     grid-row: 5;
-    height: 100vh;
+
+    .container {
+
+        flex-direction: column;
+        display: flex;
+        padding: 4rem 0rem;
+        gap: 4rem;
+
+        .info .heading h1 {
+
+            font-weight: 700;
+            font-size: 2rem;
+            color: var(--tg-primary);
+                    
+        }
+
+        .info .heading h2 {
+
+            font-weight: 700;
+            font-size: 2rem;
+            color: var(--tg-secondary);
+
+        }
+
+        .info .heading h6 {
+
+            font-size: 1rem;
+            color: var(--accent);
+
+        }
+
+        .row {
+
+            display: flex;
+            gap: 1rem;
+
+            .card {
+
+                background-color: var(--bg-tertiary);
+
+                img {
+
+                    object-fit: cover;
+                    height: 16rem;
+                    width: 16rem;
+
+                }
+
+                .card-body h4 {
+
+                    font-size: 1rem;
+                    color: var(--tg-primary);
+
+                }
+
+                .card-body h5 {
+
+                    font-size: 1rem;
+                    color: var(--tg-secondary);
+
+                }
+
+            }
+
+        }
+            
+    }
 
 }
 
