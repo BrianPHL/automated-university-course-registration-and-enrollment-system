@@ -1,0 +1,9 @@
+@import url('../../globals.css');
+
+body {
+
+    place-content: center;
+    display: grid;
+    height: 100vh;
+
+}
