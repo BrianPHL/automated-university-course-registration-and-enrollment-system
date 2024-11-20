@@ -700,89 +700,130 @@ body {
 
     .container {
 
-        .row {
+        flex-direction: column;
+        display: flex;
+        gap: 2rem;
+        
+        .wrapper {
 
             justify-content: space-between;
+            flex-direction: row;
+            align-items: flex-start;
             display: flex;
-            gap: 1rem;
+            gap: 2rem;
 
-            h5 {
+            .links {
 
-                color: var(--tg-primary);
+                flex-direction: row;
+                display: flex;
+                gap: 4rem;
+
+                .column {
+
+                    flex-direction: column;
+                    display: flex;
+                    gap: 1rem;
+
+                    h5 { color: var(--tg-primary); }
+
+                    ul {
+
+                        flex-direction: column;
+                        display: flex;
+                        gap: 0.5rem;
+
+                        li {
+
+                            align-items: center;
+                            display: flex;
+                            gap: 0.5rem;
+
+                            a, i { transition: 0.2s ease all; }
+
+                            &:hover {
+
+                                a, i {
+                                    cursor: pointer;
+                                    color: var(--accent);
+                                }
+
+                            }
+
+                        }
+
+                        li a, li i {
+
+                            color: var(--tg-secondary);
+
+                            &:hover {
+
+                                text-decoration: none;
+
+                            }
+
+                        }
+
+                    }
+
+                }
 
             }
 
-            ul li a {
+            .navbar-brand {
 
+                align-items: flex-end;
+                display: flex;
+                gap: 1rem;
+        
+                img {
+        
+                    height: 2.5rem;
+                    width: 2.5rem;
+        
+                }
+        
+                h2 {
+        
+                    font-weight: 800;
+                    font-size: 1.5rem;
+                    color: var(--tg-primary);
+        
+                }
+        
+            }
+
+        }
+
+        .divider {
+
+            background-color: var(--bg-outline);
+            align-self: stretch;
+            height: 1px;
+            width: 100%;
+
+        }
+
+        .footer {
+
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            display: flex;
+            gap: 2rem;
+
+            h6 { color: var(--tg-secondary); }
+            i { 
+                
                 transition: 0.2s ease all;
-                color: var(--tg-secondary);
-
+                color: var(--tg-primary); 
+                
                 &:hover {
 
-                    text-decoration: none;
+                    cursor: pointer;
                     color: var(--accent);
 
                 }
-
-            }
-
-            .right {
-
-                display: flex;
-                align-items: flex-start;
-                justify-content: flex-end;
-
-                .navbar-brand {
-
-                    align-items: flex-end;
-                    display: flex;
-                    gap: 1rem;
             
-                    img {
-            
-                        height: 2.5rem;
-                        width: 2.5rem;
-            
-                    }
-            
-                    h2 {
-            
-                        font-weight: 800;
-                        font-size: 1.5rem;
-                        color: var(--tg-primary);
-            
-                    }
-            
-                }
-
-            }
-
-        }
-
-        .bottom-text {
-
-            justify-content: space-between;
-            display: flex;
-
-        }
-
-        p {
-
-            font-size: 0.875rem;
-
-        }
-
-        i {
-
-            transition: 0.2s ease all;
-            font-size: 1rem;
-            color: var(--tg-primary);
-
-            &:hover {
-
-                cursor: pointer;
-                color: var(--accent);
-
             }
 
         }
@@ -932,6 +973,26 @@ body {
 
         flex-direction: column;
         display: flex;
+
+    }
+
+    #footer .container .wrapper {
+
+        flex-direction: column;
+        justify-content: space-between;
+        display: flex;
+
+    }
+
+}
+
+@media only screen and (max-width: 575px) {
+
+    #footer .container .wrapper .links {
+
+        flex-direction: column;
+        display: flex;
+        gap: 1rem;
 
     }
 
