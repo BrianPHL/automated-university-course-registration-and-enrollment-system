@@ -20,15 +20,15 @@ $(() => {
             
                 switchBtn.addClass("fa-moon");
                 switchBtn.removeClass("fa-sun");
-                companyLogo.attr("src", "../public/assets/logo/light-512.svg");
-                favicon.attr("href", "../public/favicon-light.ico");
+                companyLogo.attr("src", "../../public/assets/logo/light-512.svg");
+                favicon.attr("href", "../../public/favicon-light.ico");
 
             } else {
 
                 switchBtn.addClass("fa-sun");
                 switchBtn.removeClass("fa-moon");
-                companyLogo.attr("src", "../public/assets/logo/dark-512.svg");
-                favicon.attr("href", "../public/favicon-dark.ico");
+                companyLogo.attr("src", "../../public/assets/logo/dark-512.svg");
+                favicon.attr("href", "../../public/favicon-dark.ico");
 
             }
 

@@ -1,0 +1,147 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap');
+
+* {
+
+    font-family: "Assistant", sans-serif;
+    line-height: normal;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+html[data-theme="light"] {
+
+    --bg-primary: #BBBBBB;
+    --bg-secondary: #DCDCDC;
+    --bg-tertiary: #EAEAEA;
+    --bg-outline: #B0B0B0;
+    --tg-primary: #151515;
+    --tg-secondary: #606060;
+    --tg-disabled: #AAAAAA;
+    --accent: #6150FF;
+    --accent-hovered: #4A3BD2;
+
+}
+
+html[data-theme="dark"] {
+
+    --bg-primary: #101010;
+    --bg-secondary: #202020;
+    --bg-tertiary: #303030;
+    --bg-outline: #404040;
+    --tg-primary: #E0E0E0;
+    --tg-secondary: #A0A0A0;
+    --tg-disabled: #404040;
+    --accent: #6150FF;
+    --accent-hovered: #4A3BD2;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+h1, h2 {
+
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+h3 {
+
+    font-weight: 500;
+    font-size: 1.5rem;
+
+}
+
+h4 {
+
+    font-weight: 500;
+    font-size: 1rem;
+
+}
+
+h5, p {
+
+    font-weight: 400;
+    font-size: 1rem;
+
+}
+
+h6 {
+
+    font-weight: 400;
+    font-size: 0.825rem;
+    
+}
+
+button {
+
+    justify-content: center;
+    border-radius: 0.25rem;
+    align-items: center;
+    font-weight: 600;
+    transition: 0.2s ease all;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    gap: 0.5rem;
+
+    &[data-type="primary"] {
+
+        background-color: var(--accent);
+        border: 0;
+        color: var(--bg-tertiary);
+
+        &:hover {
+
+            background-color: var(--accent-hovered);
+            color: var(--tg-primary);
+            cursor: pointer;
+    
+        }
+
+    }
+
+    &[data-type="secondary"] {
+
+        background-color: transparent;
+        border: 1px solid var(--bg-outline);
+        color: var(--tg-primary);
+
+        &:hover {
+
+            background-color: var(--bg-outline);
+            cursor: pointer;
+    
+        }
+
+    }
+    
+}
+
+.form-control {
+
+    background-color: transparent;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--bg-outline);
+    color: var(--tg-secondary);
+
+    &:hover, &:focus {
+
+        border: 1px solid var(--accent);
+
+    }
+
+    &:focus {
+
+        background-color: var(--bg-outline);
+        color: var(--tg-primary);
+
+    }
+
+}
