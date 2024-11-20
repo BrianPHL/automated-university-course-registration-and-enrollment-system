@@ -550,11 +550,9 @@ body {
         align-items: center;
         display: flex;
 
-        h6 {
-
-            color: var(--accent);
-
-        }
+        h6 { color: var(--accent); }
+        h3 { color: var(--tg-primary); }
+        h4 { color: var(--tg-secondary); }
 
     }
 
