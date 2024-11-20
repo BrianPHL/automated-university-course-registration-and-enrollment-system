@@ -584,15 +584,14 @@ body {
     background-color: var(--bg-secondary);
     grid-row: 7;
     padding: 4rem 0;
-    display: flex;
-    
+
     .container {
-        
+
         flex-direction: column;
         display: flex;
         gap: 4rem;
 
-        .info .heading h1 {
+        .heading h1 {
 
             font-weight: 700;
             font-size: 2rem;
@@ -600,43 +599,98 @@ body {
                     
         }
 
-        .info .heading h2 {
-    
+        .heading h2 {
+
             font-weight: 700;
             font-size: 2rem;
             color: var(--tg-secondary);
-    
+
         }
-    
-        .info .heading h6 {
-    
+
+        .heading h6 {
+
             font-size: 1rem;
             color: var(--accent);
+
+        }
+
+        .container {
+
+            flex-direction: row;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            gap: 2rem;
+
+            .info {
+
+                flex-direction: column;
+                display: flex;
+                gap: 2rem;
+        
+                .phone, .chat {
+        
+                    flex-direction: column;
+                    border-radius: 0.25rem;
+                    display: flex;
+                    gap: 1rem;
+        
+                    .text h4 { color: var(--tg-primary); }
+                    .text p { color: var(--tg-secondary); }
+        
+                    button {
+        
+                        align-self: flex-start;
+                        width: auto;
+        
+                    }
+        
+                }
+        
+            }
+
+            .forms {
+
+                flex-direction: column;
+                display: flex;
+                width: 100%;
+                gap: 2rem;
+
+                h4 { color: var(--tg-primary); }
+
+                .wrapper {
+
+                    flex-direction: column;
+                    display: flex;
+                    padding: 0;
+                    margin: 0;
+                    gap: 1rem;
+
+                    .form-group {
+
+                        width: 100%;
     
-        }
+                        label { color: var(--tg-secondary); }
+    
+                    }
 
-        .row button {
+                    .name {
 
-            width: 100%;
+                        flex-direction: row;
+                        display: flex;
+                        gap: 1rem;
+    
+                    }
 
-        }
+                }
 
-        h5 {
-
-            color: var(--tg-primary);
-            
-        }
-
-        li {
-
-            color: var(--tg-secondary);
+            }
 
         }
 
     }
 
 }
-} */
 
 #footer {
 
@@ -854,6 +908,30 @@ body {
 
         }
 
+
+    }
+
+    #get-a-hold-of-us .container .container .forms .wrapper {
+
+        gap: 0rem;
+
+        .name {
+
+            flex-direction: column;
+            gap: 0rem;
+
+        }
+
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    #get-a-hold-of-us .container .container {
+
+        flex-direction: column;
+        display: flex;
 
     }
 
