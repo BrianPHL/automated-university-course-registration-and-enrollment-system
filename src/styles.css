@@ -320,12 +320,7 @@ body {
     grid-row: 3;
     display: grid;
 
-    p {
-
-        font-weight: 400;
-        font-size: 0.875rem;
-
-    }
+    .container h6 { color: var(--tg-secondary); }
 
 }
 
