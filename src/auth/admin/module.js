@@ -1,3 +1,5 @@
+import { debug } from '../../main';
+
 $(() => {
     
     const init = () => {
