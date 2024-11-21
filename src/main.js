@@ -1,23 +1,22 @@
-$(() => {
+export const debug = (type, methodName) => {
 
-    const debug = (type, methodName) => {
+    switch (type) {
 
-        switch (type) {
+        case "init":
+            console.log("[DEBUG]: Starting initialization of module: " + methodName);
+            break;
 
-            case "init":
-                console.log("[DEBUG]: Starting initialization of module: " + methodName);
-                break;
-
-            case "done":
-                console.log("[DEBUG]: Finished initialization of module: " + methodName);
-                break;
-        
-            default:
-                console.log("[DEBUG]: Invalid arguments passed! No effect.")
-                break;
-        }
-
+        case "done":
+            console.log("[DEBUG]: Finished initialization of module: " + methodName);
+            break;
+    
+        default:
+            console.log("[DEBUG]: Invalid arguments passed! No effect.")
+            break;
     }
+
+}
+
 $(() => {
     
     const init = () => {
