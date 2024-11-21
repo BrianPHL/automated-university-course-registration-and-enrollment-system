@@ -30,7 +30,7 @@ $(() => {
 
         const functionName = "themeHandler";
 
-        debug("start", functionName)
+        debug("init", functionName)
 
         const iconSwitch = (theme) => {
 
