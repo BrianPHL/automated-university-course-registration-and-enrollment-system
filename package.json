@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Automated University Course Registration and Enrollment System (AUCRES). T.I.P 2nd-year BSIT project on Web Systems & Technologies.",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
