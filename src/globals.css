@@ -66,7 +66,7 @@ h4 {
 
 }
 
-h5, p {
+h5, p, label {
 
     font-weight: 400;
     font-size: 1rem;
@@ -124,22 +124,101 @@ button {
     
 }
 
-.form-control {
+.form-group {
 
-    background-color: transparent;
-    padding: 0.75rem 1.25rem;
-    border: 1px solid var(--bg-outline);
-    color: var(--tg-secondary);
+    label { color: var(--tg-secondary); }
 
-    &:hover, &:focus {
+    .form-control {
 
-        border: 1px solid var(--accent);
+        background-color: transparent;
+        border-radius: 0.25rem;
+        padding: 1rem;
+        border: 1px solid var(--bg-outline);
+        color: var(--tg-secondary);
+
+        &:hover, &:focus {
+    
+            border: 1px solid var(--accent);
+    
+        }
+    
+        &:focus {
+    
+            background-color: var(--bg-outline);
+            box-shadow: none;
+            color: var(--tg-primary);
+    
+        }
 
     }
 
-    &:focus {
+    .input-group {
 
-        background-color: var(--bg-outline);
+        transition: 0.2s ease all;
+        border-radius: 0.25rem;
+        overflow: hidden;
+        border: 1px solid var(--bg-outline);
+
+        &.focused {
+
+            background-color: var(--bg-outline);
+            border: 1px solid var(--accent);
+            color: var(--tg-primary);
+
+        }
+
+        .form-control {
+
+            background-color: transparent;
+            padding: 1rem;
+            border: none;
+            color: var(--tg-secondary);
+    
+        }
+
+        .input-group-append .input-group-text {
+
+            border-radius: 0;
+            background-color: var(--bg-secondary);
+            border: 0;
+
+            i {
+                
+                transition: 0.2s ease all;
+                color: var(--tg-secondary);
+            
+                &:hover {
+
+                    cursor: pointer;
+                    color: var(--accent);
+
+                }
+            
+            }
+
+        }
+
+    }
+
+}
+
+.brand {
+
+    align-items: flex-end;
+    display: flex;
+    gap: 1rem;
+
+    img {
+
+        height: 2.5rem;
+        width: 2.5rem;
+
+    }
+
+    h2 {
+
+        font-weight: 800;
+        font-size: 1.5rem;
         color: var(--tg-primary);
 
     }
