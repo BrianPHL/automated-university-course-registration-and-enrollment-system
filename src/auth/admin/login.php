@@ -1,3 +1,41 @@
+<?php
+
+    session_start();
+    require '../../../config/database.php';
+
+    $error = '';
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        $username = $_POST['username'] ?? '';
+        $password = $_POST['password'] ?? '';
+
+        if (!empty($username) && !empty($password)) {
+
+            $stmt = $pdo->prepare("SELECT * FROM accounts WHERE username = :username AND role = 'admin'");
+            $stmt->execute(['username' => $username]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($user && $password === $user['password']) {
+                
+                $_SESSION['username'] = $username;
+                header("Location: ../../dashboard/admin/dashboard.php");
+                exit();
+
+            } else {
+                $error = "Invalid credentials. Please try again.";
+            }
+
+        } else {
+
+            $error = "Please fill in all fields.";
+
+        }
+
+    }
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="en" data-theme="dark">
@@ -37,14 +75,16 @@
 
                 </div>
 
-                <form action="POST">
+                <form method="POST" action="login.php">
 
                     <div class="wrapper">
+
+                        <?php if (isset($error)) { echo "<p style='color: red;'>$error</p>"; } ?>
 
                         <div class="form-group">
 
                             <label for="username">Username</label>
-                            <input class="form-control" type="text" placeholder="Your username...">
+                            <input class="form-control" type="text" name="username" placeholder="Your username...">
     
                         </div>
     
@@ -54,7 +94,7 @@
     
                             <div class="input-group">
     
-                                <input class="form-control" type="password" placeholder="Your password...">
+                                <input class="form-control" type="password" name="password" placeholder="Your password...">
     
                                 <div class="input-group-append">
                                     <div class="input-group-text">
@@ -70,7 +110,7 @@
 
                     <div class="cta">
 
-                        <button data-type="primary">
+                        <button type="submit" data-type="primary">
                             Log in
                             <i class="fa-solid fa-arrow-right-to-bracket"></i>
                         </button>
