@@ -23,6 +23,8 @@ html[data-theme="light"] {
     --tg-disabled: #AAAAAA;
     --accent: #6150FF;
     --accent-hovered: #4A3BD2;
+    --error-background: #FFAEC1;
+    --error-foreground: #E9204F;
 
 }
 
@@ -37,6 +39,8 @@ html[data-theme="dark"] {
     --tg-disabled: #404040;
     --accent: #6150FF;
     --accent-hovered: #4A3BD2;
+    --error-background: #4C1824;
+    --error-foreground: #E9204F;
 
 }
 
@@ -70,6 +74,7 @@ h5, p, label {
 
     font-weight: 400;
     font-size: 1rem;
+    margin: 0;
 
 }
 
@@ -176,10 +181,10 @@ button {
     
         }
 
-        .input-group-append .input-group-text {
+        .input-group-prepend .input-group-text, .input-group-append .input-group-text {
 
+            background-color: var(--bg-outline);
             border-radius: 0;
-            background-color: var(--bg-secondary);
             border: 0;
 
             i {
@@ -203,9 +208,10 @@ button {
 }
 
 .brand {
-
-    align-items: flex-end;
+    
+    align-items: center;
     display: flex;
+    width: auto;
     gap: 1rem;
 
     img {
@@ -218,9 +224,17 @@ button {
     h2 {
 
         font-weight: 800;
+        transition: 0.2s ease all;
         font-size: 1.5rem;
         color: var(--tg-primary);
 
+    }
+
+    &:hover {
+        
+        text-decoration: none; 
+        cursor: pointer;
+    
     }
 
 }
