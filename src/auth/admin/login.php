@@ -2,13 +2,13 @@
 
     session_start();
     require '../../../config/database.php';
-
-    $error = '';
+    
+    unset($error);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        $username = $_POST['username'] ?? '';
-        $password = $_POST['password'] ?? '';
+        $username = trim($_POST['username'] ?? '');
+        $password = trim($_POST['password'] ?? '');
 
         if (!empty($username) && !empty($password)) {
 
@@ -16,20 +16,15 @@
             $stmt->execute(['username' => $username]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($user && $password === $user['password']) {
-                
+            if ($user && $password === $user['password']) {                
                 $_SESSION['username'] = $username;
                 header("Location: ../../dashboard/admin/dashboard.php");
                 exit();
-
             } else {
                 $error = "Invalid credentials. Please try again.";
             }
-
         } else {
-
             $error = "Please fill in all fields.";
-
         }
 
     }
@@ -53,36 +48,36 @@
 
     <body>
 
-        <section id="forms">
+        <div class="container-fluid">
 
-            <div class="container">
+            <div class="heading">
 
-                <div class="heading">
+                <a class="brand">
+                    <img src="../../../public/assets/logo/light-512.svg" alt="aucres logo in light mode">
+                    <h2>aucres.</h2>
+                </a>
 
-                    <a class="brand" href="#home">
-                        <img src="../../../public/assets/logo/light-512.svg" alt="aucres logo in light mode">
-                        <h2>aucres</h2>
-                    </a>
-    
-                    <i class="theme-toggle fa-solid fa-moon"></i>
+                <i class="theme-toggle fa-solid fa-moon"></i>
 
-                </div>
+            </div>
 
-                <div class="info">
+            <div class="info">
 
-                    <h4>Welcome back!</h4>
-                    <h4>Sign in to your admin account.</h4>
+                <h4>Welcome back!</h4>
+                <h5>Sign in to your admin account.</h5>
 
-                </div>
+            </div>
 
-                <form method="POST" action="login.php">
+            <form method="POST" action="login.php">
 
-                    <div class="wrapper">
+                <?php if (isset($error)) { echo "<p class='error'>$error</p>"; } ?>
 
-                        <?php if (isset($error)) { echo "<p style='color: red;'>$error</p>"; } ?>
+                <div class="wrapper">
+
+                    <div class="inputs">
 
                         <div class="form-group">
-
+                    
                             <label for="username">Username</label>
                             <input class="form-control" type="text" name="username" placeholder="Your username...">
     
@@ -117,17 +112,11 @@
 
                     </div>
 
-                </form>
+                </div>
 
-            </div>
+            </form>
 
-        </section>
-
-        <section id="background">
-
-            <img src="../../../public/assets/bg/library.jpg" alt="An image of a library">
-
-        </section>
+        </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -2,144 +2,152 @@
 
 body {
 
+    background-image: url('../../../public/assets/bg/college.webp');
     background-color: var(--bg-primary);
-    grid-template-columns: 30% 70%;
-    display: grid;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
     height: 100vh;
 
 }
 
-#forms {
+.container-fluid {
 
     background-color: var(--bg-secondary);
-    border-radius: 0.25rem;
-    grid-column: 1;
-    width: 100%;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    margin-left: 8rem;
+    display: flex;
+    padding: 2rem;
+    height: auto;
+    width: 24rem;
+    gap: 2rem;
 
-    .container {
+    .heading {
 
-        flex-direction: column;
-        padding: 4rem;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
         display: flex;
-        height: 100%;
-        gap: 4rem;
 
-        .heading {
+        i {
 
-            justify-content: space-between;
-            flex-direction: row;
+            transition: 0.2s ease all;
+            border-radius: 0.25rem;
+            justify-content: center;
             align-items: center;
             display: flex;
-            gap: 0.5rem;
+            height: 2rem;
+            width: 2rem;
+            color: var(--tg-primary);
 
-            i {
-                
-                transition: 0.2s ease all;
-                font-size: 1.25rem;
-                color: var(--tg-primary); 
-            
-                &:hover {
+            &:hover {
 
-                    cursor: pointer;
-                    color: var(--accent);
-
-                }
+                background-color: var(--bg-outline);
+                cursor: pointer;
+                color: var(--accent);
 
             }
 
         }
 
-        .info h4:first-child { color: var(--tg-primary); }
-        .info h4:last-child { color: var(--tg-secondary); }
-        
-        form {
+    }
 
-            justify-content: space-between;
+    .error {
+
+        transition: 0.2s ease all;
+        background-color: var(--error-background);
+        border-radius: 0.25rem;
+        padding: 1rem;
+        display: flex;
+        border: 1px solid var(--error-foreground);
+        color: var(--error-foreground);
+
+    }
+
+    .info {
+
+        width: 100%;
+        h4 { color: var(--tg-primary); }
+        h5 { color: var(--tg-secondary); }
+
+    }
+
+    form {
+
+        width: 100%;
+
+        .wrapper {
+
             flex-direction: column;
             display: flex;
-            height: 100%;
             gap: 2rem;
 
-            .wrapper {
+            .inputs {
 
                 flex-direction: column;
                 display: flex;
-                gap: 0rem;
 
             }
 
-            .cta button { width: 100%; };
+            .cta, .cta button {
+
+                width: 100%;
+
+            }
 
         }
 
     }
-    
-}
-
-#background img {
-
-    grid-column: 2;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
 
 }
 
-@media only screen and (max-width: 1199px) {
+@media only screen and (max-width: 634px) {
 
-    #forms .container {
+    .container-fluid {
 
-        padding: 2rem;
-    
-    }
+        border-radius: 0;
+        margin-left: 0;
+        padding: 8rem;
+        height: 100%;
+        width: 100%;
 
-}
+        form {
 
-@media only screen and (max-width: 999px) {
+            height: 100%;
 
-    body {
-        
-        background-color: var(--bg-primary);
-        padding: 16rem;
+            .wrapper {
 
-    }
+                justify-content: space-between;
+                height: 100%;
 
-    #background { display: none; }
-
-    #forms {
-
-        grid-column: 1/3;
-    
-        .container {
-
-            gap: 2rem;
+            }
 
         }
-    
+
     }
 
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 576px) {
 
-    body { padding: 12rem; }
+    .container-fluid {
 
-    #forms .container {
+        padding: 8rem 4rem;
 
-        gap: 1rem;
-    
     }
 
 }
 
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: 500px) {
 
-    body { padding: 8rem; }
+    .container-fluid {
 
-    #forms .container {
+        padding: 8rem 2rem;
 
-        padding: 1rem;
-    
     }
 
 }
