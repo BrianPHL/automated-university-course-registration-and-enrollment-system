@@ -1,5 +1,4 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
-
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap');
 
 * {
@@ -54,12 +53,14 @@ h1, h2 {
 
     font-weight: 700;
     font-size: 3rem;
+    margin: 0;
 }
 
 h3 {
 
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin: 0;
 
 }
 
@@ -67,6 +68,7 @@ h4 {
 
     font-weight: 500;
     font-size: 1rem;
+    margin: 0;
 
 }
 
@@ -82,6 +84,7 @@ h6 {
 
     font-weight: 400;
     font-size: 0.825rem;
+    margin: 0;
     
 }
 
@@ -105,8 +108,8 @@ button {
         &:hover {
 
             background-color: var(--accent-hovered);
-            color: var(--tg-primary);
             cursor: pointer;
+            color: var(--tg-primary);
     
         }
 
@@ -133,7 +136,7 @@ button {
 
     label { color: var(--tg-secondary); }
 
-    .form-control {
+    input.form-control, textarea.form-control {
 
         background-color: transparent;
         border-radius: 0.25rem;
@@ -159,8 +162,8 @@ button {
 
     .input-group {
 
-        transition: 0.2s ease all;
         border-radius: 0.25rem;
+        transition: 0.2s ease all;
         overflow: hidden;
         border: 1px solid var(--bg-outline);
 
@@ -187,8 +190,8 @@ button {
             border-radius: 0;
             border: 0;
 
-            i {
-                
+            &[data-contains="icon"] i {
+                    
                 transition: 0.2s ease all;
                 color: var(--tg-secondary);
             
@@ -198,7 +201,8 @@ button {
                     color: var(--accent);
 
                 }
-            
+                
+
             }
 
         }

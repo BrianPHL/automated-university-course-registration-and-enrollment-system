@@ -1,4 +1,4 @@
-@import url('../globals.css');
+@import url('./globals.css');
 
 body {
 
@@ -19,7 +19,7 @@ body {
 
     .container .brand {
 
-        align-items: flex-end;
+        align-items: center;
         display: flex;
         gap: 1rem;
 
@@ -104,17 +104,23 @@ body {
 
             i {
 
+                justify-content: center;
+                border-radius: 0.25rem;
                 transition: 0.2s ease all;
+                align-items: center;
                 font-size: 1.25rem;
+                display: flex;
+                height: 2.5rem;
+                width: 2.5rem;
                 color: var(--tg-primary);
-
+    
                 &:hover {
-
+    
+                    background-color: var(--bg-outline);
                     cursor: pointer;
-                    color: var(--accent);
-
+    
                 }
-
+    
             }
 
         }
@@ -160,12 +166,17 @@ body {
 
             flex-direction: column;
             display: flex;
-            gap: 1rem;
+            gap: 2rem;
 
             h6 { color: var(--tg-secondary); }
             h1 { color: var(--accent); }
             h2 { color: var(--tg-primary); }
-            p { color: var(--tg-secondary); }
+            p { 
+            
+                width: 60%;
+                color: var(--tg-secondary);
+            
+            }
     
         }
     
@@ -207,27 +218,35 @@ body {
         padding: 4rem 0rem;
         gap: 4rem;
 
-        .info .heading h1 {
+        .info .heading {
 
-            font-weight: 700;
-            font-size: 2rem;
-            color: var(--tg-primary);
+            flex-direction: column;
+            display: flex;
+            gap: 1rem;
+
+            h5 { color: var(--accent); }
+
+            .wrapper {
+
+                flex-direction: column;
+                display: flex;
+                border: 0;
+
+                h3:first-child {
+
+                    font-weight: 700;
+                    color: var(--tg-primary); 
+                
+                }
+                h3:last-child {
                     
-        }
+                    font-weight: 700;
+                    color: var(--tg-secondary);
+                
+                }
 
-        .info .heading h2 {
-
-            font-weight: 700;
-            font-size: 2rem;
-            color: var(--tg-secondary);
-
-        }
-
-        .info .heading h6 {
-
-            font-size: 1rem;
-            color: var(--accent);
-
+            }
+        
         }
 
         .row {
@@ -250,48 +269,56 @@ body {
         display: flex;
         border: 1px solid var(--bg-outline);
                   
-        .list .feature {
+        .list {
 
+            justify-content: space-between;
             flex-direction: column;
-            transition: 0.2s ease all;
             display: flex;
-            padding: 2rem;
-            gap: 2rem;
 
-            .heading {
+            .feature {
 
-                flex-direction: row;
+                flex-direction: column;
+                transition: 0.2s ease all;
                 display: flex;
-                gap: 1rem;
-
-                i {
-
-                    font-size: 1rem;
-                    color: var(--accent);
-
+                padding: 2rem;
+                gap: 2rem;
+                
+                .heading {
+                
+                    flex-direction: row;
+                    display: flex;
+                    gap: 1rem;
+                
+                    i {
+                
+                        font-size: 1rem;
+                        color: var(--accent);
+                
+                    }
+                
+                    h3 {
+                
+                        font-size: 1rem;
+                        color: var(--tg-primary);
+                
+                    }
+                
                 }
-
-                h3 {
-
+                
+                p {
+                
                     font-size: 1rem;
-                    color: var(--tg-primary);
-
+                    color: var(--tg-secondary);
+                
                 }
-
-            }
-
-            p {
-
-                font-size: 1rem;
-                color: var(--tg-secondary);
-        
-            }
-
-            &:hover {
-
-                background-color: var(--bg-outline);
-                cursor: pointer;
-
+                
+                &:hover {
+                
+                    background-color: var(--bg-outline);
+                    cursor: pointer;
+                
+                }
+    
             }
 
         }
@@ -301,8 +328,8 @@ body {
     img {
 
         background-color: white;
-        height: 100%;
         width: 100%;
+        height: 100%;
 
     }
 
@@ -320,27 +347,35 @@ body {
         padding: 4rem 0rem;
         gap: 4rem;
 
-        .info .heading h1 {
+        .heading {
 
-            font-weight: 700;
-            font-size: 2rem;
-            color: var(--tg-primary);
+            flex-direction: column;
+            display: flex;
+            gap: 1rem;
+
+            h5 { color: var(--accent); }
+
+            .wrapper {
+
+                flex-direction: column;
+                display: flex;
+                border: 0;
+
+                h3:first-child {
+
+                    font-weight: 700;
+                    color: var(--tg-primary); 
+                
+                }
+                h3:last-child {
                     
-        }
+                    font-weight: 700;
+                    color: var(--tg-secondary);
+                
+                }
 
-        .info .heading h2 {
-
-            font-weight: 700;
-            font-size: 2rem;
-            color: var(--tg-secondary);
-
-        }
-
-        .info .heading h6 {
-
-            font-size: 1rem;
-            color: var(--accent);
-
+            }
+        
         }
 
         .row {
@@ -396,18 +431,37 @@ body {
         display: flex;
         gap: 4rem;
 
-    }
+        .heading {
 
-    .container .info {
+            text-align: center;
+            flex-direction: column;
+            display: flex;
+            gap: 1rem;
 
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        display: flex;
+            h5 { color: var(--accent); }
 
-        h6 { color: var(--accent); }
-        h3 { color: var(--tg-primary); }
-        h4 { color: var(--tg-secondary); }
+            .wrapper {
+
+                flex-direction: column;
+                display: flex;
+                border: 0;
+
+                h3:first-child {
+
+                    font-weight: 700;
+                    color: var(--tg-primary); 
+                
+                }
+                h3:last-child {
+                    
+                    font-weight: 700;
+                    color: var(--tg-secondary);
+                
+                }
+
+            }
+        
+        }
 
     }
 
@@ -422,9 +476,17 @@ body {
 
         }
 
-        .input-group-append button {
+        .input-group-append .input-group-text {
 
-            border-radius: 0 0.25rem 0.25rem 0;
+            padding: 0;
+
+            button {
+
+                border-radius: 0 0.25rem 0.25rem 0;
+                height: 100%;
+
+            }
+
 
         }
 
@@ -445,27 +507,35 @@ body {
         display: flex;
         gap: 4rem;
 
-        .heading h1 {
+        .heading {
 
-            font-weight: 700;
-            font-size: 2rem;
-            color: var(--tg-primary);
+            flex-direction: column;
+            display: flex;
+            gap: 1rem;
+
+            h5 { color: var(--accent); }
+
+            .wrapper {
+
+                flex-direction: column;
+                display: flex;
+                border: 0;
+
+                h3:first-child {
+
+                    font-weight: 700;
+                    color: var(--tg-primary); 
+                
+                }
+                h3:last-child {
                     
-        }
+                    font-weight: 700;
+                    color: var(--tg-secondary);
+                
+                }
 
-        .heading h2 {
-
-            font-weight: 700;
-            font-size: 2rem;
-            color: var(--tg-secondary);
-
-        }
-
-        .heading h6 {
-
-            font-size: 1rem;
-            color: var(--accent);
-
+            }
+        
         }
 
         .container {
@@ -522,7 +592,10 @@ body {
 
                     .form-group {
 
+                        flex-direction: column;
+                        display: flex;
                         width: 100%;
+                        gap: 0.5rem;
     
                         label { color: var(--tg-secondary); }
     
@@ -588,30 +661,28 @@ body {
 
                         li {
 
+                            border-radius: 0.25rem;
                             align-items: center;
+                            transition: 0.2s ease all;
                             display: flex;
+                            padding: 0.5rem 1rem;
+                            align-self: flex-start;
                             gap: 0.5rem;
 
-                            a, i { transition: 0.2s ease all; }
-
-                            &:hover {
-
-                                a, i {
-                                    cursor: pointer;
-                                    color: var(--accent);
-                                }
-
+                            a, i {
+                                
+                                transition: 0.2s ease all;
+                                text-decoration: none;
+                                color: var(--tg-secondary);
+                            
                             }
 
-                        }
-
-                        li a, li i {
-
-                            color: var(--tg-secondary);
-
                             &:hover {
 
-                                text-decoration: none;
+                                background-color: var(--bg-outline);
+                                cursor: pointer;
+                                
+                                a, i { color: var(--tg-primary); }
 
                             }
 
@@ -643,18 +714,26 @@ body {
             gap: 2rem;
 
             h6 { color: var(--tg-secondary); }
-            i { 
-                
+
+            i {
+
+                justify-content: center;
+                border-radius: 0.25rem;
                 transition: 0.2s ease all;
-                color: var(--tg-primary); 
-                
+                align-items: center;
+                font-size: 1.25rem;
+                display: flex;
+                height: 2.5rem;
+                width: 2.5rem;
+                color: var(--tg-primary);
+    
                 &:hover {
-
+    
+                    background-color: var(--bg-outline);
                     cursor: pointer;
-                    color: var(--accent);
-
+    
                 }
-            
+    
             }
 
         }
@@ -676,6 +755,12 @@ body {
 
         display: flex;
         gap: 1rem;
+
+        .nav-item.controls {
+
+            gap: 0.5rem;
+            
+        }
 
     }
 
@@ -743,25 +828,29 @@ body {
 
         .nav-item.controls {
 
+            align-self: center;
             display: flex;
-            gap: 0.5rem;
+            gap: 1rem;
 
             i {
 
+                justify-content: center;
                 border-radius: 0.25rem;
                 transition: 0.2s ease all;
-                padding: 1rem;
-                border: 1px solid var(--bg-outline);
-                color: var(--tg-secondary);
-
+                align-items: center;
+                font-size: 1.25rem;
+                display: flex;
+                height: 2.5rem;
+                width: 2.5rem;
+                color: var(--tg-primary);
+    
                 &:hover {
-
+    
                     background-color: var(--bg-outline);
                     cursor: pointer;
-                    color: var(--accent);
-
+    
                 }
-
+    
             }
 
         }
@@ -782,6 +871,8 @@ body {
 
 
     }
+
+    #home .container .info p { width: 100%; } 
 
     #get-a-hold-of-us .container .container .forms .wrapper {
 
@@ -824,6 +915,14 @@ body {
         flex-direction: column;
         display: flex;
         gap: 1rem;
+
+    }
+
+    #footer .container .footer {
+
+        flex-direction: column;
+        text-align: center;
+        display: flex;
 
     }
 
