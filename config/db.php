@@ -1,17 +1,34 @@
 <?php
 
-    $host = 'localhost';
-    $db   = 'aucres';
-    $user = 'root';
+    namespace App\Config;
 
-    try {
+    use PDO;
+    use PDOException;
 
-        $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    class Database {
 
-    } catch (PDOException $e) {
+        private $host = 'localhost';
+        private $db   = 'aucres';
+        private $name = 'root';
+        private $conn;
 
-        die("Database connection failed: " . $e->getMessage());
+        public function connect() {
+            $this->conn = null;
+
+            try {
+
+                $this->conn = new PDO("mysql:host=$this->host;dbname=$this->db", $this->name);
+                $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            } catch (PDOException $e) {
+                
+                echo "Database connection failed! Error: " . $e->getMessage();
+            
+            }
+
+            return $this->conn;
+
+        }
 
     }
 
