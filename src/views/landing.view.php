@@ -38,7 +38,7 @@
             <div class="container">
 
                 <a class="navbar-brand brand" href="#home">
-                    <img src="./assets/logo/light-512.svg" alt="aucres logo in light mode">
+                    <img src="./assets/logo/light.svg" alt="aucres logo in light mode">
                     <h2>aucres</h2>
                 </a>
     
@@ -515,7 +515,7 @@
                     </div>
 
                     <a class="brand" href="#home">
-                        <img src="./assets/logo/light-512.svg" alt="aucres logo in light mode">
+                        <img src="./assets/logo/light.svg" alt="aucres logo in light mode">
                         <h2>aucres</h2>
                     </a>
 
