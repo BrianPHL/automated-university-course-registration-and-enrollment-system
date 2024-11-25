@@ -39,9 +39,11 @@
 
             <form method="POST" action="login.php">
 
-                <?php if (isset($error)) { echo "<p class='error'>$error</p>"; } ?>
+                <?php if (isset($error)) { echo "<p class='error'> " . $_SESSION['error'] . "</p>"; } ?>
 
                 <div class="wrapper">
+
+                    <input type="hidden" name="role" value="admin"> 
 
                     <div class="inputs">
 
