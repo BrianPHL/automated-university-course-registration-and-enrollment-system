@@ -79,7 +79,10 @@
                             <i class="fa-solid fa-arrow-right-to-bracket"></i>
                         </button>
 
-                        <span class="portalSwitcher"><a href="">Switch to another portal</a><i class="fa-solid fa-square-arrow-up-right"></i></span>
+                        <button class="portalSwitcher" onclick="window.location.href='https://localhost/aucres/public/portals.php'">
+                            Switch to another portal
+                            <i class="fa-solid fa-square-arrow-up-right"></i>
+                        </button>
 
                     </div>
 
