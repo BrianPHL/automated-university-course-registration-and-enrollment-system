@@ -1,49 +1,53 @@
 <?php
 
-    require_once __DIR__ . '/../src/controllers/AuthController.php';
+if (!isset($_SESSION)) { session_start(); }
 
-    use App\Controllers\AuthController;
+
+
+    // require_once __DIR__ . '/../src/controllers/AuthController.php';
+
+    // use App\Controllers\AuthController;
     
-    if (!isset($_SESSION)) {
-        session_start();
-    }
+    // if (!isset($_SESSION)) {
+    //     session_start();
+    // }
 
-    $controller = new AuthController();
+    // $controller = new AuthController();
 
-    $portal = $_GET['portal'] ?? 'student';
+    // $portal = $_GET['portal'] ?? 'student';
     
-    $portalType = ($portal === 'student') ? $_GET['type'] : null;
+    // $portalType = ($portal === 'student') ? $_GET['type'] : null;
 
-    $whitelist = ['admin', 'faculty', 'student'];
+    // $whitelist = ['admin', 'faculty', 'student'];
 
-    if (!in_array($portal, $whitelist))
-    {
-        $controller->display404();
-        exit();
-    }
+    // if (!in_array($portal, $whitelist))
+    // {
+    //     $controller->display404();
+    //     exit();
+    // }
 
-    if (!isset($_GET['portal'])) {
-        header("Location: /login.php?portal=student");
-        exit();
-    }
+    // if (!isset($_GET['portal'])) {
+    //     header("Location: /login.php?portal=student");
+    //     exit();
+    // }
 
-    $_SESSION['portal_type'] = $portal;
+    // $_SESSION['portal_type'] = $portal;
     
-    switch ($portal)
-    {
-        case 'admin';
-            $controller->displayAdminLogin();
-            break;
+    // switch ($portal)
+    // {
+    //     case 'admin';
+    //         $controller->displayAdminLogin();
+    //         break;
 
-        case 'faculty';
-            $controller->displayFacultyLogin();
-            break;
+    //     case 'faculty';
+    //         $controller->displayFacultyLogin();
+    //         break;
 
-        case 'student';
-            (isset($portalType) && $portalType === 'login')
-                ? $controller->displayStudentLogin()
-                : $controller->displayStudentRegistration();
-            break;
-    }
+    //     case 'student';
+    //         (isset($portalType) && $portalType === 'login')
+    //             ? $controller->displayStudentLogin()
+    //             : $controller->displayStudentRegistration();
+    //         break;
+    // }
 
 ?>

@@ -1,39 +1,4 @@
-<?php
-
-    require '../config/db.php';
-
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-
-    
-    unset($error);
-
-    // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    //     $username = trim($_POST['username'] ?? '');
-    //     $password = trim($_POST['password'] ?? '');
-
-    //     if (!empty($username) && !empty($password)) {
-
-    //         $stmt = $pdo->prepare("SELECT * FROM accounts WHERE username = :username AND role = 'admin'");
-    //         $stmt->execute(['username' => $username]);
-    //         $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    //         if ($user && $password === $user['password']) {                
-    //             $_SESSION['username'] = $username;
-    //             header("Location: ../../dashboard/admin/dashboard.php");
-    //             exit();
-    //         } else {
-    //             $error = "Invalid credentials. Please try again.";
-    //         }
-    //     } else {
-    //         $error = "Please fill in all fields.";
-    //     }
-
-    // }
-
-?>
+<?php if (!isset($_SESSION)) { session_start(); } ?>
 
 <!DOCTYPE html>
 
