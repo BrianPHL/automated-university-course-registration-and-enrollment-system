@@ -187,8 +187,11 @@ button {
         .input-group-prepend .input-group-text, .input-group-append .input-group-text {
 
             background-color: var(--bg-outline);
+            justify-content: center;
             border-radius: 0;
+            padding: 0;
             border: 0;
+            width: 2.5rem;
 
             &[data-contains="icon"] i {
                     
