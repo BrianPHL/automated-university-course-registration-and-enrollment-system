@@ -1,0 +1,83 @@
+@import url('./globals.css');
+
+body {
+
+    grid-template-columns: 100%;
+    grid-template-rows: 90vh 10vh;
+    display: grid;
+
+}
+
+#footer {
+
+    background-color: var(--bg-tertiary);
+    align-items: center;
+    grid-row: 2;
+    display: flex;
+
+    .container {
+        
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        display: flex;
+        /* gap: 2rem; */
+
+        h6 { color: var(--tg-secondary); }
+
+        i {
+
+            justify-content: center;
+            border-radius: 0.25rem;
+            transition: 0.2s ease all;
+            align-items: center;
+            font-size: 1.25rem;
+            display: flex;
+            height: 2.5rem;
+            width: 2.5rem;
+            color: var(--tg-primary);
+
+            &:hover {
+
+                background-color: var(--bg-outline);
+                cursor: pointer;
+
+            }
+
+        }
+
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    #footer .container .wrapper {
+
+        flex-direction: column;
+        justify-content: space-between;
+        display: flex;
+
+    }
+
+}
+
+@media only screen and (max-width: 575px) {
+
+    #footer .container .wrapper .links {
+
+        flex-direction: column;
+        display: flex;
+        gap: 1rem;
+
+    }
+
+    #footer .container .footer {
+
+        flex-direction: column;
+        text-align: center;
+        display: flex;
+
+    }
+
+}
