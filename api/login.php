@@ -3,6 +3,12 @@
     if (!isset($_SESSION)) { session_start(); }
 
     require_once '../config/db.php';
+    if (isset($_GET['action']) && $_GET['action'] === 'switch') {
+
+        header('Location: https://localhost/aucres/public/portals.php');
+        exit();
+
+    }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
