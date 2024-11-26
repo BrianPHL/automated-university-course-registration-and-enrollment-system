@@ -1,34 +1,29 @@
 <?php
 
-    namespace App\Config;
+    function connect() {
 
-    use PDO;
-    use PDOException;
+        static $conn = null;
 
-    class Database {
+        if ($conn === null) {
 
-        private $host = 'localhost';
-        private $db   = 'aucres';
-        private $name = 'root';
-        private $conn;
-
-        public function connect() {
-            $this->conn = null;
+            $host = 'localhost';
+            $db   = 'aucres';
+            $name = 'root';
 
             try {
-
-                $this->conn = new PDO("mysql:host=$this->host;dbname=$this->db", $this->name);
-                $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+    
+                $conn = new PDO("mysql:host=$host;dbname=$db", $name);
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
             } catch (PDOException $e) {
-                
+    
                 echo "Database connection failed! Error: " . $e->getMessage();
-            
+    
             }
-
-            return $this->conn;
-
+    
         }
+
+        return $conn;
 
     }
 
