@@ -47,6 +47,10 @@
 
         if ($user && $password === $user['password']) { // TODO: Use password_verify on PROD.
 
+            if (!isset($_SESSION['csrf_token'])) {
+                $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+            }
+
             $_SESSION['user'] = $user;
 
             header("Location: https://localhost/aucres/public/dashboard.php");
