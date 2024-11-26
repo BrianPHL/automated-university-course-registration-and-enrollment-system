@@ -16,7 +16,7 @@ html[data-theme="light"] {
     --bg-primary: #BBBBBB;
     --bg-secondary: #DCDCDC;
     --bg-tertiary: #EAEAEA;
-    --bg-outline: #B0B0B0;
+    --bg-outline: #C5C5C5;
     --tg-primary: #151515;
     --tg-secondary: #606060;
     --tg-disabled: #AAAAAA;
@@ -136,7 +136,7 @@ button {
 
     label { color: var(--tg-secondary); }
 
-    input.form-control, textarea.form-control {
+    input.form-control.single, textarea.form-control {
 
         background-color: transparent;
         border-radius: 0.25rem;
@@ -167,17 +167,10 @@ button {
         overflow: hidden;
         border: 1px solid var(--bg-outline);
 
-        &.focused {
-
-            background-color: var(--bg-outline);
-            border: 1px solid var(--accent);
-            color: var(--tg-primary);
-
-        }
-
-        .form-control {
+        .form-control.stacked {
 
             background-color: transparent;
+            box-shadow: none;
             padding: 1rem;
             border: none;
             color: var(--tg-secondary);
@@ -207,6 +200,20 @@ button {
                 
 
             }
+
+        }
+
+        &.focused {
+
+            background-color: var(--bg-outline);
+            border: 1px solid var(--accent);
+            color: var(--tg-primary);
+
+        }
+
+        &:hover {
+
+            border: 1px solid var(--accent);
 
         }
 
