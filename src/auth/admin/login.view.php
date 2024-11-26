@@ -37,11 +37,11 @@
 
             </div>
 
-            <form method="POST" action="login.php">
-
-                <?php if (isset($error)) { echo "<p class='error'> " . $_SESSION['error'] . "</p>"; } ?>
+            <form method="POST" action="https://localhost/aucres/api/login.php">
 
                 <div class="wrapper">
+
+                    <?php if (isset($_SESSION['error'])) { echo "<h6 class='error'> " . $_SESSION['error'] . "</h6>"; } ?>
 
                     <input type="hidden" name="role" value="admin"> 
 
