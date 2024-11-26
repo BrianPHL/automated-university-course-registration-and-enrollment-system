@@ -9,6 +9,7 @@
     if (isset($_GET['action']) && $_GET['action'] === 'switch') {
 
         header('Location: https://localhost/aucres/public/portals.php');
+        session_write_close();
         exit();
 
     }
@@ -50,6 +51,7 @@
             unset($_SESSION['error']);
 
             header("Location: https://localhost/aucres/public/dashboard.php?portal=${role}");
+            session_write_close();
             exit();
 
         } else {

@@ -8,6 +8,7 @@
     if (!$portal) {
 
         header("Location: https://localhost/aucres/public/portals.php");
+        session_write_close();
         exit();
 
     }
@@ -15,6 +16,7 @@
     if (!in_array($portal, $whitelist)) {
 
         require_once __DIR__ . '/../src/404.view.php';
+        session_write_close();
         exit();
 
     }
@@ -26,11 +28,13 @@
             if ($_GET['type'] === 'login') {
 
                 require_once __DIR__ . '/../src/auth/student/login.view.php';
+                session_write_close();
                 exit(); 
 
             } else {
 
                 require_once __DIR__ . '/../src/auth/student/registration.view.php';
+                session_write_close();
                 exit(); 
 
             }
