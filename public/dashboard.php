@@ -7,7 +7,7 @@
 
     if (!in_array($dashboard, $whitelist))
     {
-        require_once __DIR__ . '/../src/views/404.view.php';
+        require_once __DIR__ . '/../src/404.view.php';
         session_write_close();
         exit();
     }
@@ -17,15 +17,15 @@
     switch ($dashboard)
     {
         case 'admin';
-            require_once __DIR__ . '/../src/views/auth/admin/login.view.php';
+            require_once __DIR__ . '/../src/auth/admin/login.view.php';
             break;
 
         case 'faculty';
-            require_once __DIR__ . '/../src/views/auth/faculty/login.view.php';
+            require_once __DIR__ . '/../src/auth/faculty/login.view.php';
             break;
 
         case 'student';
-            require_once __DIR__ . '/../src/views/auth/student/dashboard.view.php';
+            require_once __DIR__ . '/../src/auth/student/dashboard.view.php';
             break;            
 
     }
