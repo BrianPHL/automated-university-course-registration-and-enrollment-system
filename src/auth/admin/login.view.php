@@ -50,7 +50,7 @@
                         <div class="form-group">
                     
                             <label for="username">Username</label>
-                            <input class="form-control" type="text" name="username" placeholder="Your username...">
+                            <input class="form-control single" type="text" name="username" placeholder="Your username...">
     
                         </div>
     
@@ -60,7 +60,7 @@
     
                             <div class="input-group">
     
-                                <input class="form-control" type="password" name="password" placeholder="Your password...">
+                                <input class="form-control stacked" type="password" name="password" placeholder="Your password...">
     
                                 <div class="input-group-append">
                                     <div class="input-group-text" data-contains="icon">
