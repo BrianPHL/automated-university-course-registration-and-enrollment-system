@@ -2,6 +2,6 @@
 
     if (!isset($_SESSION)) { session_start(); }
 
-    require_once __DIR__ . '/../src/landing.view.php';    
+    require_once __DIR__ . '/../src/index.view.html';    
 
 ?>
