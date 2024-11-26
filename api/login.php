@@ -6,6 +6,8 @@
 
     $conn = connect();
 
+    unset($_SESSION['error']);
+
     if (isset($_GET['action']) && $_GET['action'] === 'switch') {
 
         header('Location: https://localhost/aucres/public/portals.php');
@@ -15,8 +17,6 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-        $_SESSION['error'] = '';
 
         $role = $_POST['role'] ?? 'student';
         $username = $_POST['username'] ?? null;
@@ -48,9 +48,8 @@
         if ($user && $password === $user['password']) { // TODO: Use password_verify on PROD.
 
             $_SESSION['user'] = $user;
-            unset($_SESSION['error']);
 
-            header("Location: https://localhost/aucres/public/dashboard.php?portal=${role}");
+            header("Location: https://localhost/aucres/public/dashboard.php");
             session_write_close();
             exit();
 
@@ -64,6 +63,6 @@
     }
 
     http_response_code(400);
-    error_log('Invalid request made to login.php');
+    error_log('Invalid request made to api/login.php');
 
 ?>
