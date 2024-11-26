@@ -256,3 +256,39 @@ button {
     }
 
 }
+
+.dropdown-menu {
+
+    background-color: var(--bg-outline);
+    border-radius: 0.25rem;
+    padding: 0;
+    margin: 0;
+
+    .dropdown-header { 
+    
+        padding: 0.5rem 1rem;
+        color: var(--tg-secondary);
+    
+    }
+
+    .dropdown-item {
+        
+        transition: 0.2s ease all;
+        justify-content: flex-start;
+        flex-direction: row;
+        border-radius: 0;
+        display: flex;
+        padding: 1rem 1rem;
+        color: var(--tg-secondary);
+        gap: 0.5rem;
+
+        &:hover {
+
+            background-color: var(--accent);
+            color: var(--tg-primary);
+
+        }
+
+    }
+
+}
