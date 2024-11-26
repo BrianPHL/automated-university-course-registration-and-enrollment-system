@@ -294,29 +294,11 @@
 
                 </div>
 
-                <!-- <div class="form-group">
-    
-                    <label for="password">Password</label>
-
-                    <div class="input-group">
-
-                        <input class="form-control" type="password" name="password" placeholder="Your password...">
-
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <i class="togglePassword fa-solid fa-eye-slash"></i>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div> -->
-
                 <div class="form-group">
 
                     <div class="input-group">
 
-                        <input class="form-control" type="text" placeholder="Your email address...">
+                        <input class="form-control stacked" type="text" placeholder="Your email address...">
 
                         <div class="input-group-append">
                             <div class="input-group-text" data-contains="button">
@@ -410,14 +392,14 @@
                                 <div class="form-group">
 
                                     <label for="first_name">First name</label>
-                                    <input class="form-control" type="text" name="first_name"  placeholder="Your first name...">
+                                    <input class="form-control single" type="text" name="first_name"  placeholder="Your first name...">
 
                                 </div>
 
                                 <div class="form-group">
 
                                     <label for="second_name">Second name</label>
-                                    <input class="form-control" type="text" name="second_name" placeholder="Your second name...">
+                                    <input class="form-control single" type="text" name="second_name" placeholder="Your second name...">
 
                                 </div>
 
@@ -426,7 +408,7 @@
                             <div class="form-group">
 
                                 <label for="email_address">Email address</label>
-                                <input class="form-control" type="text" name="email_address" placeholder="Your email address...">
+                                <input class="form-control single" type="text" name="email_address" placeholder="Your email address...">
                                 
                             </div>
 

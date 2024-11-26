@@ -48,4 +48,10 @@ $(() => {
     
     });
 
+    $('.form-control').on('focus', function() {
+        $(this).closest('.input-group').addClass('focused');
+    }).on('blur', function() {
+        $(this).closest('.input-group').removeClass('focused');
+    });
+
 })

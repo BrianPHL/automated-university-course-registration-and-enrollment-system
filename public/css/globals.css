@@ -184,20 +184,24 @@ button {
             border-radius: 0;
             padding: 0;
             border: 0;
-            width: 2.5rem;
 
-            &[data-contains="icon"] i {
-                    
-                transition: 0.2s ease all;
-                color: var(--tg-secondary);
-            
-                &:hover {
+            &[data-contains="icon"] {
 
-                    cursor: pointer;
-                    color: var(--accent);
+                width: 2.5rem;
+
+                i {
+
+                    transition: 0.2s ease all;
+                    color: var(--tg-secondary);
+                
+                    &:hover {
+    
+                        cursor: pointer;
+                        color: var(--accent);
+    
+                    }
 
                 }
-                
 
             }
 
