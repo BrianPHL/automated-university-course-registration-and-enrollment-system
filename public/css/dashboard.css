@@ -2,9 +2,44 @@
 
 body {
 
+    background-color: var(--bg-primary);
     grid-template-columns: 100%;
     grid-template-rows: 90vh 10vh;
     display: grid;
+
+}
+
+.navbar {
+
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--bg-outline);
+    grid-row: 1;
+    padding: 1rem;
+
+    .container .brand {
+
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+
+        img {
+
+            height: 2.5rem;
+            width: 2.5rem;
+
+        }
+
+        h2 {
+
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--tg-primary);
+
+        }
+
+    }
+
+    .container button { gap: 1rem; }
 
 }
 
@@ -50,29 +85,9 @@ body {
 
 }
 
-@media only screen and (max-width: 767px) {
-
-    #footer .container .wrapper {
-
-        flex-direction: column;
-        justify-content: space-between;
-        display: flex;
-
-    }
-
-}
-
 @media only screen and (max-width: 575px) {
 
-    #footer .container .wrapper .links {
-
-        flex-direction: column;
-        display: flex;
-        gap: 1rem;
-
-    }
-
-    #footer .container .footer {
+    #footer .container {
 
         flex-direction: column;
         text-align: center;
