@@ -54,11 +54,21 @@
 
         </nav>
 
-        <div class="container">
+        <section id="main" class="container">
 
+            <nav>
 
+                <h1>nav</h1>
 
-        </div>
+            </nav>
+
+            <div class="wrapper">
+
+                <h1>wrapper for summary & tables</h1>
+
+            </div>
+
+        </section>
 
         <section id="footer">
 
