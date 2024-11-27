@@ -3,7 +3,7 @@
     if (!isset($_SESSION)) { session_start(); }
 
     $user = (isset($_SESSION['user']) ? $_SESSION['user'] : null);
-    $role = $user['role'];
+    $role = (isset($user)) ? $user['role'] : null;
 
     if (empty($user)) {
     
