@@ -41,7 +41,7 @@
 
                 <div class="wrapper">
 
-                    <?php if (isset($_SESSION['error'])) { echo "<h6 class='error'> " . $_SESSION['error'] . "</h6>"; } ?>
+                    <?php if (isset($_SESSION['error']['auth'])) { echo "<h6 class='error'> " . $_SESSION['error']['auth'] . "</h6>"; } ?>
 
                     <input type="hidden" name="role" value="admin"> 
 

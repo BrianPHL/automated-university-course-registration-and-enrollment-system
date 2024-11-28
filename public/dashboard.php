@@ -6,12 +6,12 @@
     $role = (isset($user)) ? $user['role'] : null;
     $page = (isset($_GET['page'])) ? $_GET['page'] : null;
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         if (empty($user)) {
     
-            http_response_code(403);
-            header("Location: https://localhost/aucres/src/error.view.php?code=403");
+            http_response_code(401);
+            header("Location: https://localhost/aucres/public/error.php?code=401");
             session_write_close();
             exit();
     
@@ -26,7 +26,7 @@
     }
 
     http_response_code(400);
-    header("Location: https://localhost/aucres/src/error.view.php?code=400");
+    header("Location: https://localhost/aucres/public/error.php?code=400");
     session_write_close();
     exit();
 
