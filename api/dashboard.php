@@ -27,6 +27,8 @@
     }
 
     http_response_code(400);
-    error_log('Invalid request made to api/dashboard.php');
+    header("Location: https://localhost/aucres/src/error.view.php?code=400");
+    session_write_close();
+    exit();
 
 ?>
