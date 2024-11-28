@@ -58,17 +58,28 @@ body {
         flex-direction: column;
         align-self: flex-start;
         border-radius: 0.25rem;
+        border: 1px solid var(--bg-outline);
         flex-wrap: nowrap;
         display: block;
         overflow: hidden;
         height: auto;
         width: 30%;
 
+        li {
+
+            &:not(:last-child) {
+
+                border-bottom: 1px solid var(--bg-outline);
+
+            }
+
+        }
+
         li a {
 
-            transition: 0.2s ease all;
             font-weight: 500;
             align-items: center;
+            transition: 0.2s ease all;
             padding: 1rem;
             display: flex;
             color: var(--tg-primary);
@@ -91,22 +102,25 @@ body {
 
             i.fa-caret-down { transition: 0.2s ease all; }
 
-            ul#accountsCollapse {
-
-                li a {
-
-                    padding-left: 2rem;
-
-                }
-
-            }
-
             &:hover, &.active {
 
                 background-color: var(--accent);
 
             }
 
+        }
+
+        ul#accountsCollapse li:first-child {
+
+            border-top: 1px solid var(--bg-outline);
+
+        }
+
+        
+        ul#accountsCollapse li a { 
+            
+            padding-left: 2rem;
+        
         }
         
     }
