@@ -60,7 +60,7 @@
 
                 <li class="nav-item">
 
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" data-page="home">
                         <i class="fa-solid fa-chart-line"></i>
                         Dashboard
                     </a>
@@ -81,10 +81,10 @@
                         <i class="fa-solid fa-caret-down"></i>
                     </a>
 
-                    <ul class="collapse list-unstyled ps-3" id="accountsCollapse">
+                    <ul class="collapse list-unstyled" id="accountsCollapse">
                         <li>
 
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" data-page="student-accounts">
                                 <i class="fa-solid fa-graduation-cap"></i>    
                                 Student
                             </a>
@@ -93,7 +93,7 @@
 
                         <li>
 
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" data-page="faculty-accounts">
                                 <i class="fa-solid fa-chalkboard-user"></i>   
                                 Faculty
                             </a>
@@ -102,7 +102,7 @@
 
                         <li>
 
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" data-page="admin-accounts">
                                 <i class="fa-solid fa-user-tie"></i>   
                                 Admin
                             </a>
@@ -115,7 +115,7 @@
 
                 <li class="nav-item">
 
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" data-page="profile">
                         <i class="fa-solid fa-circle-user"></i>
                         User Profile
                     </a>
