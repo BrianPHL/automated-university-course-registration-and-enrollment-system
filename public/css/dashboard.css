@@ -113,7 +113,21 @@ body {
 
     .dashboard {
 
+        flex-direction: column;
+        display: flex;
         width: 100%;
+        gap: 1rem;
+
+        .breadcrumbs {
+
+            background-color: var(--bg-secondary);
+            border-radius: 0.25rem;
+            padding: 1rem;
+            border: 1px solid var(--bg-outline);
+
+            p { color: var(--tg-primary); }
+
+        }
 
         .counters {
 

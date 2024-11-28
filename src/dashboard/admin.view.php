@@ -126,6 +126,12 @@
 
             <div class="wrapper dashboard">
 
+                <div class="container breadcrumbs">
+
+                    <p>Dashboard</p>
+
+                </div>
+
                 <div class="container counters">
 
                     <div class="counter">
