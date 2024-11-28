@@ -285,7 +285,7 @@ button {
 
         &:hover {
 
-            background-color: var(--accent);
+            background-color: var(--bg-outline);
             color: var(--tg-primary);
 
         }

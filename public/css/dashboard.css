@@ -57,8 +57,10 @@ body {
         background-color: var(--bg-secondary);
         flex-direction: column;
         align-self: flex-start;
+        border-radius: 0.25rem;
         flex-wrap: nowrap;
         display: block;
+        overflow: hidden;
         height: auto;
         width: 30%;
 
