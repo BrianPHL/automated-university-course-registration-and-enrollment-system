@@ -111,6 +111,38 @@ body {
         
     }
 
+    .dashboard {
+
+        width: 100%;
+
+        .counters {
+
+            flex-direction: row;
+            display: flex;
+            width: 100%;
+            padding: 0;
+            gap: 1rem;
+    
+            .counter {
+    
+                flex-direction: column;
+                background-color: var(--bg-secondary);
+                border-radius: 0.25rem;
+                display: flex;
+                padding: 1rem;
+                border: 1px solid var(--bg-outline);
+                width: 100%;
+                gap: 1rem;
+
+                h4 { color: var(--tg-secondary); }
+                h3 { color: var(--tg-primary); }
+    
+            }
+    
+        }
+
+    }
+
 }
 
 #footer {
@@ -133,8 +165,8 @@ body {
 
             justify-content: center;
             border-radius: 0.25rem;
-            transition: 0.2s ease all;
             align-items: center;
+            transition: 0.2s ease all;
             font-size: 1.25rem;
             display: flex;
             height: 2.5rem;

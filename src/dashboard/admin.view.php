@@ -126,7 +126,30 @@
 
             <div class="wrapper dashboard">
 
-                
+                <div class="container counters">
+
+                    <div class="counter">
+
+                        <h4>Student accounts</h4>
+                        <h3>0</h3>
+                            
+                    </div>
+
+                    <div class="counter">
+
+                        <h4>Faculty accounts</h4>
+                        <h3>0</h3>
+                            
+                    </div>
+
+                    <div class="counter">
+
+                        <h4>No. of admin accounts</h4>
+                        <h3>0</h3>
+                            
+                    </div>
+
+                </div>
 
             </div>
 
