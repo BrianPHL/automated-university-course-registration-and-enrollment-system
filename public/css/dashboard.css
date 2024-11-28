@@ -4,9 +4,9 @@ body {
 
     background-color: var(--bg-primary);
     grid-template-columns: 100%;
-    grid-template-rows: 8.75vh 79.75vh 8vh;
+    grid-template-rows: 8.75vh 76.50vh 8vh;
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
 
 }
 
