@@ -56,24 +56,14 @@ body {
 
         background-color: var(--bg-secondary);
         flex-direction: column;
-        align-self: flex-start;
         border-radius: 0.25rem;
+        align-self: flex-start;
         border: 1px solid var(--bg-outline);
         flex-wrap: nowrap;
         display: block;
         overflow: hidden;
         height: auto;
         width: 30%;
-
-        li {
-
-            &:not(:last-child) {
-
-                border-bottom: 1px solid var(--bg-outline);
-
-            }
-
-        }
 
         li a {
 
@@ -105,14 +95,9 @@ body {
             &:hover, &.active {
 
                 background-color: var(--accent);
+                cursor: pointer;
 
             }
-
-        }
-
-        ul#accountsCollapse li:first-child {
-
-            border-top: 1px solid var(--bg-outline);
 
         }
 
@@ -120,6 +105,7 @@ body {
         ul#accountsCollapse li a { 
             
             padding-left: 2rem;
+            cursor: pointer;
         
         }
         
