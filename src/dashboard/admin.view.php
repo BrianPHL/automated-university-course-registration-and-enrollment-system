@@ -56,13 +56,75 @@
 
         <section id="main" class="container">
 
-            <nav>
+            <ul class="nav">
+                
+                <li class="nav-item">
 
-                <h1>nav</h1>
+                    <a class="nav-link active" href="#">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Dashboard
+                    </a>
+                </li>
 
-            </nav>
+                <li class="nav-item">
+                    <a
+                        class="nav-link dropdown"
+                        href="#accountsCollapse"
+                        data-toggle="collapse"
+                        aria-expanded="false"
+                        aria-controls="accountsCollapse"
+                    >
+                        <span>
+                            <i class="fa-solid fa-database"></i>
+                            Accounts
+                        </span>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </a>
 
-            <div class="wrapper">
+                    <ul class="collapse list-unstyled ps-3" id="accountsCollapse">
+                        <li>
+
+                            <a class="nav-link" href="#">
+                                <i class="fa-solid fa-graduation-cap"></i>    
+                                Student
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a class="nav-link" href="#">
+                                <i class="fa-solid fa-chalkboard-user"></i>   
+                                Faculty
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a class="nav-link" href="#">
+                                <i class="fa-solid fa-user-tie"></i>   
+                                Admin
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-circle-user"></i>
+                        User Profile
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <div class="wrapper dashboard">
 
                 <h1>wrapper for summary & tables</h1>
 
@@ -85,6 +147,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js" integrity="sha512-igl8WEUuas9k5dtnhKqyyld6TzzRjvMqLC79jkgT3z02FvJyHAuUtyemm/P/jYSne1xwFI06ezQxEwweaiV7VA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         <script type="module" src="./js/globals.js"></script>
+        <script type="module" src="./js/dashboard.js"></script>
 
     </body>
 
