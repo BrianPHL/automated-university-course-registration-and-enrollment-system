@@ -6,7 +6,7 @@
 
     $conn = connect();
 
-    unset($_SESSION['error']);
+    unset($_SESSION['error']['auth']);
 
     if (isset($_GET['action']) && $_GET['action'] === 'switch') {
 
@@ -34,7 +34,7 @@
 
         if (empty($username) || empty($password)) {
         
-            $_SESSION['error'] = 'All fields are required.';
+            $_SESSION['error']['auth'] = 'All fields are required.';
             unsuccessfulRedirect($role);
         
         }
@@ -53,13 +53,13 @@
 
             $_SESSION['user'] = $user;
 
-            header("Location: https://localhost/aucres/public/dashboard.php");
+            header("Location: https://localhost/aucres/public/dashboard.php?page=home");
             session_write_close();
             exit();
 
         } else {
 
-            $_SESSION['error'] = 'Invalid username or password.';
+            $_SESSION['error']['auth'] = 'Invalid username or password.';
             unsuccessfulRedirect($role);
 
         }
