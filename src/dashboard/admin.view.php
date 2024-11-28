@@ -42,7 +42,7 @@
                             <i class="fa-solid fa-circle-user"></i>    
                             View profile
                         </button>
-                        <button class="dropdown-item" type="button">
+                        <button class="dropdown-item" type="button" onclick="window.location.href='https://localhost/aucres/api/dashboard.php?action=logout'">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             Logout
                         </button>
@@ -57,7 +57,7 @@
         <section id="main" class="container">
 
             <ul class="nav">
-                
+
                 <li class="nav-item">
 
                     <a class="nav-link active" href="#">
@@ -126,7 +126,7 @@
 
             <div class="wrapper dashboard">
 
-                <h1>wrapper for summary & tables</h1>
+                
 
             </div>
 
