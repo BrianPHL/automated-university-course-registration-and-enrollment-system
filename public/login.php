@@ -4,6 +4,7 @@
 
     $portal = $_GET['portal'];
     $whitelist = ['admin', 'faculty', 'student'];
+    $user = (isset($_SESSION['user'])) ? $_SESSION['user'] : null;
 
     if (!$portal) {
 
@@ -16,6 +17,14 @@
     if (!in_array($portal, $whitelist)) {
 
         require_once __DIR__ . '/../src/404.view.php';
+        session_write_close();
+        exit();
+
+    }
+
+    if (isset($user)) {
+
+        header("Location: https://localhost/aucres/public/dashboard.php?portal=" . $user['role']);
         session_write_close();
         exit();
 
