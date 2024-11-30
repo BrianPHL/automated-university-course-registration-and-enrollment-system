@@ -64,61 +64,100 @@ body {
             height: 100%;
             gap: 1rem;
 
-            ul.nav {
+            .panel {
 
-                background-color: var(--bg-secondary);
+                justify-content: space-between;
                 flex-direction: column;
-                border-radius: 0.25rem;
-                align-self: flex-start;
-                flex-wrap: nowrap;
-                display: block;
-                height: auto;
+                display: flex;
                 width: 30%;
-        
-                li a {
-        
-                    font-weight: 500;
+                gap: 1rem;
+
+                ul.nav {
+
+                    background-color: var(--bg-secondary);
+                    flex-direction: column;
+                    border-radius: 0.25rem;
+                    align-self: flex-start;
+                    flex-wrap: nowrap;
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+            
+                    li a {
+            
+                        font-weight: 500;
+                        align-items: center;
+                        transition: 0.2s ease all;
+                        padding: 1rem;
+                        display: flex;
+                        color: var(--tg-primary);
+                        gap: 0.5rem;
+            
+                        &.dropdown {
+            
+                            justify-content: space-between;
+                            display: flex;
+            
+                            span {
+            
+                                align-items: center;
+                                display: flex;
+                                gap: 0.5rem;
+            
+                            }
+            
+                        }
+            
+                        i.fa-caret-down { transition: 0.2s ease all; }
+            
+                        &:hover, &.active {
+            
+                            background-color: var(--accent);
+                            cursor: pointer;
+            
+                        }
+            
+                    }
+            
+                    
+                    ul#accountsCollapse li a { 
+                        
+                        padding-left: 2rem;
+                        cursor: pointer;
+                    
+                    }
+                    
+                }
+                
+                .actions {
+
+                    background-color: var(--bg-secondary);
+                    justify-content: space-between;
+                    border-radius: 0.25rem;
                     align-items: center;
-                    transition: 0.2s ease all;
                     padding: 1rem;
                     display: flex;
-                    color: var(--tg-primary);
-                    gap: 0.5rem;
-        
-                    &.dropdown {
-        
-                        justify-content: space-between;
-                        display: flex;
-        
-                        span {
-        
-                            align-items: center;
-                            display: flex;
-                            gap: 0.5rem;
-        
+                    width: 100%;
+
+                    i.theme-toggle {
+
+                        border-radius: 0.25rem;
+                        transition: 0.2s ease all;
+                        padding: 0.5rem 0.5rem;
+                        color: var(--tg-secondary);
+
+                        &:hover {
+
+                            background-color: var(--bg-outline);
+                            cursor: pointer;
+                            color: var(--tg-primary);
+
                         }
-        
+
                     }
-        
-                    i.fa-caret-down { transition: 0.2s ease all; }
-        
-                    &:hover, &.active {
-        
-                        background-color: var(--accent);
-                        cursor: pointer;
-        
-                    }
-        
+
                 }
-        
-                
-                ul#accountsCollapse li a { 
-                    
-                    padding-left: 2rem;
-                    cursor: pointer;
-                
-                }
-                
+
             }
         
             .dashboard {

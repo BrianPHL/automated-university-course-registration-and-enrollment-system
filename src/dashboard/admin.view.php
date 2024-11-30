@@ -66,73 +66,88 @@
 
                 <div class="wrapper">
 
-                    <ul class="nav">
+                    <div class="panel">
 
-                        <li class="nav-item">
-        
-                            <a class="nav-link active" data-page="home">
-                                <i class="fa-solid fa-chart-line"></i>
-                                Dashboard
-                            </a>
-                        </li>
-        
-                        <li class="nav-item">
-                            <a
-                                class="nav-link dropdown"
-                                href="#accountsCollapse"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                aria-controls="accountsCollapse"
-                            >
-                                <span>
-                                    <i class="fa-solid fa-database"></i>
-                                    Accounts
-                                </span>
-                                <i class="fa-solid fa-caret-down"></i>
-                            </a>
-        
-                            <ul class="collapse list-unstyled" id="accountsCollapse">
-                                <li>
-        
-                                    <a class="nav-link" data-page="student-accounts">
-                                        <i class="fa-solid fa-graduation-cap"></i>    
-                                        Student
-                                    </a>
-        
-                                </li>
-        
-                                <li>
-        
-                                    <a class="nav-link" data-page="faculty-accounts">
-                                        <i class="fa-solid fa-chalkboard-user"></i>   
-                                        Faculty
-                                    </a>
-        
-                                </li>
-        
-                                <li>
-        
-                                    <a class="nav-link" data-page="admin-accounts">
-                                        <i class="fa-solid fa-user-tie"></i>   
-                                        Admin
-                                    </a>
-        
-                                </li>
-        
-                            </ul>
-        
-                        </li>
-        
-                        <li class="nav-item">
-        
-                            <a class="nav-link" data-page="profile">
-                                <i class="fa-solid fa-circle-user"></i>
-                                User Profile
-                            </a>
-        
-                        </li>
-        
-                    </ul>
+                        <ul class="nav">
+
+                            <li class="nav-item">
+            
+                                <a class="nav-link active" data-page="home">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+            
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link dropdown"
+                                    href="#accountsCollapse"
+                                    data-toggle="collapse"
+                                    aria-expanded="false"
+                                    aria-controls="accountsCollapse"
+                                >
+                                    <span>
+                                        <i class="fa-solid fa-database"></i>
+                                        Accounts
+                                    </span>
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </a>
+            
+                                <ul class="collapse list-unstyled" id="accountsCollapse">
+                                    <li>
+            
+                                        <a class="nav-link" data-page="student-accounts">
+                                            <i class="fa-solid fa-graduation-cap"></i>    
+                                            Student
+                                        </a>
+            
+                                    </li>
+            
+                                    <li>
+            
+                                        <a class="nav-link" data-page="faculty-accounts">
+                                            <i class="fa-solid fa-chalkboard-user"></i>   
+                                            Faculty
+                                        </a>
+            
+                                    </li>
+            
+                                    <li>
+            
+                                        <a class="nav-link" data-page="admin-accounts">
+                                            <i class="fa-solid fa-user-tie"></i>   
+                                            Admin
+                                        </a>
+            
+                                    </li>
+            
+                                </ul>
+            
+                            </li>
+            
+                            <li class="nav-item">
+            
+                                <a class="nav-link" data-page="profile">
+                                    <i class="fa-solid fa-circle-user"></i>
+                                    User Profile
+                                </a>
+            
+                            </li>
+            
+                        </ul>
+
+                        <div class="actions">
+
+                            <button class="logout" data-type="secondary" type="button">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                Logout
+                            </button>
+
+                            <i class="theme-toggle fa-solid fa-moon"></i>
+
+                        </div>
+
+                    </div>
         
                     <div class="wrapper dashboard">
         
