@@ -665,7 +665,7 @@ body {
                             align-items: center;
                             transition: 0.2s ease all;
                             display: flex;
-                            padding: 0.5rem 1rem;
+                            padding: 0.5rem 0.5rem;
                             align-self: flex-start;
                             gap: 0.5rem;
 
