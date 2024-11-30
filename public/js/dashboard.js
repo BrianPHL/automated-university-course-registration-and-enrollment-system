@@ -1,3 +1,5 @@
+import { promptConfirmationDialog } from './globals.js';
+
 $(() => {
 
     $(".nav-link").on("click", function() {
@@ -34,6 +36,25 @@ $(() => {
         columnDefs: [
             { className: 'dt-body-center', targets: [0] }
         ]
+    });
+
+    $('.logout').on('click', async function() {
+
+        const confirmationResult = await promptConfirmationDialog({
+            title: "Log out of your account?",
+            description: "Logging out means any unsaved changes will be lost and you'll have to log back in.",
+            options: {
+                no: "Nevermind",
+                yes: "Log me out of my account"
+            }
+        });
+
+        if (confirmationResult === 'yes') {
+
+            window.location.href = 'https://localhost/aucres/api/dashboard.php?action=logout';
+
+        }
+
     });
 
 })

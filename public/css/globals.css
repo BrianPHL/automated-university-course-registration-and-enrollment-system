@@ -24,6 +24,7 @@ html[data-theme="light"] {
     --accent-hovered: #4A3BD2;
     --error-background: #FFAEC1;
     --error-foreground: #E9204F;
+    --error-hover: #86102C;
 
 }
 
@@ -40,6 +41,7 @@ html[data-theme="dark"] {
     --accent-hovered: #4A3BD2;
     --error-background: #4C1824;
     --error-foreground: #E9204F;
+    --error-hover: #86102C;
 
 }
 
@@ -124,6 +126,21 @@ button {
         &:hover {
 
             background-color: var(--bg-outline);
+            cursor: pointer;
+    
+        }
+
+    }
+
+    &[data-type="warning"] {
+
+        background-color: var(--error-foreground);
+        border: 0;
+        color: var(--tg-primary);
+
+        &:hover {
+
+            background-color: var(--error-hover);
             cursor: pointer;
     
         }
@@ -432,6 +449,51 @@ button {
                 tbody tr td { border: 0; }
     
             }
+
+        }
+
+    }
+
+}
+
+#confirmation-modal {
+
+    background-color: var(--bg-primary);
+    place-content: center;
+    position: absolute;
+    z-index: 1000;
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    .content {
+
+        background-color: var(--bg-secondary);
+        flex-direction: column;
+        border-radius: 0.25rem;
+        padding: 2rem;
+        display: flex;
+        width: 32rem;
+        gap: 2rem;
+
+        .message {
+
+            flex-direction: column;
+            display: flex;
+            gap: 2rem;
+
+            h3 { color: var(--tg-primary); }
+            p { color: var(--tg-secondary); }
+
+        }
+
+        .cta {
+
+            align-self: flex-end;
+            display: flex;
+            gap: 1rem;
 
         }
 

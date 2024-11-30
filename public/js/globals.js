@@ -1,3 +1,38 @@
+export const promptConfirmationDialog = (message) => {
+
+    return new Promise((resolve) => {
+
+        const html =
+        `
+         <div id="confirmation-modal">
+            <div class="content">
+                <div class="message">
+                    <h3 class="title">${ message['title'] }</h3>
+                    <p class="description">${ message['description'] }</p>
+                </div>
+                <div class="cta">
+                    <button id="modal-no" data-answer="no" data-type="secondary">${ message['options']['no'] }</button>
+                    <button id="modal-yes" data-answer="yes" data-type="warning">${ message['options']['yes'] }</button>
+                </div>
+            </div>
+        </div>
+        `
+
+        $('body').append(html);
+
+        $('#confirmation-modal').find('button').on('click', function(event) {
+            
+            event.preventDefault();
+
+            $('#confirmation-modal').remove();
+            resolve($(this).attr('data-answer'));
+
+        })
+
+    })
+
+}
+
 $(() => {
 
     const iconSwitch = (theme) => {
@@ -33,6 +68,7 @@ $(() => {
         }
     
     }
+
     const switchBtn = $(".theme-toggle");
     
     checkCurrTheme();

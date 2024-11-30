@@ -48,7 +48,7 @@
                             <i class="fa-solid fa-circle-user"></i>    
                             View profile
                         </button>
-                        <button class="dropdown-item" type="button" onclick="window.location.href='https://localhost/aucres/api/dashboard.php?action=logout'">
+                        <button class="dropdown-item logout" type="button">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             Logout
                         </button>
