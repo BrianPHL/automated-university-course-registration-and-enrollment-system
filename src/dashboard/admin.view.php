@@ -13,6 +13,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" integrity="sha512-rt/SrQ4UNIaGfDyEXZtNcyWvQeOq0QLygHluFQcSjaGB04IxWhal71tKuzP6K8eYXYB6vJV4pHkXcmFGGQ1/0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="//cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
         <link id="favicon" rel="shortcut icon" href="../../../public/favicon-light.ico" type="image/x-icon">
         <link rel="stylesheet" href="./css/dashboard.css">
         <title>admin dashboard | aucres</title>
@@ -157,11 +158,196 @@
 
                 </div>
 
+                <div class="container table">
+
+                    <table id="dashboard-table" class="cell-border nowrap order-column">
+
+                        <thead>
+                            <tr>
+                                <td>Id</td>
+                                <td>Username</td>
+                                <td>Role</td>
+                                <td>Email</td>
+                                <td>First name</td>
+                                <td>Last name</td>
+                                <td>Updated at</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>admin_brianph1</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>admin_brianph2</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>admin_brianph3</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>admin_brianph1</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>admin_brianph2</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>admin_brianph3</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>admin_brianph1</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>admin_brianph2</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>admin_brianph3</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>admin_brianph1</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>admin_brianph2</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>admin_brianph3</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>admin_brianph1</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>admin_brianph2</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>admin_brianph3</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>admin_brianph1</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>admin_brianph2</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>admin_brianph3</td>
+                                <td>admin</td>
+                                <td>qblcpasco@tip.edu.ph</td>
+                                <td>Brian Lawrence</td>
+                                <td>Pasco</td>
+                                <td>2024-11-29 11:58:12</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
             </div>
 
         </section>
 
-        <section id="footer">
+        <!-- <section id="footer">
 
             <div class="container">
 
@@ -170,13 +356,14 @@
 
             </div>
 
-        </section>
+        </section> -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js" integrity="sha512-igl8WEUuas9k5dtnhKqyyld6TzzRjvMqLC79jkgT3z02FvJyHAuUtyemm/P/jYSne1xwFI06ezQxEwweaiV7VA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-        <script type="module" src="./js/globals.js"></script>
+        <!-- <script type="module" src="./js/globals.js"></script> -->
         <script type="module" src="./js/dashboard.js"></script>
+        <script type="module" src="//cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
 
     </body>
 

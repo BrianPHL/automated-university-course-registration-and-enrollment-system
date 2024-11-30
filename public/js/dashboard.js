@@ -26,4 +26,14 @@ $(() => {
 
     })
 
+    $('#dashboard-table').DataTable({
+        dom: '<"top"<"dt-start"lf><"dt-middle"ip><"dt-end">>rt',
+        responsive: true,
+        scrollX: true,
+        scrollCollapse: true,
+        columnDefs: [
+            { className: 'dt-body-center', targets: [0] }
+        ]
+    });
+
 })

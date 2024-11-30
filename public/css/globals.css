@@ -293,3 +293,136 @@ button {
     }
 
 }
+
+.table {
+
+    background-color: var(--bg-secondary);
+    flex-direction: column;
+    border-radius: 0.5rem;
+    display: flex;
+    padding: 0;
+    height: 100%;
+
+    .dt-container {
+
+        flex-direction: column;
+        display: flex;
+
+        .top .dt-start, .dt-middle {
+
+            justify-content: space-between;
+            flex-direction: row;
+            border-bottom: 1px solid var(--bg-outline);
+            align-items: center;
+            padding: 1rem;
+            display: flex;
+
+            .dt-length {
+
+                align-items: center;
+                display: flex;
+                gap: 0.5rem;
+
+                select { 
+                
+                    border: 1px solid var(--bg-outline);
+                    color: var(--tg-primary); 
+                
+                }
+
+                label { color: var(--tg-secondary); }
+
+            }
+
+            .dt-search {
+
+                align-items: center;
+                display: flex;
+                gap: 0.5rem;
+
+                label { color: var(--tg-secondary); }
+
+                input {
+
+                    background-color: transparent;
+                    outline-offset: 0;
+                    border-radius: 0.25rem;
+                    transition: 0.2s ease all;
+                    padding: 0.5rem;
+                    border: 1px solid var(--bg-outline);
+                    color: var(--tg-secondary);
+            
+                    &:hover, &:focus {
+                
+                        border: 1px solid var(--accent);
+                
+                    }
+                
+                    &:focus {
+                
+                        background-color: var(--bg-outline);
+                        box-shadow: none;
+                        color: var(--tg-primary);
+                
+                    }
+
+                }
+
+            }
+
+            .dt-info { color: var(--tg-secondary); }
+            .dt-paging nav { 
+                
+                display: flex;
+                color: var(--tg-secondary);
+                gap: 0.5rem;
+
+                .dt-paging-button {
+
+                    border-radius: 0.25rem;
+                    transition: 0.2s ease all;
+                    border: 0;
+
+                    &.disabled { color: var(--tg-disabled); }
+
+                    &:hover, &.current {
+
+                        background: 0;
+                        background-color: var(--accent);
+                        border: 0;
+                        color: var(--tg-primary) !important;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        .dt-scroll {
+
+            padding: 1rem;
+
+            .dt-scroll-head .dt-scroll-headInner .dataTable {
+
+                font-weight: 600;
+                color: var(--tg-primary);
+    
+                thead tr td { border: 0; }
+    
+            }
+
+            .dt-scroll-body  .dataTable {
+
+                color: var(--tg-secondary);
+    
+                tbody tr td { border: 0; }
+    
+            }
+
+        }
+
+    }
+
+}
