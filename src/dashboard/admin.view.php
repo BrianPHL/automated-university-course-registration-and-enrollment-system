@@ -60,153 +60,172 @@
 
         </nav>
 
-        <section id="main" class="container">
+        <section id="main">
 
-            <ul class="nav">
+            <div class="container">
 
-                <li class="nav-item">
+                <div class="wrapper">
 
-                    <a class="nav-link active" data-page="home">
-                        <i class="fa-solid fa-chart-line"></i>
-                        Dashboard
-                    </a>
-                </li>
+                    <ul class="nav">
 
-                <li class="nav-item">
-                    <a
-                        class="nav-link dropdown"
-                        href="#accountsCollapse"
-                        data-toggle="collapse"
-                        aria-expanded="false"
-                        aria-controls="accountsCollapse"
-                    >
-                        <span>
-                            <i class="fa-solid fa-database"></i>
-                            Accounts
-                        </span>
-                        <i class="fa-solid fa-caret-down"></i>
-                    </a>
-
-                    <ul class="collapse list-unstyled" id="accountsCollapse">
-                        <li>
-
-                            <a class="nav-link" data-page="student-accounts">
-                                <i class="fa-solid fa-graduation-cap"></i>    
-                                Student
+                        <li class="nav-item">
+        
+                            <a class="nav-link active" data-page="home">
+                                <i class="fa-solid fa-chart-line"></i>
+                                Dashboard
                             </a>
-
                         </li>
-
-                        <li>
-
-                            <a class="nav-link" data-page="faculty-accounts">
-                                <i class="fa-solid fa-chalkboard-user"></i>   
-                                Faculty
+        
+                        <li class="nav-item">
+                            <a
+                                class="nav-link dropdown"
+                                href="#accountsCollapse"
+                                data-toggle="collapse"
+                                aria-expanded="false"
+                                aria-controls="accountsCollapse"
+                            >
+                                <span>
+                                    <i class="fa-solid fa-database"></i>
+                                    Accounts
+                                </span>
+                                <i class="fa-solid fa-caret-down"></i>
                             </a>
-
+        
+                            <ul class="collapse list-unstyled" id="accountsCollapse">
+                                <li>
+        
+                                    <a class="nav-link" data-page="student-accounts">
+                                        <i class="fa-solid fa-graduation-cap"></i>    
+                                        Student
+                                    </a>
+        
+                                </li>
+        
+                                <li>
+        
+                                    <a class="nav-link" data-page="faculty-accounts">
+                                        <i class="fa-solid fa-chalkboard-user"></i>   
+                                        Faculty
+                                    </a>
+        
+                                </li>
+        
+                                <li>
+        
+                                    <a class="nav-link" data-page="admin-accounts">
+                                        <i class="fa-solid fa-user-tie"></i>   
+                                        Admin
+                                    </a>
+        
+                                </li>
+        
+                            </ul>
+        
                         </li>
-
-                        <li>
-
-                            <a class="nav-link" data-page="admin-accounts">
-                                <i class="fa-solid fa-user-tie"></i>   
-                                Admin
+        
+                        <li class="nav-item">
+        
+                            <a class="nav-link" data-page="profile">
+                                <i class="fa-solid fa-circle-user"></i>
+                                User Profile
                             </a>
-
+        
                         </li>
-
+        
                     </ul>
+        
+                    <div class="wrapper dashboard">
+        
+                        <div class="breadcrumbs">
+        
+                            <p>Dashboard</p>
+        
+                        </div>
+        
+                        <div class="counters">
+        
+                            <div class="counter">
+        
+                                <h4>No. of Student accounts</h4>
+                                <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'student')) . "<h3>" ?>
+                                    
+                            </div>
+        
+                            <div class="counter">
+        
+                                <h4>No. of Faculty accounts</h4>
+                                <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'faculty')) . "<h3>" ?>
+                            </div>
+        
+                            <div class="counter">
+        
+                                <h4>No. of admin accounts</h4>
+                                <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'admin')) . "<h3>" ?>
+                                    
+                            </div>
+        
+                        </div>
+        
+                        <div class="table">
+        
+                            <table id="dashboard-table" class="cell-border nowrap order-column">
+        
+                                <thead>
+        
+                                    <tr>
+                                        <td>Id</td>
+                                        <td>Username</td>
+                                        <td>Role</td>
+                                        <td>Email</td>
+                                        <td>First name</td>
+                                        <td>Last name</td>
+                                        <td>Updated at</td>
+                                    
+                                    </tr>
+                                
+                                </thead>
+        
+                                <tbody>
+        
+                                    <?php
+                                
+                                    $results = getTableData($conn, 'accounts');
+            
+                                    foreach ($results as $row) {
+            
+                                        echo "<tr>";
+                                            echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['username']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['role']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['updated_at']) . "</td>";
+                                        echo "</tr>";
+            
+                                    }
+            
+                                    ?>
+        
+                                </tbody>
+        
+                            </table>
+        
+                        </div>
+        
+                    </div>
 
-                </li>
+                </div>
 
-                <li class="nav-item">
+                <div class="footer">
 
-                    <a class="nav-link" data-page="profile">
-                        <i class="fa-solid fa-circle-user"></i>
-                        User Profile
+                    <h6>&copy; 2024 Automated University Course Registration and Enrollment System. All rights reserved.</h6>
+
+                    <a href="https://localhost/aucres/public/index.php">
+                        Homepage
+                        <i class="fa-solid fa-square-arrow-up-right"></i>
                     </a>
-
-                </li>
-
-            </ul>
-
-            <div class="wrapper dashboard">
-
-                <div class="container breadcrumbs">
-
-                    <p>Dashboard</p>
-
-                </div>
-
-                <div class="container counters">
-
-                    <div class="counter">
-
-                        <h4>No. of Student accounts</h4>
-                        <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'student')) . "<h3>" ?>
-                            
-                    </div>
-
-                    <div class="counter">
-
-                        <h4>No. of Faculty accounts</h4>
-                        <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'faculty')) . "<h3>" ?>
-                    </div>
-
-                    <div class="counter">
-
-                        <h4>No. of admin accounts</h4>
-                        <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'admin')) . "<h3>" ?>
-                            
-                    </div>
-
-                </div>
-
-                <div class="container table">
-
-                    <table id="dashboard-table" class="cell-border nowrap order-column">
-
-                        <thead>
-
-                            <tr>
-                                <td>Id</td>
-                                <td>Username</td>
-                                <td>Role</td>
-                                <td>Email</td>
-                                <td>First name</td>
-                                <td>Last name</td>
-                                <td>Updated at</td>
-                            
-                            </tr>
-                        
-                        </thead>
-
-                        <tbody>
-
-                            <?php
-                        
-                            $results = getTableData($conn, 'accounts');
     
-                            foreach ($results as $row) {
-    
-                                echo "<tr>";
-                                    echo "<td>" . htmlspecialchars($row['id']) . "</td>";
-                                    echo "<td>" . htmlspecialchars($row['username']) . "</td>";
-                                    echo "<td>" . htmlspecialchars($row['role']) . "</td>";
-                                    echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                                    echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
-                                    echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
-                                    echo "<td>" . htmlspecialchars($row['updated_at']) . "</td>";
-                                echo "</tr>";
-    
-                            }
-    
-                            ?>
-
-                        </tbody>
-
-                    </table>
-
                 </div>
 
             </div>

@@ -48,114 +48,169 @@ body {
 
 #main {
 
-    flex-direction: row;
     grid-column: 1;
     grid-row: 2;
-    display: flex;
-    height: 100%;
-    gap: 2rem;
 
-    ul.nav {
+    .container {
 
-        background-color: var(--bg-secondary);
         flex-direction: column;
-        border-radius: 0.25rem;
-        align-self: flex-start;
-        flex-wrap: nowrap;
-        display: block;
-        height: auto;
-        width: 30%;
+        display: flex;
+        gap: 1rem;
 
-        li a {
+        .wrapper {
 
-            font-weight: 500;
+            flex-direction: row;
+            display: flex;
+            height: 100%;
+            gap: 1rem;
+
+            ul.nav {
+
+                background-color: var(--bg-secondary);
+                flex-direction: column;
+                border-radius: 0.25rem;
+                align-self: flex-start;
+                flex-wrap: nowrap;
+                display: block;
+                height: auto;
+                width: 30%;
+        
+                li a {
+        
+                    font-weight: 500;
+                    align-items: center;
+                    transition: 0.2s ease all;
+                    padding: 1rem;
+                    display: flex;
+                    color: var(--tg-primary);
+                    gap: 0.5rem;
+        
+                    &.dropdown {
+        
+                        justify-content: space-between;
+                        display: flex;
+        
+                        span {
+        
+                            align-items: center;
+                            display: flex;
+                            gap: 0.5rem;
+        
+                        }
+        
+                    }
+        
+                    i.fa-caret-down { transition: 0.2s ease all; }
+        
+                    &:hover, &.active {
+        
+                        background-color: var(--accent);
+                        cursor: pointer;
+        
+                    }
+        
+                }
+        
+                
+                ul#accountsCollapse li a { 
+                    
+                    padding-left: 2rem;
+                    cursor: pointer;
+                
+                }
+                
+            }
+        
+            .dashboard {
+        
+                
+                flex-direction: column;
+                display: flex;
+                height: 100%;
+                width: 70%;
+                gap: 1rem;
+        
+                .breadcrumbs {
+        
+                    background-color: var(--bg-secondary);
+                    border-radius: 0.25rem;
+                    padding: 1rem;
+                    p { color: var(--tg-primary); }
+        
+                }
+        
+                .counters {
+        
+                    flex-direction: row;
+                    display: flex;
+                    width: 100%;
+                    padding: 0;
+                    gap: 1rem;
+            
+                    .counter {
+            
+                        flex-direction: column;
+                        background-color: var(--bg-secondary);
+                        border-radius: 0.25rem;
+                        display: flex;
+                        padding: 1rem;
+                        width: 100%;
+                        gap: 1rem;
+        
+                        h4 { color: var(--tg-secondary); }
+                        h3 { color: var(--tg-primary); }
+            
+                    }
+            
+                }
+        
+                .table { grid-row: 2; }
+        
+            }
+
+        }
+
+        .footer {
+
+            background-color: var(--bg-secondary);
+            justify-content: space-between;
+            border-radius: 0.25rem;
             align-items: center;
-            transition: 0.2s ease all;
             padding: 1rem;
             display: flex;
-            color: var(--tg-primary);
-            gap: 0.5rem;
 
-            &.dropdown {
+            h6 { color: var(--tg-secondary); }
 
-                justify-content: space-between;
+            a {
+
+                text-decoration: none;
+                border-radius: 0.25rem;
+                align-items: center;
+                transition: 0.2s ease all;
+                padding: 0.5rem 0.5rem;
                 display: flex;
+                gap: 0.5rem;
+                color: var(--tg-secondary);
 
-                span {
+                i {
 
-                    align-items: center;
-                    display: flex;
-                    gap: 0.5rem;
+                    transition: 0.2s ease all;
+                    color: var(--tg-secondary);
+
+                }
+
+                &:hover {
+
+                    background-color: var(--bg-outline);
+                    cursor: pointer;
+
+                    i { color: var(--tg-primary); }
 
                 }
 
             }
-
-            i.fa-caret-down { transition: 0.2s ease all; }
-
-            &:hover, &.active {
-
-                background-color: var(--accent);
-                cursor: pointer;
-
-            }
-
-        }
-
-        
-        ul#accountsCollapse li a { 
-            
-            padding-left: 2rem;
-            cursor: pointer;
-        
-        }
-        
-    }
-
-    .dashboard {
-
-        
-        flex-direction: column;
-        display: flex;
-        height: 100%;
-        width: 70%;
-        gap: 1rem;
-
-        .breadcrumbs {
-
-            background-color: var(--bg-secondary);
-            border-radius: 0.25rem;
-            padding: 1rem;
-            p { color: var(--tg-primary); }
-
-        }
-
-        .counters {
-
-            flex-direction: row;
-            display: flex;
-            width: 100%;
-            padding: 0;
-            gap: 1rem;
-    
-            .counter {
-    
-                flex-direction: column;
-                background-color: var(--bg-secondary);
-                border-radius: 0.25rem;
-                display: flex;
-                padding: 1rem;
-                width: 100%;
-                gap: 1rem;
-
-                h4 { color: var(--tg-secondary); }
-                h3 { color: var(--tg-primary); }
-    
-            }
     
         }
-
-        .table { grid-row: 2; }
 
     }
 
