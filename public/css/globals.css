@@ -315,7 +315,7 @@ button {
 
     background-color: var(--bg-secondary);
     flex-direction: column;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     margin-bottom: 0;
     display: flex;
     padding: 0;
