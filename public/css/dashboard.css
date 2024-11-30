@@ -61,7 +61,6 @@ body {
         flex-direction: column;
         border-radius: 0.25rem;
         align-self: flex-start;
-        border: 1px solid var(--bg-outline);
         flex-wrap: nowrap;
         display: block;
         height: auto;
@@ -127,8 +126,6 @@ body {
             background-color: var(--bg-secondary);
             border-radius: 0.25rem;
             padding: 1rem;
-            border: 1px solid var(--bg-outline);
-
             p { color: var(--tg-primary); }
 
         }
@@ -148,7 +145,6 @@ body {
                 border-radius: 0.25rem;
                 display: flex;
                 padding: 1rem;
-                border: 1px solid var(--bg-outline);
                 width: 100%;
                 gap: 1rem;
 
@@ -159,11 +155,7 @@ body {
     
         }
 
-        .table {
-
-            grid-row: 2;
-
-        }
+        .table { grid-row: 2; }
 
     }
 
