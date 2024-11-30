@@ -167,6 +167,7 @@
                     <table id="dashboard-table" class="cell-border nowrap order-column">
 
                         <thead>
+
                             <tr>
                                 <td>Id</td>
                                 <td>Username</td>
@@ -175,12 +176,32 @@
                                 <td>First name</td>
                                 <td>Last name</td>
                                 <td>Updated at</td>
+                            
                             </tr>
+                        
                         </thead>
 
                         <tbody>
 
-                            
+                            <?php
+                        
+                            $results = getTableData($conn, 'accounts');
+    
+                            foreach ($results as $row) {
+    
+                                echo "<tr>";
+                                    echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['username']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['role']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['updated_at']) . "</td>";
+                                echo "</tr>";
+    
+                            }
+    
+                            ?>
 
                         </tbody>
 

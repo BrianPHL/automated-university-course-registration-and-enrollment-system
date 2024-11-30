@@ -18,6 +18,18 @@
 
     }
 
+    function getTableData($pConn, $pTable, $pRole = null) {
+
+        $sql = (empty($pRole)) ? "SELECT * FROM $pTable" : "SELECT * FROM $pTable WHERE role = $pRole";
+
+        $stmt = $pConn->prepare($sql);
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $results;
+
+    }
+
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         if (empty($user)) {
