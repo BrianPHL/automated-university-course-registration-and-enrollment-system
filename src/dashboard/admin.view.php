@@ -142,22 +142,21 @@
 
                     <div class="counter">
 
-                        <h4>Student accounts</h4>
-                        <h3><?php echo getEntriesCount($conn, 'accounts', 'student'); ?></h3>
+                        <h4>No. of Student accounts</h4>
+                        <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'student')) . "<h3>" ?>
                             
                     </div>
 
                     <div class="counter">
 
-                        <h4>Faculty accounts</h4>
-                        <h3><?php echo getEntriesCount($conn, 'accounts', 'faculty'); ?></h3>
-                            
+                        <h4>No. of Faculty accounts</h4>
+                        <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'faculty')) . "<h3>" ?>
                     </div>
 
                     <div class="counter">
 
                         <h4>No. of admin accounts</h4>
-                        <h3><?php echo getEntriesCount($conn, 'accounts', 'admin'); ?></h3>
+                        <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'admin')) . "<h3>" ?>
                             
                     </div>
 
