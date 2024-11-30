@@ -6,6 +6,18 @@
     $role = (isset($user)) ? $user['role'] : null;
     $page = (isset($_GET['page'])) ? $_GET['page'] : null;
 
+    function getEntriesCount($conn, $table, $role) {
+
+        $stmt = $conn->prepare("SELECT COUNT(*) AS total_entries FROM $table WHERE role = :role");
+        $stmt->bindParam(":role", $role);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $count = $result['total_entries'];
+
+        return $count;
+
+    }
+
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         if (empty($user)) {

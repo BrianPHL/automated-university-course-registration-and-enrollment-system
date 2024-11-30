@@ -2,6 +2,11 @@
 
     if (!isset($_SESSION)) { session_start(); }
 
+    require_once '../public/dashboard.php';
+    require_once '../config/db.php'; 
+    
+    $conn = connect();
+
 ?>
 
 <!DOCTYPE html>
@@ -138,21 +143,21 @@
                     <div class="counter">
 
                         <h4>Student accounts</h4>
-                        <h3>0</h3>
+                        <h3><?php echo getEntriesCount($conn, 'accounts', 'student'); ?></h3>
                             
                     </div>
 
                     <div class="counter">
 
                         <h4>Faculty accounts</h4>
-                        <h3>0</h3>
+                        <h3><?php echo getEntriesCount($conn, 'accounts', 'faculty'); ?></h3>
                             
                     </div>
 
                     <div class="counter">
 
                         <h4>No. of admin accounts</h4>
-                        <h3>0</h3>
+                        <h3><?php echo getEntriesCount($conn, 'accounts', 'admin'); ?></h3>
                             
                     </div>
 
