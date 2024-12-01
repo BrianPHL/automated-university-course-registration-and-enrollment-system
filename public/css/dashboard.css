@@ -168,7 +168,6 @@ body {
                 display: flex;
                 width: 70%;
         
-                .home, .user-profile {
 
                     flex-direction: column;
                     display: flex;
