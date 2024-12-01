@@ -3,7 +3,7 @@
     if (!isset($_SESSION)) { session_start(); }
 
     $user = (isset($_SESSION['user']) ? $_SESSION['user'] : null);
-    $role = (isset($user)) ? $user['role'] : null;
+    $role = (isset($_GET['portal'])) ? $_GET['portal'] : null;
     $page = (isset($_GET['page'])) ? $_GET['page'] : null;
 
     function getEntriesCount($pConn, $pTable, $pRole) {
@@ -36,16 +36,15 @@
     
             http_response_code(401);
             header("Location: https://localhost/aucres/public/error.php?code=401");
-            session_write_close();
-            exit();
-    
-        } else {
         
+        } else {
+
             require_once __DIR__ . "/../src/dashboard/{$role}.view.php";
-            session_write_close();
-            exit();
         
         }
+
+        session_write_close();
+        exit();
 
     }
 

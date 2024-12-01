@@ -53,7 +53,7 @@
 
             $_SESSION['user'] = $user;
 
-            header("Location: https://localhost/aucres/public/dashboard.php?page=home");
+            header("Location: https://localhost/aucres/public/dashboard.php?portal=" . $user['role']);
             session_write_close();
             exit();
 
