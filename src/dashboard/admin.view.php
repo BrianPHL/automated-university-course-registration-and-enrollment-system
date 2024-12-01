@@ -149,7 +149,7 @@
 
                     </div>
         
-                    <div class="wrapper dashboard">
+                    <div class="dashboard">
         
                         <div class="breadcrumbs">
         
