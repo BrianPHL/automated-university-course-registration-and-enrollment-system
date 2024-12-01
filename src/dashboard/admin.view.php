@@ -231,7 +231,23 @@
                             </div>
             
                         </div>
-        
+
+                        <div class="user-profile" style="display: none;">
+
+                            <div class="breadcrumbs">
+
+                                <p><a class="breadcrumb-link" data-page="home">Dashboard</a><span style="margin-right: 0.5rem; ">/</span>User Profile</p>
+
+                            </div>
+
+                            <div class="profile">
+
+                                
+
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>

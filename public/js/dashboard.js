@@ -1,5 +1,14 @@
 import { promptConfirmationDialog } from './globals.js';
 
+const loadDashboardSection = (pSection) => {
+
+    const section = '.' + pSection;
+
+    $('#dashboardSection').children().css('display', 'none');
+    $('#dashboardSection').find(section).css('display', 'flex');
+
+}
+
 $(() => {
 
     $(".nav-link").on("click", function() {
@@ -16,24 +25,28 @@ $(() => {
         }
         $(".nav-link").removeClass("active");
         $(this).addClass("active");
-    
+
     });
 
     $("a.nav-link").on("click", function() {
 
         if ($(this).is('[data-page]') === false) { return; }
-        
-        const newURL = `https://localhost/aucres/public/dashboard.php?page=${$(this).attr('data-page')}`;
-        history.pushState(null, '', newURL);
+
+        loadDashboardSection($(this).attr('data-page'));
 
     })
 
     $("a.breadcrumb-link").on("click", function() {
 
         if ($(this).is('[data-page]') === false) { return; }
-        
-        const newURL = `https://localhost/aucres/public/dashboard.php?page=${$(this).attr('data-page')}`;
-        history.pushState(null, '', newURL);
+
+        const links = $('.panel > .nav > li');
+        const active = $('.panel > .nav > li > a.active');
+
+        active.removeClass('active');
+        links.find('a[data-page=' + $(this).attr('data-page') + ']').addClass('active');
+
+        loadDashboardSection($(this).attr('data-page'));
 
     })
 
