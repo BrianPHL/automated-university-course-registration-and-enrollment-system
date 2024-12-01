@@ -28,6 +28,15 @@ $(() => {
 
     })
 
+    $("a.breadcrumb-link").on("click", function() {
+
+        if ($(this).is('[data-page]') === false) { return; }
+        
+        const newURL = `https://localhost/aucres/public/dashboard.php?page=${$(this).attr('data-page')}`;
+        history.pushState(null, '', newURL);
+
+    })
+
     $('#dashboard-table').DataTable({
         dom: '<"top"<"dt-start"lf><"dt-middle"ip><"dt-end">>rt',
         responsive: true,
