@@ -42,7 +42,7 @@ $(() => {
 
         const confirmationResult = await promptConfirmationDialog({
             title: "Log out of your account?",
-            description: "Logging out means any unsaved changes will be lost and you'll have to log back in.",
+            description: "Logging out means any unsaved changes will be lost and you'll have to log back in!",
             options: {
                 no: "Nevermind",
                 yes: "Log me out of my account"
@@ -51,10 +51,29 @@ $(() => {
 
         if (confirmationResult === 'yes') {
 
-            window.location.href = 'https://localhost/aucres/api/dashboard.php?action=logout';
+            window.location.href = 'https://localhost/aucres/api/dashboard.php?action=logout&where=portal';
 
         }
 
     });
+
+    $('.return').on('click', async function() {
+
+        const confirmationResult = await promptConfirmationDialog({
+            title: "Return to homepage?",
+            description: "Doing this will also log you out of your account. Any unsaved changes will be lost and you'll have to log back in!",
+            options: {
+                no: "Nevermind",
+                yes: "Logout & Return to Homepage"
+            }
+        });
+
+        if (confirmationResult === 'yes') {
+
+            window.location.href = 'https://localhost/aucres/api/dashboard.php?action=logout&where=homepage';
+
+        }
+
+    })
 
 })

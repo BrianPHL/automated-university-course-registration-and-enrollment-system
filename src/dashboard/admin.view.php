@@ -236,7 +236,7 @@
 
                     <h6>&copy; 2024 Automated University Course Registration and Enrollment System. All rights reserved.</h6>
 
-                    <a href="https://localhost/aucres/public/index.php">
+                    <a class="return">
                         Homepage
                         <i class="fa-solid fa-square-arrow-up-right"></i>
                     </a>
