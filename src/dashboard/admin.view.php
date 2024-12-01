@@ -127,7 +127,7 @@
             
                             <li class="nav-item">
             
-                                <a class="nav-link" data-page="profile">
+                                <a class="nav-link" data-page="user-profile">
                                     <i class="fa-solid fa-circle-user"></i>
                                     User Profile
                                 </a>
@@ -148,84 +148,88 @@
                         </div>
 
                     </div>
-        
-                    <div class="dashboard">
-        
-                        <div class="breadcrumbs">
-        
-                            <p>Dashboard</p>
-        
-                        </div>
-        
-                        <div class="counters">
-        
-                            <div class="counter">
-        
-                                <h4>No. of Student accounts</h4>
-                                <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'student')) . "</h3>" ?>
-                                    
-                            </div>
-        
-                            <div class="counter">
-        
-                                <h4>No. of Faculty accounts</h4>
-                                <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'faculty')) . "</h3>" ?>
-                            </div>
-        
-                            <div class="counter">
-        
-                                <h4>No. of admin accounts</h4>
-                                <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'admin')) . "</h3>" ?>
-                                    
-                            </div>
-        
-                        </div>
-        
-                        <div class="table">
-        
-                            <table id="dashboard-table" class="cell-border nowrap order-column">
-        
-                                <thead>
-        
-                                    <tr>
-                                        <td>Id</td>
-                                        <td>Username</td>
-                                        <td>Role</td>
-                                        <td>Email</td>
-                                        <td>First name</td>
-                                        <td>Last name</td>
-                                        <td>Updated at</td>
-                                    
-                                    </tr>
-                                
-                                </thead>
-        
-                                <tbody>
 
-                                    <?php
-                                
-                                    $results = getTableData($conn, 'accounts');
-            
-                                    foreach ($results as $row) {
-            
-                                        echo "<tr>";
-                                            echo "<td>" . htmlspecialchars($row['id']) . "</td>";
-                                            echo "<td>" . htmlspecialchars($row['username']) . "</td>";
-                                            echo "<td>" . htmlspecialchars($row['role']) . "</td>";
-                                            echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                                            echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
-                                            echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
-                                            echo "<td>" . htmlspecialchars($row['updated_at']) . "</td>";
-                                        echo "</tr>";
-            
-                                    }
-            
-                                    ?>
+                    <div id="dashboardSection">
+
+                        <div class="home">
         
-                                </tbody>
-        
-                            </table>
-        
+                            <div class="breadcrumbs">
+            
+                                <p>Dashboard</p>
+            
+                            </div>
+            
+                            <div class="counters">
+            
+                                <div class="counter">
+            
+                                    <h4>No. of Student accounts</h4>
+                                    <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'student')) . "</h3>" ?>
+                                        
+                                </div>
+            
+                                <div class="counter">
+            
+                                    <h4>No. of Faculty accounts</h4>
+                                    <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'faculty')) . "</h3>" ?>
+                                </div>
+            
+                                <div class="counter">
+            
+                                    <h4>No. of admin accounts</h4>
+                                    <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'admin')) . "</h3>" ?>
+                                        
+                                </div>
+            
+                            </div>
+            
+                            <div class="table">
+            
+                                <table id="dashboard-table" class="cell-border nowrap order-column">
+            
+                                    <thead>
+            
+                                        <tr>
+                                            <td>Id</td>
+                                            <td>Username</td>
+                                            <td>Role</td>
+                                            <td>Email</td>
+                                            <td>First name</td>
+                                            <td>Last name</td>
+                                            <td>Updated at</td>
+                                        
+                                        </tr>
+                                    
+                                    </thead>
+            
+                                    <tbody>
+    
+                                        <?php
+                                    
+                                        $results = getTableData($conn, 'accounts');
+                
+                                        foreach ($results as $row) {
+                
+                                            echo "<tr>";
+                                                echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['username']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['role']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['updated_at']) . "</td>";
+                                            echo "</tr>";
+                
+                                        }
+                
+                                        ?>
+            
+                                    </tbody>
+            
+                                </table>
+            
+                            </div>
+            
                         </div>
         
                     </div>
