@@ -151,7 +151,7 @@
 
                     <div id="dashboardSection">
 
-                        <div class="home">
+                        <div class="home" style="display: none;">
         
                             <div class="breadcrumbs">
             
@@ -232,7 +232,7 @@
             
                         </div>
 
-                        <div class="user-profile" style="display: none;">
+                        <div class="user-profile">
 
                             <div class="breadcrumbs">
 
@@ -242,7 +242,61 @@
 
                             <div class="profile">
 
-                                
+                                <div class="info">
+
+                                    <h4>Id</h4>
+                                    <p><?php echo $_SESSION['user']['id'] ?></p>
+
+                                </div>
+
+                                <div class="info">
+
+                                    <h4>Username</h4>
+                                    <p><?php echo $_SESSION['user']['username'] ?></p>
+
+                                </div>
+
+                                <div class="info">
+
+                                    <h4>Role</h4>
+                                    <p><?php echo $_SESSION['user']['role'] ?></p>
+
+                                </div>
+
+                                <div class="info">
+
+                                    <h4>Email address</h4>
+                                    <p><?php echo $_SESSION['user']['email'] ?></p>
+
+                                </div>
+
+                                <div class="info">
+
+                                    <h4>First name</h4>
+                                    <p><?php echo $_SESSION['user']['first_name'] ?></p>
+
+                                </div>
+
+                                <div class="info">
+
+                                    <h4>Last name</h4>
+                                    <p><?php echo $_SESSION['user']['last_name'] ?></p>
+
+                                </div>
+
+                                <div class="info">
+
+                                    <h4>Created at</h4>
+                                    <p><?php echo $_SESSION['user']['created_at'] ?></p>
+
+                                </div>
+
+                                <div class="info">
+
+                                    <h4>Last updated at</h4>
+                                    <p><?php echo $_SESSION['user']['updated_at'] ?></p>
+
+                                </div>
 
                             </div>
 
