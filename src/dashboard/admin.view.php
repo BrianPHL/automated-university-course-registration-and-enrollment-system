@@ -366,7 +366,7 @@
 
                             <div class="table" data-type="all" style="display: none;">
 
-                                <table id="all-student-accounts-table" class="cell-border nowrap order-column" style="display: none;">
+                                <table id="all-student-accounts-table" class="cell-border nowrap order-column">
             
                                     <thead>
             
