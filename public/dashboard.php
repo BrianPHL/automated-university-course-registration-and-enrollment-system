@@ -6,16 +6,19 @@
     $role = (isset($_GET['portal'])) ? $_GET['portal'] : null;
     $page = (isset($_GET['page'])) ? $_GET['page'] : null;
 
-    function getEntriesCount($pConn, $pTable, $pRole) {
+    function getEntriesCount($pConn, $pTable, $pRole = null) {
 
         $conn = (isset($pConn)) ? $pConn : null;
         $table = (isset($pTable)) ? $pTable : null;
         $role = (isset($pRole)) ? $pRole : null;
+        $sql;
 
-        if (empty($conn) || empty($table) || empty($role)) return;
+        if (empty($conn) || empty($table)) return;
 
-        $stmt = $pConn->prepare("SELECT COUNT(*) AS total_entries FROM $pTable WHERE role = :role");
-        $stmt->bindParam(":role", $pRole);
+        $sql = (isset($role)) ? "SELECT COUNT(*) AS total_entries FROM $pTable WHERE role = :role" : "SELECT COUNT(*) AS total_entries FROM $pTable";
+
+        $stmt = $conn->prepare($sql);
+        if (isset($role)) $stmt->bindParam(":role", $pRole);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         $count = $result['total_entries'];
@@ -24,16 +27,15 @@
 
     }
 
-    function getTableData($pConn, $pTable, $pRole = null) {
+    function getAccountsData($pConn, $pRole = null) {
 
         $conn = (isset($pConn)) ? $pConn : null;
-        $table = (isset($pTable)) ? $pTable : null;
         $role = (isset($pRole)) ? $pRole : null;
         $sql;
 
-        if (empty($conn) || empty($table)) return;
+        if (empty($conn)) return;
         
-        $sql = (empty($role)) ? "SELECT * FROM $pTable" : "SELECT * FROM $pTable WHERE role = :role";
+        $sql = (empty($role)) ? "SELECT * FROM accounts" : "SELECT * FROM accounts WHERE role = :role";
         
         $stmt = $pConn->prepare($sql);
         if (isset($role)) { $stmt->bindParam(":role", $role); }
@@ -44,13 +46,18 @@
 
     }
 
-    function getPendingStudents($pConn) {
+    function getStudentsData($pConn, $pStatus = null) {
 
         $conn = (isset($pConn)) ? $pConn : null;
+        $status = (isset($pStatus)) ? $pRole : null;
+        $sql;
 
         if (empty($conn)) return;
-
-        $stmt = $conn->prepare("SELECT * FROM accounts WHERE status = 'pending' AND role = 'student'");
+        
+        $sql = (empty($status)) ? "SELECT * FROM students" : "SELECT * FROM students WHERE status = :status";
+        
+        $stmt = $pConn->prepare($sql);
+        if (isset($role)) { $stmt->bindParam(":status", $status); }
         $stmt->execute();
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

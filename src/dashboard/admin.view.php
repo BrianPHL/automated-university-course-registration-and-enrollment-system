@@ -164,7 +164,7 @@
                                 <div class="counter">
             
                                     <h4>No. of Student accounts</h4>
-                                    <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'accounts', 'student')) . "</h3>" ?>
+                                    <?php echo "<h3>" . htmlspecialchars(getEntriesCount($conn, 'students')) . "</h3>" ?>
                                         
                                 </div>
             
@@ -206,7 +206,7 @@
     
                                         <?php
                                     
-                                        $results = getTableData($conn, 'accounts');
+                                        $results = getAccountsData($conn);
                 
                                         foreach ($results as $row) {
                 
@@ -366,15 +366,15 @@
 
                             <div class="table" data-type="all" style="display: none;">
 
-                                <table id="all-student-accounts-table" class="cell-border nowrap order-column">
+                                <table id="student-accounts-table" class="cell-border nowrap order-column">
             
                                     <thead>
             
                                         <tr>
                                             <td>Id</td>
                                             <td>Username</td>
-                                            <td>Role</td>
-                                            <td>Email</td>
+                                            <td>Status</td>
+                                            <td>Program</td>
                                             <td>First name</td>
                                             <td>Last name</td>
                                             <td>Updated at</td>
@@ -387,15 +387,15 @@
     
                                         <?php
                                     
-                                        $results = getTableData($conn, 'accounts', 'student');
+                                        $results = getStudentsData($conn);
                 
                                         foreach ($results as $row) {
                 
                                             echo "<tr>";
                                                 echo "<td>" . htmlspecialchars($row['id']) . "</td>";
                                                 echo "<td>" . htmlspecialchars($row['username']) . "</td>";
-                                                echo "<td>" . htmlspecialchars($row['role']) . "</td>";
-                                                echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['status']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['program']) . "</td>";
                                                 echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
                                                 echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
                                                 echo "<td>" . htmlspecialchars($row['updated_at']) . "</td>";
