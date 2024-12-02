@@ -9,7 +9,58 @@ const loadDashboardSection = (pSection) => {
 
 }
 
+const initializeTables = () => {
+
+    $('#dashboard-table').DataTable({
+        dom: '<"top"<"dt-start"lf><"dt-middle"ip><"dt-end">>rt',
+        responsive: true,
+        scrollX: true,
+        scrollCollapse: true,
+        columnDefs: [
+            { className: 'dt-body-center', targets: [0] }
+        ]
+    });
+
+    $('#all-student-accounts-table').DataTable({
+        dom: '<"top"<"dt-start"lf><"dt-middle"ip><"dt-end">>rt',
+        responsive: true,
+        scrollX: true,
+        scrollCollapse: true,
+        columnDefs: [
+            { className: 'dt-body-center', targets: [0] }
+        ]
+    });
+
+    $('#pending-student-accounts-table').DataTable({
+        dom: '<"top"<"dt-start"lf><"dt-middle"ip><"dt-end">>rt',
+        responsive: true,
+        scrollX: true,
+        scrollCollapse: true,
+        columnDefs: [
+            { className: 'dt-body-center', targets: [0] }
+        ]
+    });
+
+}
+
 $(() => {
+
+    initializeTables();
+
+    $('.categories > button').on('click', function(event) {
+
+        event.preventDefault();
+
+        if ($(this).hasClass('active')) return;
+
+        $(this).parent().find('button.active').removeClass('active');
+        $(this).addClass('active');
+
+        $(this).parent().parent().find('.table.active').css('display', 'none');
+
+        $(this).parent().parent().find('.table[data-type=' + $(this).attr('data-category')).css('display', 'flex');
+
+    })
 
     $(".nav-link").on("click", function() {
 
@@ -49,16 +100,6 @@ $(() => {
         loadDashboardSection($(this).attr('data-page'));
 
     })
-
-    $('#dashboard-table').DataTable({
-        dom: '<"top"<"dt-start"lf><"dt-middle"ip><"dt-end">>rt',
-        responsive: true,
-        scrollX: true,
-        scrollCollapse: true,
-        columnDefs: [
-            { className: 'dt-body-center', targets: [0] }
-        ]
-    });
 
     $('.logout').on('click', async function() {
 

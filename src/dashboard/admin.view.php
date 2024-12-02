@@ -232,7 +232,7 @@
             
                         </div>
 
-                        <div class="user-profile">
+                        <div class="user-profile" style="display: none;">
 
                             <div class="breadcrumbs">
 
@@ -297,6 +297,117 @@
                                     <p><?php echo $_SESSION['user']['updated_at'] ?></p>
 
                                 </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="student-accounts">
+
+                            <div class="breadcrumbs">
+
+                                <p><a class="breadcrumb-link" data-page="home">Dashboard</a><span style="margin-right: 0.5rem; ">/</span>Accounts (Student)</p>
+
+                            </div>
+
+                            <div class="categories">
+
+                                <button data-category="pending" data-type="secondary" class="active">Pending</button>
+                                <button data-category="all" data-type="secondary">All</button>
+
+                            </div>
+
+                            <div class="active table" data-type="pending">
+            
+                                <table id="pending-student-accounts-table" data-type="pending" class="cell-border nowrap order-column">
+            
+                                    <thead>
+            
+                                        <tr>
+                                            <td>Id</td>
+                                            <td>Username</td>
+                                            <td>Role</td>
+                                            <td>Email</td>
+                                            <td>First name</td>
+                                            <td>Last name</td>
+                                            <td>Updated at</td>
+                                        
+                                        </tr>
+                                    
+                                    </thead>
+            
+                                    <tbody>
+    
+                                        <?php
+                                    
+                                        $results = getPendingStudents($conn);
+                
+                                        foreach ($results as $row) {
+                
+                                            echo "<tr>";
+                                                echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['username']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['role']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['updated_at']) . "</td>";
+                                            echo "</tr>";
+                
+                                        }
+                
+                                        ?>
+            
+                                    </tbody>
+            
+                                </table>
+            
+                            </div>
+
+                            <div class="table" data-type="all" style="display: none;">
+
+                                <table id="all-student-accounts-table" class="cell-border nowrap order-column" style="display: none;">
+            
+                                    <thead>
+            
+                                        <tr>
+                                            <td>Id</td>
+                                            <td>Username</td>
+                                            <td>Role</td>
+                                            <td>Email</td>
+                                            <td>First name</td>
+                                            <td>Last name</td>
+                                            <td>Updated at</td>
+                                        
+                                        </tr>
+                                    
+                                    </thead>
+            
+                                    <tbody>
+    
+                                        <?php
+                                    
+                                        $results = getTableData($conn, 'accounts', 'student');
+                
+                                        foreach ($results as $row) {
+                
+                                            echo "<tr>";
+                                                echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['username']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['role']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['updated_at']) . "</td>";
+                                            echo "</tr>";
+                
+                                        }
+                
+                                        ?>
+            
+                                    </tbody>
+            
+                                </table>
 
                             </div>
 

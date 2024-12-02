@@ -44,6 +44,20 @@
 
     }
 
+    function getPendingStudents($pConn) {
+
+        $conn = (isset($pConn)) ? $pConn : null;
+
+        if (empty($conn)) return;
+
+        $stmt = $conn->prepare("SELECT * FROM accounts WHERE status = 'pending' AND role = 'student'");
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $results;
+
+    }
+
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         if (empty($user)) {
