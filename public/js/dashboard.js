@@ -11,35 +11,20 @@ const loadDashboardSection = (pSection) => {
 
 const initializeTables = () => {
 
-    $('#dashboard-table').DataTable({
+    const tableArgs = {
         dom: '<"top"<"dt-start"lf><"dt-middle"ip><"dt-end">>rt',
         responsive: true,
         scrollX: true,
-        scrollCollapse: true,
         columnDefs: [
             { className: 'dt-body-center', targets: [0] }
         ]
-    });
+    }
 
-    $('#all-student-accounts-table').DataTable({
-        dom: '<"top"<"dt-start"lf><"dt-middle"ip><"dt-end">>rt',
-        responsive: true,
-        scrollX: true,
-        scrollCollapse: true,
-        columnDefs: [
-            { className: 'dt-body-center', targets: [0] }
-        ]
-    });
+    $('#dashboard-table').DataTable(tableArgs);
 
-    $('#pending-student-accounts-table').DataTable({
-        dom: '<"top"<"dt-start"lf><"dt-middle"ip><"dt-end">>rt',
-        responsive: true,
-        scrollX: true,
-        scrollCollapse: true,
-        columnDefs: [
-            { className: 'dt-body-center', targets: [0] }
-        ]
-    });
+    $('#all-student-accounts-table').DataTable(tableArgs);
+
+    $('#pending-student-accounts-table').DataTable(tableArgs);
 
 }
 
@@ -56,9 +41,9 @@ $(() => {
         $(this).parent().find('button.active').removeClass('active');
         $(this).addClass('active');
 
-        $(this).parent().parent().find('.table.active').css('display', 'none');
+        $(this).parent().parent().find('.table.active').css('display', 'none').removeClass('active');
 
-        $(this).parent().parent().find('.table[data-type=' + $(this).attr('data-category')).css('display', 'flex');
+        $(this).parent().parent().find('.table[data-type=' + $(this).attr('data-category')).css('display', 'flex').addClass('active');
 
     })
 
