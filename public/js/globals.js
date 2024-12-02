@@ -33,6 +33,19 @@ export const promptConfirmationDialog = (message) => {
 
 }
 
+export const promptInformationDialog = (message) => {
+
+    const html =
+    `
+        <div id="information-modal">
+            
+        </div>
+    `
+
+    $('body').append(html);
+
+}
+
 $(() => {
 
     const iconSwitch = (theme) => {

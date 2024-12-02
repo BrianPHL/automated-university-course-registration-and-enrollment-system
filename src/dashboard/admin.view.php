@@ -317,50 +317,35 @@
 
                             </div>
 
-                            <div class="active table" data-type="pending">
-            
-                                <table id="pending-student-accounts-table" data-type="pending" class="cell-border nowrap order-column">
-            
-                                    <thead>
-            
-                                        <tr>
-                                            <td>Id</td>
-                                            <td>Username</td>
-                                            <td>Role</td>
-                                            <td>Email</td>
-                                            <td>First name</td>
-                                            <td>Last name</td>
-                                            <td>Updated at</td>
+                            <div class="active table" data-type="pending" style="padding: 1rem; display: flex; flex-direction: column; gap: 1rem;">
+
+                                <div class="entry" data-id="1">
+
+                                    <div class="wrapper">
+
+                                        <div class="info">
                                         
-                                        </tr>
-                                    
-                                    </thead>
-            
-                                    <tbody>
+                                            <h4>Brian Lawrence Pasco</h4>
     
-                                        <?php
-                                    
-                                        $results = getPendingStudents($conn);
-                
-                                        foreach ($results as $row) {
-                
-                                            echo "<tr>";
-                                                echo "<td>" . htmlspecialchars($row['id']) . "</td>";
-                                                echo "<td>" . htmlspecialchars($row['username']) . "</td>";
-                                                echo "<td>" . htmlspecialchars($row['role']) . "</td>";
-                                                echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                                                echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
-                                                echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
-                                                echo "<td>" . htmlspecialchars($row['updated_at']) . "</td>";
-                                            echo "</tr>";
-                
-                                        }
-                
-                                        ?>
-            
-                                    </tbody>
-            
-                                </table>
+                                        </div>
+    
+                                        <a>
+                                            View full info
+                                            <i class="fa-solid fa-square-arrow-up-right"></i>
+                                        </a>
+
+                                    </div>
+
+                                    <div class="divider"></div>
+
+                                    <div class="cta">
+    
+                                        <button class="reject-pending" data-type="warning">Reject</button>
+                                        <button class="accept-pending" data-type="primary">Accept</button>
+
+                                    </div>
+
+                                </div>
             
                             </div>
 

@@ -5,10 +5,11 @@
     require_once '../config/db.php'; 
     
     $conn = connect();
-    $action = (isset($_GET['action'])) ? $_GET['action'] : null;
     $where = (isset($_GET['where'])) ? $_GET['where'] : null;
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+        $action = (isset($_GET['action'])) ? $_GET['action'] : null;
 
         if (isset($action) && $action === 'logout') {
 
@@ -32,6 +33,30 @@
 
             session_write_close();
             exit();      
+
+        }
+
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        $action = (isset($_POST['action'])) ? $_POST['action'] : null;
+
+        if (isset($action) && $action === 'reject') {
+
+            $id = (isset($_POST['id'])) ? $_POST['id'] : null;
+
+            if (empty($id)) {
+
+                http_response_code(400);
+                header("Location: https://localhost/aucres/public/error.php?code=400");
+                session_write_close();
+                exit();
+
+            }
+
+            echo 'success';
+            exit();
 
         }
 

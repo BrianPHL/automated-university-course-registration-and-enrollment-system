@@ -22,9 +22,7 @@ const initializeTables = () => {
 
     $('#dashboard-table').DataTable(tableArgs);
 
-    $('#all-student-accounts-table').DataTable(tableArgs);
-
-    $('#pending-student-accounts-table').DataTable(tableArgs);
+    $('#student-accounts-table').DataTable(tableArgs);
 
 }
 
@@ -119,6 +117,36 @@ $(() => {
         if (confirmationResult === 'yes') {
 
             window.location.href = 'https://localhost/aucres/api/dashboard.php?action=logout&where=homepage';
+
+        }
+
+    })
+
+    $('.reject-pending').on('click', async function() {
+
+        const name = $(this).parent().parent().find('.wrapper > .info > h4').text();
+        const id = $(this).parent().parent().attr('data-id');
+
+        const confirmationResult = await promptConfirmationDialog({
+            title: "Reject " + name + "?",
+            description: "By rejecting the student, it will automatically delete their pending account registration from the system!",
+            options: {
+                no: "Cancel",
+                yes: "Reject & Delete"
+            }
+        });
+
+        if (confirmationResult === 'yes') {
+
+            $.ajax({
+                url: 'https://localhost/aucres/api/dashboard.php',
+                method: 'POST',
+                data: { action: 'reject', id: id },
+                success: function(response) {
+                    console.log(response);
+                },
+                error: function(xhr, status, error) { console.log('meow') }
+            });
 
         }
 

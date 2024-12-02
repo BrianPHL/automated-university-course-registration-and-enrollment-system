@@ -455,11 +455,129 @@ button {
 
     }
 
+    .entry {
+
+        background-color: var(--bg-tertiary);
+        flex-direction: column;
+        border-radius: 0.25rem;
+        display: flex;
+        padding: 1rem;
+        gap: 1rem;
+
+        .wrapper {
+
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            display: flex;
+
+            .info {
+
+                h4 { color: var(--tg-primary); }
+    
+            }
+    
+            a {
+
+                text-decoration: none;
+                border-radius: 0.25rem;
+                align-items: center;
+                transition: 0.2s ease all;
+                align-self: flex-start;
+                padding: 0.5rem 0.5rem;
+                display: flex;
+                color: var(--tg-secondary);
+                gap: 0.5rem;
+                
+                i {
+                
+                    transition: 0.2s ease all;
+                    color: var(--tg-secondary);
+                
+                }
+    
+                &:hover {
+    
+                    background-color: var(--bg-outline);
+                    cursor: pointer;
+                    color: var(--tg-primary);
+    
+                    i { color: var(--tg-primary); }
+    
+                }
+    
+            }
+
+        }
+
+        .divider {
+
+            border-radius: 0.25rem;
+            border: 1px solid var(--bg-outline);
+
+        }
+
+        .cta {
+    
+            align-self: flex-end;
+            flex-direction: row;
+            display: flex;
+            gap: 0.5rem;
+
+        }
+
+    }
+
 }
 
 #confirmation-modal {
 
-    background-color: var(--bg-primary);
+    background-color: #00000080;
+    place-content: center;
+    position: absolute;
+    z-index: 1000;
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    .content {
+
+        background-color: var(--bg-secondary);
+        flex-direction: column;
+        border-radius: 0.25rem;
+        padding: 2rem;
+        display: flex;
+        width: 32rem;
+        gap: 2rem;
+
+        .message {
+
+            flex-direction: column;
+            display: flex;
+            gap: 2rem;
+
+            h3 { color: var(--tg-primary); }
+            p { color: var(--tg-secondary); }
+
+        }
+
+        .cta {
+
+            align-self: flex-end;
+            display: flex;
+            gap: 1rem;
+
+        }
+
+    }
+
+}
+
+#information-modal {
+
+    background-color: #00000080;
     place-content: center;
     position: absolute;
     z-index: 1000;
