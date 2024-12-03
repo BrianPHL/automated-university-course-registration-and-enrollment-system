@@ -319,7 +319,7 @@
 
                             <div class="active table" data-type="pending" style="padding: 1rem; display: flex; flex-direction: column; gap: 1rem;">
 
-                                <div class="placeholder" style="display: none;">
+                                <div class="placeholder">
 
                                     <h4>No data available.</h4>
 
@@ -328,7 +328,7 @@
                                 <?php
 
                                 $results = getStudentsData($conn, 'pending');
-
+                                
                                 foreach ($results as $row) {
                                     echo "<div class='entry' data-id='" . htmlspecialchars($row['id']) . "'>";
                                         echo "<div class='wrapper'>";
@@ -496,18 +496,23 @@
                 mutations.forEach((mutation) => {
                     if (mutation.type === 'childList') {
                     
-                        if ($(targetElement).children(':visible').length > 0) {
-                            $(targetElement).find('.placeholder').css('display', 'none');
+                        if ($(targetElement).children().not('.placeholder').length > 0) {
+                            $(targetElement).find('.placeholder').hide();
                         } else {
                             $(targetElement).find('.placeholder').css('display', 'grid');
+                            $(targetElement).find('.placeholder').show();
                         }
                     }
                 })
             })
+            
+            if ($(targetElement).children().not('.placeholder').length === 0) {
+                $(targetElement).find('.placeholder').show();
+            } else {
+                $(targetElement).find('.placeholder').hide();
+            }
 
-            if ($(targetElement).children(':visible').length === 0) $(targetElement).find('.placeholder').css('display', 'grid');
-
-            observer.observe(targetElement, { childList: true });
+            observer.observe(targetElement, { childList: true, subtree: true });
 
         </script>
 
