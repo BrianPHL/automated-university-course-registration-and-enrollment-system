@@ -31,6 +31,34 @@
 
         }
 
+        if (isset($role) && $role === 'student') {
+
+            $stmt = $conn->prepare("SELECT * FROM students WHERE username = :username");
+            $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+            $stmt->execute();
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            if ($user && $password === $user['password']) {
+    
+                if (!isset($_SESSION['csrf_token'])) {
+                    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+                }
+    
+                $_SESSION['user'] = $user;
+    
+                header("Location: https://localhost/aucres/public/dashboard.php?portal=student");
+                session_write_close();
+                exit();
+    
+            } else {
+    
+                $_SESSION['error']['auth'] = 'Invalid username or password.';
+                unsuccessfulRedirect($role);
+    
+            }
+
+        }
+
         if (isset($role) && $role === 'admin') {
 
             $stmt = $conn->prepare("SELECT * FROM accounts WHERE role = :role AND username = :username");
