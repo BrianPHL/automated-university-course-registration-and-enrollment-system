@@ -10,9 +10,16 @@
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        $role = $_POST['role'] ?? 'student';
-        $username = $_POST['username'] ?? null;
-        $password = $_POST['password'] ?? null;
+        $username = (isset($_POST['username'])) ? $_POST['username'] : null;
+        $password = (isset($_POST['password'])) ? $_POST['password'] : null;
+        $role = (isset($_POST['role'])) ? $_POST['role'] : null;
+
+        if (empty($username) || empty($password) || empty($role)) {
+        
+            $_SESSION['error']['auth'] = 'All fields are required.';
+            unsuccessfulRedirect($role);
+        
+        }
 
         function unsuccessfulRedirect($role) {
 
@@ -24,35 +31,32 @@
 
         }
 
-        if (empty($username) || empty($password)) {
-        
-            $_SESSION['error']['auth'] = 'All fields are required.';
-            unsuccessfulRedirect($role);
-        
-        }
+        if (isset($role) && $role === 'admin') {
+
+            $stmt = $conn->prepare("SELECT * FROM accounts WHERE role = :role AND username = :username");
+            $stmt->bindParam(":role", $role, PDO::PARAM_STR);
+            $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+            $stmt->execute();
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
-        $stmt = $conn->prepare("SELECT * FROM accounts WHERE role = :role AND username = :username");
-        $stmt->bindParam(":role", $role, PDO::PARAM_STR);
-        $stmt->bindParam(":username", $username, PDO::PARAM_STR);
-        $stmt->execute();
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($user && $password === $user['password']) {
-
-            if (!isset($_SESSION['csrf_token'])) {
-                $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+            if ($user && $password === $user['password']) {
+    
+                if (!isset($_SESSION['csrf_token'])) {
+                    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+                }
+    
+                $_SESSION['user'] = $user;
+    
+                header("Location: https://localhost/aucres/public/dashboard.php?portal=" . $user['role']);
+                session_write_close();
+                exit();
+    
+            } else {
+    
+                $_SESSION['error']['auth'] = 'Invalid username or password.';
+                unsuccessfulRedirect($role);
+    
             }
-
-            $_SESSION['user'] = $user;
-
-            header("Location: https://localhost/aucres/public/dashboard.php?portal=" . $user['role']);
-            session_write_close();
-            exit();
-
-        } else {
-
-            $_SESSION['error']['auth'] = 'Invalid username or password.';
-            unsuccessfulRedirect($role);
 
         }
     
