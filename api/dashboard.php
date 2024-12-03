@@ -16,7 +16,7 @@
         if (isset($action) && $action === 'logout') {
 
             $location = (isset($_POST['location'])) ? $_POST['location'] : null;
-            $role = (isset($_SESSION['user']['role'])) ? $_SESSION['user']['role'] : null;
+            $role = (isset($_SESSION['user']['role'])) ? $_SESSION['user']['role'] : 'student';
 
             if (empty($location) || empty($role)) {
 
