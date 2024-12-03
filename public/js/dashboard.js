@@ -1,5 +1,21 @@
 import { promptConfirmationDialog } from './globals.js';
 
+const targetElement = $('.table[data-type="pending"]')[0];
+let observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        if (mutation.type === 'childList') {
+
+            if ($(targetElement).children(':visible').length > 0) {
+                $(targetElement).find('.placeholder').css('display', 'none');
+            } else {
+                $(targetElement).find('.placeholder').css('display', 'grid');
+            }
+        }
+    })
+})
+
+observer.observe(targetElement, { childList: true });
+
 const loadDashboardSection = (pSection) => {
 
     const section = '.' + pSection;

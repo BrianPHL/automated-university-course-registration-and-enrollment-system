@@ -454,6 +454,17 @@ button {
         }
 
     }
+    
+    .placeholder {
+
+        place-content: center;
+        display: grid;
+        height: 100%;
+        width: 100%;
+
+        h4 { color: var(--tg-secondary); }
+
+    }
 
     .entry {
 

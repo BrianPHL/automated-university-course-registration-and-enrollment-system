@@ -319,6 +319,12 @@
 
                             <div class="active table" data-type="pending" style="padding: 1rem; display: flex; flex-direction: column; gap: 1rem;">
 
+                                <div class="placeholder" style="display: none;">
+
+                                    <h4>No data available.</h4>
+
+                                </div>
+                                
                                 <?php
 
                                 $results = getStudentsData($conn, 'pending');
