@@ -402,6 +402,67 @@
 
                         </div>
 
+                        <div class="faculty-accounts">
+
+                            <div class="header">
+
+                                <p><a class="breadcrumb-link" data-page="home">Dashboard</a><span style="margin-right: 0.5rem; ">/</span>Accounts (Faculty)</p>
+
+                                <button data-type="primary">
+                                    <i class="fa-solid fa-plus"></i>
+                                    Add an account
+                                </button>
+
+                            </div>
+
+                            <div class="table">
+
+                                <table id="faculty-accounts-table" class="cell-border nowrap order-column">
+            
+                                    <thead>
+            
+                                        <tr>
+                                            <td>Id</td>
+                                            <td>Username</td>
+                                            <td>Role</td>
+                                            <td>Email</td>
+                                            <td>First name</td>
+                                            <td>Last name</td>
+                                            <td>Updated at</td>
+                                        </tr>
+                                    
+                                    </thead>
+            
+                                    <tbody>
+    
+                                        <?php
+                                    
+                                        $results = getAccountsData($conn, 'faculty');
+                
+                                        foreach ($results as $row) {
+                
+                                            echo "<tr>";
+                                                echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['username']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['role']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['first_name']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['last_name']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['updated_at']) . "</td>";
+                                            echo "</tr>";
+                
+                                        }
+                
+                                        ?>
+            
+                                    </tbody>
+            
+                                </table>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>

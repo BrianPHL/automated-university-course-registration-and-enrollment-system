@@ -168,7 +168,7 @@ body {
                 display: flex;
                 width: 70%;
         
-                .home, .user-profile, .student-accounts {
+                .home, .user-profile, .student-accounts, .faculty-accounts {
 
                     flex-direction: column;
                     display: flex;
@@ -176,11 +176,16 @@ body {
                     width: 100%;
                     gap: 1rem;
             
-                    .breadcrumbs {
+                    .header {
             
                         background-color: var(--bg-secondary);
+                        justify-content: space-between;
+                        flex-direction: row;
                         border-radius: 0.25rem;
+                        align-items: center;
                         padding: 1rem;
+                        display: flex;
+
                         p {
                             
                             color: var(--tg-primary); 
