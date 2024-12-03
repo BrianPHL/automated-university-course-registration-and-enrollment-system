@@ -58,7 +58,10 @@
     
     }
 
+    error_log("HTTP 400 in api/login.php");
     http_response_code(400);
-    error_log('Invalid request made to api/login.php');
+    header("Location: https://localhost/aucres/public/error.php?code=400");
+    session_write_close();
+    exit();
 
 ?>

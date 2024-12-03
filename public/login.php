@@ -40,43 +40,55 @@
     
         }
 
+        if (empty($user)) {
 
-        switch($portal) {
+            switch($portal) {
 
-            case 'student':
-    
-                if ($_GET['type'] === 'login') {
-    
-                    require_once __DIR__ . '/../src/auth/student/login.view.php';
-                    session_write_close();
-                    exit(); 
-    
-                } else {
-    
-                    require_once __DIR__ . '/../src/auth/student/registration.view.php';
-                    session_write_close();
-                    exit(); 
-    
-                }
-    
-                break;
-    
-            case 'faculty':
-    
-                require_once __DIR__ . '/../src/auth/faculty/login.view.php';
-                break;
-                
-            case 'admin':
-    
-                require_once __DIR__ . '/../src/auth/admin/login.view.php';
-                break;
-    
-            default:
-    
-                require_once __DIR__ . '/../src/404.view.php';
-                break;
+                case 'student':
+        
+                    if ($_GET['type'] === 'login') {
+        
+                        require_once __DIR__ . '/../src/auth/student/login.view.php';
+                        session_write_close();
+                        exit(); 
+        
+                    } else {
+        
+                        require_once __DIR__ . '/../src/auth/student/registration.view.php';
+                        session_write_close();
+                        exit(); 
+        
+                    }
+        
+                    break;
+        
+                case 'faculty':
+        
+                    require_once __DIR__ . '/../src/auth/faculty/login.view.php';
+                    break;
+                    
+                case 'admin':
+        
+                    require_once __DIR__ . '/../src/auth/admin/login.view.php';
+                    break;
+        
+                default:
+        
+                    require_once __DIR__ . '/../src/404.view.php';
+                    break;
+            }
+
+            session_write_close();
+            exit();
+
         }
 
     }
+
+    error_log("HTTP 400 in public/login.php");
+    http_response_code(400);
+    header("Location: https://localhost/aucres/public/error.php?code=400");
+    session_write_close();
+    exit();
 
 ?>
