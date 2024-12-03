@@ -32,8 +32,8 @@
 
             <div class="info">
 
-                <h4>REGISTRATION FORM</h4>
-                <h5>Fill out the following to register.</h5>
+                <h4>Register and unlock your academic journey!</h4>
+                <h5>Easily enroll in courses and kickstart your academic journey.</h5>
 
             </div>
 
