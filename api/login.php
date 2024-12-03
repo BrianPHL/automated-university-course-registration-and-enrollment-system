@@ -8,14 +8,6 @@
 
     unset($_SESSION['error']['auth']);
 
-    if (isset($_GET['action']) && $_GET['action'] === 'switch') {
-
-        header('Location: https://localhost/aucres/public/portals.php');
-        session_write_close();
-        exit();
-
-    }
-
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $role = $_POST['role'] ?? 'student';
@@ -45,7 +37,7 @@
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user && $password === $user['password']) { // TODO: Use password_verify on PROD.
+        if ($user && $password === $user['password']) {
 
             if (!isset($_SESSION['csrf_token'])) {
                 $_SESSION['csrf_token'] = bin2hex(random_bytes(32));

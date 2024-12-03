@@ -97,7 +97,17 @@ $(() => {
 
         if (confirmationResult === 'yes') {
 
-            window.location.href = 'https://localhost/aucres/api/dashboard.php?action=logout&where=portal';
+            $.ajax({
+                url: 'https://localhost/aucres/api/dashboard.php',
+                method: 'POST',
+                data: {
+                    action: 'logout',
+                    location: 'portal'
+                },
+                dataType: 'json',
+                success: function(response) { window.location.href = response.destination; },
+                error: function() { console.error("Error when logout is invoked!"); }
+            });
 
         }
 
@@ -116,7 +126,17 @@ $(() => {
 
         if (confirmationResult === 'yes') {
 
-            window.location.href = 'https://localhost/aucres/api/dashboard.php?action=logout&where=homepage';
+            $.ajax({
+                url: 'https://localhost/aucres/api/dashboard.php',
+                method: 'POST',
+                data: {
+                    action: 'logout',
+                    location: 'homepage'
+                },
+                dataType: 'json',
+                success: function(response) { window.location.href = response.destination; },
+                error: function() { console.error("Error when logout is invoked!"); }
+            });
 
         }
 
@@ -147,7 +167,7 @@ $(() => {
                     id: id
                 },
                 success: function() { entry.remove(); },
-                error: function() { console.log("Something happened that stopped the server from executing the request!"); }
+                error: function() { console.log("Error when reject pending student is invoked!"); }
             });
 
         }

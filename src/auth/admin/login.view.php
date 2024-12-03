@@ -81,7 +81,7 @@
                             <i class="fa-solid fa-arrow-right-to-bracket"></i>
                         </button>
 
-                        <button type="button" class="portalSwitcher" onclick="event.preventDefault(); location.href='https://localhost/aucres/api/login.php?action=switch'">
+                        <button type="button" class="portalSwitcher" onclick="event.preventDefault(); location.href='https://localhost/aucres/public/login.php?action=switch'">
                             Switch to another portal
                             <i class="fa-solid fa-square-arrow-up-right"></i>
                         </button>

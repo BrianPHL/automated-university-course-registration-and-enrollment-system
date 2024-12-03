@@ -6,42 +6,45 @@
     require_once './functions.php';
     
     $conn = connect();
-    $where = (isset($_GET['where'])) ? $_GET['where'] : null;
-
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-
-        $action = (isset($_GET['action'])) ? $_GET['action'] : null;
-
-        if (isset($action) && $action === 'logout') {
-
-            $role = (isset($_SESSION['user'])) ? $_SESSION['user']['role'] : null; 
-
-            session_unset();
-            session_destroy();
-
-            if (isset($where) && $where === 'portal') {
-
-                $location = ($role === 'student')
-                    ? "https://localhost/aucres/public/login.php?portal=student&type=login"
-                    : "https://localhost/aucres/public/login.php?portal={$role}";
-                header("Location: $location");
-
-            } elseif (isset($where) && $where === 'homepage') {
-
-                header("Location: https://localhost/aucres/public/index.php");
-
-            }
-
-            session_write_close();
-            exit();      
-
-        }
-
-    }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $action = (isset($_POST['action'])) ? $_POST['action'] : null;
+
+        if (isset($action) && $action === 'logout') {
+
+            $location = (isset($_POST['location'])) ? $_POST['location'] : null;
+            $role = (isset($_SESSION['user']['role'])) ? $_SESSION['user']['role'] : null;
+
+            if (empty($location) || empty($role)) {
+
+                http_response_code(400);
+                header("Location: https://localhost/aucres/public/error.php?code=400");
+                session_write_close();
+                exit();
+
+            };
+
+            if ($location === 'portal') {
+
+                $destination = ($role === 'student') ? "https://localhost/aucres/public/login.php?portal=student&type=login" : "https://localhost/aucres/public/login.php?portal={$role}";
+
+                echo json_encode([ "destination" => $destination ]);
+
+            }
+
+            if ($location === 'homepage') {
+
+                echo json_encode([ "destination" => "https://localhost/aucres/public/index.php" ]);
+
+            }
+
+            session_unset();
+            session_destroy();
+            session_write_close();
+            exit();
+
+        }
 
         if (isset($action) && $action === 'reject') {
 
