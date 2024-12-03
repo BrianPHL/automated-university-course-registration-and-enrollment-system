@@ -397,7 +397,7 @@ body {
 
 @media only screen and (max-width: 768px) {
 
-    #main .container .wrapper {
+    #main > .container > .wrapper {
 
         flex-direction: column;
         display: flex;
