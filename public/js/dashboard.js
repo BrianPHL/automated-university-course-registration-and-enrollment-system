@@ -93,7 +93,7 @@ $(() => {
                 no: "Nevermind",
                 yes: "Log me out of my account"
             }
-        });
+        }, 'warn');
 
         if (confirmationResult === 'yes') {
 
@@ -122,7 +122,7 @@ $(() => {
                 no: "Nevermind",
                 yes: "Logout & Return to Homepage"
             }
-        });
+        }, 'warn');
 
         if (confirmationResult === 'yes') {
 
@@ -154,7 +154,7 @@ $(() => {
                 no: "Cancel",
                 yes: "Reject & Delete"
             }
-        });
+        }, 'warn');
 
         if (confirmationResult === 'yes') {
 

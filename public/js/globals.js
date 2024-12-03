@@ -1,6 +1,11 @@
-export const promptConfirmationDialog = (message) => {
+export const promptConfirmationDialog = (pMessage, pType = null) => {
 
     return new Promise((resolve) => {
+
+        const message = (pMessage) ? pMessage : null;
+        const type = (pType === 'warn') ? 'warning' : 'primary' ;
+
+        if (!message || !type) return;
 
         const html =
         `
@@ -12,7 +17,7 @@ export const promptConfirmationDialog = (message) => {
                 </div>
                 <div class="cta">
                     <button id="modal-no" data-answer="no" data-type="secondary">${ message['options']['no'] }</button>
-                    <button id="modal-yes" data-answer="yes" data-type="warning">${ message['options']['yes'] }</button>
+                    <button id="modal-yes" data-answer="yes" data-type="${ type }">${ message['options']['yes'] }</button>
                 </div>
             </div>
         </div>
