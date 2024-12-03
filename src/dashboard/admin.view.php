@@ -428,6 +428,28 @@
         <script type="module" src="./js/dashboard.js"></script>
         <script type="module" src="//cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
 
+        <script>
+
+            const targetElement = $('.table[data-type="pending"]')[0];
+            let observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'childList') {
+                    
+                        if ($(targetElement).children(':visible').length > 0) {
+                            $(targetElement).find('.placeholder').css('display', 'none');
+                        } else {
+                            $(targetElement).find('.placeholder').css('display', 'grid');
+                        }
+                    }
+                })
+            })
+
+            if ($(targetElement).children(':visible').length === 0) $(targetElement).find('.placeholder').css('display', 'grid');
+
+            observer.observe(targetElement, { childList: true });
+
+        </script>
+
     </body>
 
 </html>
