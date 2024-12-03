@@ -72,6 +72,22 @@ function deleteData($pConn, $pTable, $pId) {
     $stmt->execute();
 
     exit();
+
+}
+
+function acceptPendingStudentAccount($pConn, $pId) {
+
+    $conn = (isset($pConn)) ? $pConn : null;
+    $id = (isset($pId)) ? $pId : null;
+
+    if (empty($conn) || empty($id)) return;
+
+    $stmt = $conn->prepare("UPDATE students SET status = 'active' WHERE id = :id");
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+
+    exit();
+    
 }
 
 ?>

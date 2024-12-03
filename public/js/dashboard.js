@@ -174,4 +174,35 @@ $(() => {
 
     })
 
+    $('.accept-pending').on('click', async function() {
+
+        const entry = $(this).parent().parent();
+        const name = entry.find('h4').text();
+        const id = entry.attr('data-id');
+        const confirmationResult = await promptConfirmationDialog({
+            title: "Accept " + name + "?",
+            description: "By accepting the student, it will automatically make their account active and will be able to log in to their accounts.",
+            options: {
+                no: "Cancel",
+                yes: "Accept Account Registration"
+            }
+        });
+
+        if (confirmationResult === 'yes') {
+
+            $.ajax({
+                url: 'https://localhost/aucres/api/dashboard.php',
+                method: 'POST',
+                data: { 
+                    action: 'accept',
+                    id: id
+                },
+                success: function() { entry.remove(); },
+                error: function() { console.log("Error when accept pending student is invoked!"); }
+            });
+
+        }
+        
+    });
+
 })

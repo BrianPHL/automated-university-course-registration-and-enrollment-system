@@ -9,6 +9,8 @@
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+        if (empty($conn)) return;
+
         $action = (isset($_POST['action'])) ? $_POST['action'] : null;
 
         if (isset($action) && $action === 'logout') {
@@ -61,6 +63,24 @@
             }
 
             deleteData($conn, $table, $id);
+            exit();
+
+        }
+
+        if (isset($action) && $action === 'accept') {
+
+            $id = (isset($_POST['id'])) ? $_POST['id'] : null;
+
+            if (empty($id)) {
+
+                http_response_code(400);
+                header("Location: https://localhost/aucres/public/error.php?code=400");
+                session_write_close();
+                exit();
+
+            }
+
+            acceptPendingStudentAccount($conn, $id);
             exit();
 
         }
