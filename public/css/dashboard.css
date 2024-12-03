@@ -6,7 +6,7 @@ body {
     grid-template-columns: 100%;
     grid-template-rows: auto 1fr;
     display: grid;
-    height: auto;
+    height: 100vh;
 
 }
 
