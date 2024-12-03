@@ -330,23 +330,16 @@
                                 $results = getStudentsData($conn, 'pending');
                                 
                                 foreach ($results as $row) {
-                                    echo "<div class='entry' data-id='" . htmlspecialchars($row['id']) . "'>";
-                                        echo "<div class='wrapper'>";
-                                            echo "<div class='info'>";
-                                                echo "<h4>" . htmlspecialchars($row['first_name']) . " " . htmlspecialchars($row['last_name']) . "</h4>";
-                                                echo "<h5>" . htmlspecialchars($row['username']) . "</h5>";
-                                            echo "</div>";
-                                            echo "<a>";
-                                                echo "View full info";
-                                                echo "<i class='fa-solid fa-square-arrow-up-right'></i>"; 
-                                            echo "</a>";
-                                        echo "</div>";
-                                        echo "<div class='divider'></div>";
-                                        echo "<div class='cta'>";
-                                            echo "<button class='reject-pending' data-type='warning'>Reject</button>";
-                                            echo "<button class='accept-pending' data-type='primary'>Accept</button>";   
-                                        echo "</div>";
+                                echo "<div class='entry' data-id=" . htmlspecialchars($row['id']) . ">";
+                                    echo "<div class='info'>";
+                                        echo "<h4>" . htmlspecialchars($row['first_name']) . ' ' . $row['last_name'] . "</h4>";
+                                        echo "<h5>" . htmlspecialchars($row['username']) . "</h5>";
                                     echo "</div>";
+                                    echo "<div class='cta'>";
+                                        echo "<button class='reject-pending' data-type='warning'>Reject</button>";
+                                        echo "<button class='accept-pending' data-type='primary'>Accept</button>";    
+                                    echo "</div>";
+                                echo "</div>";
                                 }
 
                                 ?>
@@ -499,7 +492,6 @@
                         if ($(targetElement).children().not('.placeholder').length > 0) {
                             $(targetElement).find('.placeholder').hide();
                         } else {
-                            $(targetElement).find('.placeholder').css('display', 'grid');
                             $(targetElement).find('.placeholder').show();
                         }
                     }
