@@ -153,7 +153,7 @@
 
                         <div class="home" style="display: none;">
         
-                            <div class="breadcrumbs">
+                            <div class="header">
             
                                 <p>Dashboard</p>
             
@@ -234,7 +234,7 @@
 
                         <div class="user-profile" style="display: none;">
 
-                            <div class="breadcrumbs">
+                            <div class="header">
 
                                 <p><a class="breadcrumb-link" data-page="home">Dashboard</a><span style="margin-right: 0.5rem; ">/</span>User Profile</p>
 
@@ -302,9 +302,9 @@
 
                         </div>
 
-                        <div class="student-accounts">
+                        <div class="student-accounts" style="display: none;">
 
-                            <div class="breadcrumbs">
+                            <div class="header">
 
                                 <p><a class="breadcrumb-link" data-page="home">Dashboard</a><span style="margin-right: 0.5rem; ">/</span>Accounts (Student)</p>
 
