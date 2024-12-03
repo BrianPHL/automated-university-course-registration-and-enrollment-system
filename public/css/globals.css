@@ -474,6 +474,7 @@ button {
             .info {
 
                 h4 { color: var(--tg-primary); }
+                h5 { color: var(--tg-secondary); }
     
             }
     

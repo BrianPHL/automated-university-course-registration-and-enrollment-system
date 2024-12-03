@@ -2,7 +2,8 @@
 
     if (!isset($_SESSION)) { session_start(); }
     
-    require_once '../config/db.php'; 
+    require_once '../config/db.php';
+    require_once './functions.php';
     
     $conn = connect();
     $where = (isset($_GET['where'])) ? $_GET['where'] : null;
@@ -44,9 +45,10 @@
 
         if (isset($action) && $action === 'reject') {
 
+            $table = (isset($_POST['table'])) ? $_POST['table'] : null;
             $id = (isset($_POST['id'])) ? $_POST['id'] : null;
 
-            if (empty($id)) {
+            if (empty($id) || empty($table)) {
 
                 http_response_code(400);
                 header("Location: https://localhost/aucres/public/error.php?code=400");
@@ -55,13 +57,14 @@
 
             }
 
-            echo 'success';
+            deleteData($conn, $table, $id);
             exit();
 
         }
 
     }
 
+    error_log("HTTP 400 in api/dashboard.php");
     http_response_code(400);
     header("Location: https://localhost/aucres/public/error.php?code=400");
     session_write_close();

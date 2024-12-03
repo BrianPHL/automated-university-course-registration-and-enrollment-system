@@ -2,8 +2,8 @@
 
     if (!isset($_SESSION)) { session_start(); }
 
-    require_once '../public/dashboard.php';
     require_once '../config/db.php'; 
+    require_once '../api/functions.php';
     
     $conn = connect();
 
@@ -319,33 +319,31 @@
 
                             <div class="active table" data-type="pending" style="padding: 1rem; display: flex; flex-direction: column; gap: 1rem;">
 
-                                <div class="entry" data-id="1">
+                                <?php
 
-                                    <div class="wrapper">
+                                $results = getStudentsData($conn, 'pending');
 
-                                        <div class="info">
-                                        
-                                            <h4>Brian Lawrence Pasco</h4>
-    
-                                        </div>
-    
-                                        <a>
-                                            View full info
-                                            <i class="fa-solid fa-square-arrow-up-right"></i>
-                                        </a>
+                                foreach ($results as $row) {
+                                    echo "<div class='entry' data-id='" . htmlspecialchars($row['id']) . "'>";
+                                        echo "<div class='wrapper'>";
+                                            echo "<div class='info'>";
+                                                echo "<h4>" . htmlspecialchars($row['first_name']) . " " . htmlspecialchars($row['last_name']) . "</h4>";
+                                                echo "<h5>" . htmlspecialchars($row['username']) . "</h5>";
+                                            echo "</div>";
+                                            echo "<a>";
+                                                echo "View full info";
+                                                echo "<i class='fa-solid fa-square-arrow-up-right'></i>"; 
+                                            echo "</a>";
+                                        echo "</div>";
+                                        echo "<div class='divider'></div>";
+                                        echo "<div class='cta'>";
+                                            echo "<button class='reject-pending' data-type='warning'>Reject</button>";
+                                            echo "<button class='accept-pending' data-type='primary'>Accept</button>";   
+                                        echo "</div>";
+                                    echo "</div>";
+                                }
 
-                                    </div>
-
-                                    <div class="divider"></div>
-
-                                    <div class="cta">
-    
-                                        <button class="reject-pending" data-type="warning">Reject</button>
-                                        <button class="accept-pending" data-type="primary">Accept</button>
-
-                                    </div>
-
-                                </div>
+                                ?>
             
                             </div>
 

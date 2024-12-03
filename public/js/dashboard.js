@@ -124,9 +124,9 @@ $(() => {
 
     $('.reject-pending').on('click', async function() {
 
-        const name = $(this).parent().parent().find('.wrapper > .info > h4').text();
-        const id = $(this).parent().parent().attr('data-id');
-
+        const entry = $(this).parent().parent();
+        const name = entry.find('h4').text();
+        const id = entry.attr('data-id');
         const confirmationResult = await promptConfirmationDialog({
             title: "Reject " + name + "?",
             description: "By rejecting the student, it will automatically delete their pending account registration from the system!",
@@ -141,11 +141,13 @@ $(() => {
             $.ajax({
                 url: 'https://localhost/aucres/api/dashboard.php',
                 method: 'POST',
-                data: { action: 'reject', id: id },
-                success: function(response) {
-                    console.log(response);
+                data: { 
+                    action: 'reject',
+                    table: 'students',
+                    id: id
                 },
-                error: function(xhr, status, error) { console.log('meow') }
+                success: function() { entry.remove(); },
+                error: function() { console.log("Something happened that stopped the server from executing the request!"); }
             });
 
         }
