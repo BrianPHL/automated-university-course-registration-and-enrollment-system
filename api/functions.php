@@ -90,4 +90,48 @@ function acceptPendingStudentAccount($pConn, $pId) {
     
 }
 
+function registerStudent($pConn, $pData) {
+
+    // Validate connection and data
+    if (empty($pConn) || empty($pData)) {
+        error_log("Invalid database connection or data.");
+        $_SESSION['error']['auth'] = "Registration failed. Please try again.";
+        return false;
+    }
+
+    $conn = $pConn;
+
+    // Set default status
+    $status = 'pending';
+
+    try {
+        // Prepare SQL query
+        $stmt = $conn->prepare(
+            "INSERT INTO students(username, status, program, first_name, last_name, password) 
+             VALUES (:username, :status, :program, :first_name, :last_name, :password)"
+        );
+
+        // Bind parameters
+        $stmt->bindParam(":username", $pData['username']);
+        $stmt->bindParam(":status", $status);
+        $stmt->bindParam(":program", $pData['program']);
+        $stmt->bindParam(":first_name", $pData['first_name']);
+        $stmt->bindParam(":last_name", $pData['last_name']);
+        $stmt->bindParam(":password", $pData['password']);
+
+        // Execute query
+        $stmt->execute();
+
+        // Log success
+        error_log("User registered successfully: " . $pData['username']);
+        return true;
+
+    } catch (PDOException $e) {
+        // Log error and set session error
+        error_log("Database Error: " . $e->getMessage());
+        $_SESSION['error']['auth'] = "Registration failed due to a database error. Please try again.";
+        return false;
+    }
+}
+
 ?>

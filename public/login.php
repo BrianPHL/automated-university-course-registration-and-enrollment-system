@@ -54,7 +54,7 @@
         
                     } else {
         
-                        require_once __DIR__ . '/../src/auth/student/registration.view.php';
+                        require_once __DIR__ . '/../src/auth/student/register.view.php';
                         session_write_close();
                         exit(); 
         
