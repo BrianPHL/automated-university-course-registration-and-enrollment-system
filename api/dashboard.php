@@ -85,6 +85,38 @@
 
         }
 
+        if (isset($action) && $action === 'add-faculty') {
+
+            // username, email, first_name, last_name, password
+
+            $username = (isset($_POST['username'])) ? $_POST['username'] : null;
+            $role = (isset($_POST['role'])) ? $_POST['role'] : null;
+            $email = (isset($_POST['email'])) ? $_POST['email'] : null;
+            $first_name = (isset($_POST['first_name'])) ? $_POST['first_name'] : null;
+            $last_name = (isset($_POST['last_name'])) ? $_POST['last_name'] : null;
+            $password = (isset($_POST['password'])) ? $_POST['password'] : null;
+
+            if (empty($username) || empty($role) || empty($email) || empty($first_name) || empty($last_name) || empty($password)) {
+
+                http_response_code(400);
+                header("Location: https://localhost/aucres/public/error.php?code=400");
+                session_write_close();
+                exit();
+
+            }
+
+            addFaculty($conn, array(
+                'username' => $username,
+                'role' => $role,
+                'email' => $email,
+                'first_name' => $first_name,
+                'last_name' => $last_name,
+                'password' => $password
+            ));
+            exit();
+
+        }
+
     }
 
     error_log("HTTP 400 in api/dashboard.php");

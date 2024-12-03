@@ -302,7 +302,7 @@
 
                         </div>
 
-                        <div class="student-accounts" style="display: none;">
+                        <div class="student-accounts">
 
                             <div class="header">
 
@@ -395,14 +395,14 @@
 
                         </div>
 
-                        <div class="faculty-accounts">
+                        <div class="faculty-accounts" style="display: none;">
 
                             <div class="header">
 
                                 <p><a class="breadcrumb-link" data-page="home">Dashboard</a><span style="margin-right: 0.5rem; ">/</span>Accounts (Faculty)</p>
 
-                                <button data-type="primary">
-                                    <i class="fa-solid fa-plus"></i>
+                                <button class="add-faculty-account" data-type="primary">
+                                    <i class=" fa-solid fa-plus"></i>
                                     Add an account
                                 </button>
 

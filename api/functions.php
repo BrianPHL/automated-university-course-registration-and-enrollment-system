@@ -134,4 +134,24 @@ function registerStudent($pConn, $pData) {
     }
 }
 
+function addFaculty($pConn, $pData) {
+
+    $conn = (isset($pConn)) ? $pConn : null;
+    $data = (isset($pData)) ? $pData : null;
+
+    if (empty($conn) || empty($data)) return;
+
+    $stmt = $conn->prepare("INSERT INTO accounts (username, role, email, first_name, last_name, password) VALUES (:username, :role, :email, :first_name, :last_name, :password)");
+    $stmt->bindParam(":username", $data['username']);
+    $stmt->bindParam(":role", $data['role']);
+    $stmt->bindParam(":email", $data['email']);
+    $stmt->bindParam(":first_name", $data['first_name']);
+    $stmt->bindParam(":last_name", $data['last_name']);
+    $stmt->bindParam(":password", $data['first_name']);
+    $stmt->execute();
+
+    exit();
+
+}
+
 ?>

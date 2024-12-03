@@ -205,4 +205,47 @@ $(() => {
         
     });
 
+    $('.add-faculty-account').on('click', function() {
+
+        const html =
+        `
+        <div id="input-modal">
+            <form method="POST" action="https://localhost/aucres/api/dashboard.php">
+                <h4>Add faculty account</h4>  
+                <div class="inputs">
+                    <input type="hidden" name="action" value="add-faculty">
+                    <input type="hidden" name="role" value="faculty">
+                    <div class="form-group"> 
+                        <label for="username">Username</label>
+                        <input class="form-control single" type="text" name="username" placeholder="Username..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input class="form-control single" type="text" name="email" placeholder="Email address..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="first_name">First name</label>
+                        <input class="form-control single" type="text" name="first_name" placeholder="First name..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last name</label>
+                        <input class="form-control single" type="text" name="last_name" placeholder="Last name..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control single" type="text" name="password" placeholder="Password..." required>
+                    </div>
+                </div>
+                <div class="cta">
+                    <button onclick="event.preventDefault(); $(this).parent().parent().parent().remove();" data-type="secondary">Cancel</button>
+                    <button data-type="primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        `
+
+        $('body').append(html);
+
+    })
+
 })
