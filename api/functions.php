@@ -59,6 +59,38 @@ function getStudentsData($pConn, $pStatus = null) {
 
 }
 
+function getCoursesData($pConn, $pId = null) {
+
+    $conn = (isset($pConn)) ? $pConn : null;
+    $id = (isset($pId)) ? $pId : null;
+    $sql;
+
+    if (empty($conn)) return;
+
+    $sql = (empty($id)) ? "SELECT * FROM courses" : "SELECT * FROM courses WHERE created_by = :created_by";
+    $stmt = $conn->prepare($sql);
+    if (isset($id)) { $stmt->bindParam(":created_by", $id); }
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+    
+}
+
+function getEnrolleesData($pConn) {
+
+    $conn = (isset($pConn)) ? $pConn : null;
+
+    if (empty($conn)) return;
+
+    $stmt = $conn->prepare("SELECT * FROM enrollees");
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+
+}
+
 function deleteData($pConn, $pTable, $pId) {
 
     $conn = (isset($pConn)) ? $pConn : null;
