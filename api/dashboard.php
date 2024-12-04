@@ -115,6 +115,33 @@
 
         }
 
+        if (isset($action) && $action === 'add-course') {
+
+            $title = (isset($_POST['title'])) ? $_POST['title'] : null;
+            $description = (isset($_POST['description'])) ? $_POST['description'] : null;
+            $program = (isset($_POST['program'])) ? $_POST['program'] : null;
+
+            if (empty($title) || empty($description) || empty ($program)) {
+
+                http_response_code(400);
+                header("Location: https://localhost/aucres/public/error.php?code=400");
+                session_write_close();
+                exit();
+
+            }
+
+
+
+            addCourse($conn, array(
+                'title' => $title,
+                'description' => $description,
+                'program' => $program,
+                'created_by' => $_SESSION['user']['id']
+            ));
+            exit();
+
+        }
+
     }
 
     error_log("HTTP 400 in api/dashboard.php");

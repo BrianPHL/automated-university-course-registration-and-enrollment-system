@@ -291,4 +291,65 @@ $(() => {
 
     })
 
+    $('.add-course').on('click', function() {
+
+        const html =
+        `
+        <div id="input-modal">
+            <form method="POST" action="" id="add-course-form">
+                <h4>Add a course</h4>  
+                <div class="inputs">
+                    <input type="hidden" name="action" value="add-course">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input class="form-control single" type="text" name="title" placeholder="Title..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input class="form-control single" type="text" name="description" placeholder="Description..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="program"> Program </label>
+                        <select class="form-control single" name="program" required>
+                            <option value="" disabled selected> Select your program </option>
+                            <option value="Information Technology"> Information Technology </option>
+                            <option value="Computer Science"> Computer Science </option>
+                               <option value="Computer Engineering"> Computer Engineering </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="cta">
+                    <button onclick="event.preventDefault(); $(this).parent().parent().parent().remove();" data-type="secondary">Cancel</button>
+                    <button data-type="primary">Add a course</button>
+                </div>
+            </form>
+        </div>
+        `
+
+        $('body').append(html);
+
+        $('#add-course-form').on('submit', function(event) {
+
+            event.preventDefault();
+
+            $.ajax({
+                url: 'https://localhost/aucres/api/dashboard.php',
+                method: 'POST',
+                data: $(this).serialize(),
+                success: function() {
+                    promptAlert('Successfully added a course!');
+                    $('#add-course-form').trigger('reset');
+                    $('#add-course-form').parent().remove();
+                },
+                error: function() {
+                    promptAlert('An error occured while adding a course! Please try again later.')
+                    console.error('An error occured while adding a course!');
+                }
+            })
+
+        })
+
+    })
+
 })

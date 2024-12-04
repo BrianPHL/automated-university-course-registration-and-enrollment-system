@@ -154,4 +154,22 @@ function addFaculty($pConn, $pData) {
 
 }
 
+function addCourse($pConn, $pData) {
+
+    $conn = (isset($pConn)) ? $pConn : null;
+    $data = (isset($pData)) ? $pData : null;
+
+    if (empty($conn) || empty($data)) return;
+
+    $stmt = $conn->prepare("INSERT INTO courses (title, description, program, created_by) VALUES (:title, :description, :program, :created_by)");
+    $stmt->bindParam(":title", $data['title']);
+    $stmt->bindParam(":description", $data['description']);
+    $stmt->bindParam(":program", $data['program']);
+    $stmt->bindParam(":created_by", $data['created_by']);
+    $stmt->execute();
+
+    exit();
+    
+}
+
 ?>
