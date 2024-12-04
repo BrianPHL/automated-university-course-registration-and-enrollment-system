@@ -4,7 +4,7 @@
 
     $user = (isset($_SESSION['user']) ? $_SESSION['user'] : null);
     $role = (isset($_GET['portal'])) ? $_GET['portal'] : null;
-    $page = (isset($_GET['page'])) ? $_GET['page'] : null;
+    $page = (isset($_GET['page'])) ? $_GET['page'] : null; 
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 

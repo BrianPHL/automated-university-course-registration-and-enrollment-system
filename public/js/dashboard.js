@@ -227,7 +227,7 @@ $(() => {
         const html =
         `
         <div id="input-modal">
-            <form method="POST" action="https://localhost/aucres/api/dashboard.php">
+            <form method="POST" action="" id="add-faculty-account-form">
                 <h4>Add faculty account</h4>  
                 <div class="inputs">
                     <input type="hidden" name="action" value="add-faculty">
@@ -255,13 +255,34 @@ $(() => {
                 </div>
                 <div class="cta">
                     <button onclick="event.preventDefault(); $(this).parent().parent().parent().remove();" data-type="secondary">Cancel</button>
-                    <button data-type="primary">Submit</button>
+                    <button data-type="primary">Add Faculty Account</button>
                 </div>
             </form>
         </div>
         `
 
         $('body').append(html);
+
+        $('#add-faculty-account-form').on('submit', function(event) {
+
+            event.preventDefault();
+
+            $.ajax({
+                url: 'https://localhost/aucres/api/dashboard.php',
+                method: 'POST',
+                data: $(this).serialize(),
+                success: function() {
+                    promptAlert('Successfully added a faculty account!');
+                    $('#add-faculty-account-form').trigger('reset');
+                    $('#add-faculty-account-form').parent().remove();
+                },
+                error: function() {
+                    promptAlert('An error occured while adding a faculty account! Please try again later.')
+                    console.error('An error occured while adding a faculty account!');
+                }
+            })
+
+        })
 
     })
 
