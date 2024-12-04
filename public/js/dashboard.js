@@ -173,7 +173,7 @@ $(() => {
 
                 },
                 error: function() { 
-                    promptAlert("An error occured while rejecting a pending student account!");
+                    promptAlert("An error occured while rejecting a pending student account! Please try again later.");
                 }
             });
 
@@ -212,8 +212,8 @@ $(() => {
                 },
                 error: function() {
 
-                    console.log("Error when accept pending student is invoked!");
-                    promptAlert("An error occured while accepting a pending student account!!");
+                    console.error("Error when accept pending student is invoked!");
+                    promptAlert("An error occured while accepting a pending student account! Please try again later.");
                 
                 }
             });
