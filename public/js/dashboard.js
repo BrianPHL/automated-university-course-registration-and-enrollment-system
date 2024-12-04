@@ -24,6 +24,10 @@ const initializeTables = () => {
     $('#student-accounts-table').DataTable(tableArgs);
     $('#faculty-accounts-table').DataTable(tableArgs);
     $('#admin-accounts-table').DataTable(tableArgs);
+    $('#faculty-dashboard-students-table').DataTable(tableArgs);
+    $('#faculty-dashboard-courses-table').DataTable(tableArgs);
+    $('#faculty-dashboard-enrollees-table').DataTable(tableArgs);
+    $('#faculty-dashboard-manage-courses-table').DataTable(tableArgs);
 
 }
 
