@@ -1,4 +1,4 @@
-import { promptConfirmationDialog } from './globals.js';
+import { promptConfirmationDialog, promptAlert } from './globals.js';
 
 const loadDashboardSection = (pSection) => {
 
@@ -166,8 +166,15 @@ $(() => {
                     table: 'students',
                     id: id
                 },
-                success: function() { entry.remove(); },
-                error: function() { console.log("Error when reject pending student is invoked!"); }
+                success: function() {
+                    
+                    entry.remove();
+                    promptAlert("Successfully rejected pending student account!");
+
+                },
+                error: function() { 
+                    promptAlert("An error occured while rejecting a pending student account!");
+                }
             });
 
         }
@@ -197,8 +204,18 @@ $(() => {
                     action: 'accept',
                     id: id
                 },
-                success: function() { entry.remove(); },
-                error: function() { console.log("Error when accept pending student is invoked!"); }
+                success: function() {
+                
+                    entry.remove();
+                    promptAlert("Successfully accepted pending student account!");
+                
+                },
+                error: function() {
+
+                    console.log("Error when accept pending student is invoked!");
+                    promptAlert("An error occured while accepting a pending student account!!");
+                
+                }
             });
 
         }

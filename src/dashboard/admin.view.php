@@ -26,6 +26,11 @@
     </head>
 
     <body>
+        
+        <div class="alert alert-warning alert-dismissible fade d-none" id="alert-popup" role="alert">
+            <label for="alert">Alert</label>
+            <p id="alert-message"></p>
+        </div>
 
         <nav class="navbar navbar-expand-lg navbar-dark">
 

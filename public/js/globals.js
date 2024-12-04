@@ -38,16 +38,23 @@ export const promptConfirmationDialog = (pMessage, pType = null) => {
 
 }
 
-export const promptInformationDialog = (message) => {
+export const promptAlert = (message) => {
 
-    const html =
-    `
-        <div id="information-modal">
-            
-        </div>
-    `
+    $('#alert-message').text('');
+    $('#alert-message').text(message);
+    $('#alert-popup').removeClass('d-none').addClass('show');
 
-    $('body').append(html);
+    $('#alert-popup').on('click', function() {
+        $('#alert-popup').fadeOut(function () {
+            $(this).addClass('d-none').removeClass('show').css('display', '');
+        });        
+    })
+
+    setTimeout(function () {
+        $('#alert-popup').fadeOut(function () {
+            $(this).addClass('d-none').removeClass('show').css('display', '');
+        });
+    }, 3000);
 
 }
 

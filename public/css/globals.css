@@ -649,3 +649,33 @@ button {
     }
 
 }
+
+#alert-popup {
+
+    background-color: var(--bg-tertiary);
+    transition: 0.2s ease all;
+    max-width: 128rem;
+    position: fixed;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+    border: 1px solid var(--accent);
+    right: 1rem;
+    top: 6rem;
+
+    label { color: var(--tg-secondary); }
+
+    p {
+
+        color: var(--tg-primary);
+        font-weight: 600;
+
+    }
+
+    &:hover { 
+
+        background-color: var(--accent); 
+        cursor: pointer;
+    
+    }
+
+}
