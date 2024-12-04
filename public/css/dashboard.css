@@ -168,7 +168,7 @@ body {
                 display: flex;
                 width: 70%;
         
-                .home, .user-profile, .student-accounts, .faculty-accounts {
+                .home, .user-profile, .student-accounts, .faculty-accounts, .admin-accounts {
 
                     flex-direction: column;
                     display: flex;

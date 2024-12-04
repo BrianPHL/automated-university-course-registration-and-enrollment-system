@@ -23,6 +23,7 @@ const initializeTables = () => {
     $('#dashboard-table').DataTable(tableArgs);
     $('#student-accounts-table').DataTable(tableArgs);
     $('#faculty-accounts-table').DataTable(tableArgs);
+    $('#admin-accounts-table').DataTable(tableArgs);
 
 }
 
