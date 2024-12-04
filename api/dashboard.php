@@ -87,8 +87,6 @@
 
         if (isset($action) && $action === 'add-faculty') {
 
-            // username, email, first_name, last_name, password
-
             $username = (isset($_POST['username'])) ? $_POST['username'] : null;
             $role = (isset($_POST['role'])) ? $_POST['role'] : null;
             $email = (isset($_POST['email'])) ? $_POST['email'] : null;
