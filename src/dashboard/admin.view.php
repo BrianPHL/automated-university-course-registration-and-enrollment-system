@@ -156,7 +156,7 @@
 
                     <div id="dashboardSection">
 
-                        <div class="home" style="display: none;">
+                        <div class="home">
         
                             <div class="header">
             
@@ -307,7 +307,7 @@
 
                         </div>
 
-                        <div class="student-accounts">
+                        <div class="student-accounts" style="display: none;">
 
                             <div class="header">
 
