@@ -38,10 +38,6 @@
 
                     <div class="dropdown-menu dropdown-menu-left dropdown-menu-lg-right">
                         <label class="dropdown-header">Profile actions</label>
-                        <button class="dropdown-item" type="button">
-                            <i class="fa-solid fa-circle-user"></i>    
-                            View profile
-                        </button>
                         <button class="dropdown-item logout" type="button">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             Logout
