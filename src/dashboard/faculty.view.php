@@ -127,7 +127,7 @@
                                 <button 
                                 data-category="students" data-type="secondary" class="active">Students</button>
                                 <button data-category="courses" data-type="secondary">Courses</button>
-                                <button data-category="enrollees" data-type="secondary">Enrollees</button>
+                                <button data-category="enrolled" data-type="secondary">Enrolled</button>
 
                             </div>
             
@@ -221,9 +221,9 @@
 
                             </div>
 
-                            <div class="table" data-type="enrollees" style="display: none;">
+                            <div class="table" data-type="enrolled" style="display: none;">
 
-                                <table id="faculty-dashboard-enrollees-table" class="cell-border nowrap order-column">
+                                <table id="faculty-dashboard-enrolled-table" class="cell-border nowrap order-column">
             
                                     <thead>
             
@@ -241,14 +241,14 @@
     
                                         <?php
                                     
-                                        $results = getEnrolleesData($conn);
+                                        $results = getEnrolledData($conn);
                 
                                         foreach ($results as $row) {
                 
                                             echo "<tr>";
                                                 echo "<td>" . htmlspecialchars($row['id']) . "</td>";
                                                 echo "<td>" . htmlspecialchars($row['course']) . "</td>";
-                                                echo "<td>" . htmlspecialchars($row['student']) . "</td>";
+                                                echo "<td>" . htmlspecialchars($row['student_id']) . "</td>";
                                                 echo "<td>" . htmlspecialchars($row['paid']) . "</td>";
                                             echo "</tr>";
                 

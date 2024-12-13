@@ -59,31 +59,75 @@ function getStudentsData($pConn, $pStatus = null) {
 
 }
 
-function getCoursesData($pConn, $pId = null) {
+function getCoursesData($pConn) {
 
     $conn = (isset($pConn)) ? $pConn : null;
-    $id = (isset($pId)) ? $pId : null;
-    $sql;
 
     if (empty($conn)) return;
 
-    $sql = (empty($id)) ? "SELECT * FROM courses" : "SELECT * FROM courses WHERE created_by = :created_by";
-    $stmt = $conn->prepare($sql);
-    if (isset($id)) { $stmt->bindParam(":created_by", $id); }
+    $stmt = $conn->prepare("SELECT * FROM courses");
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     return $results;
-    
+
 }
 
-function getEnrolleesData($pConn) {
+function getCourseDataByProgram($pConn, $pProgram) {
+
+    $conn = (isset($pConn)) ? $pConn : null;
+    $program = (isset($pProgram)) ? $pProgram : null;
+
+    if (empty($conn) || empty($program)) return;
+
+    $stmt = $conn->prepare("SELECT * FROM courses WHERE program = :program");
+    if (isset($program)) { $stmt->bindParam(":program", $program); }
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+
+}
+
+function getCourseDataByCreatedBy($pConn, $pCreatedBy) {
+
+    $conn = (isset($pConn)) ? $pConn : null;
+    $createdBy = (isset($pCreatedBy)) ? $pCreatedBy : null;
+
+    if (empty($conn) || empty($createdBy)) return;
+
+    $stmt = $conn->prepare("SELECT * FROM courses WHERE created_by = :created_by");
+    if (isset($program)) { $stmt->bindParam(":created_by", $pCreatedBy); }
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+
+}
+
+function getEnrolledData($pConn) {
 
     $conn = (isset($pConn)) ? $pConn : null;
 
     if (empty($conn)) return;
 
-    $stmt = $conn->prepare("SELECT * FROM enrollees");
+    $stmt = $conn->prepare("SELECT * FROM enrolled");
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+
+}
+
+function getEnrolledDataByStudentId($pConn, $pId) {
+
+    $conn = (isset($pConn)) ? $pConn : null;
+    $id = (isset($pId)) ? $pId : null;
+
+    if (empty($conn) || empty($pId)) return;
+
+    $stmt = $conn->prepare("SELECT * FROM enrolled WHERE student_id = :student_id");
+    $stmt->bindParam(":student_id", $id);
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

@@ -121,7 +121,7 @@
             $description = (isset($_POST['description'])) ? $_POST['description'] : null;
             $program = (isset($_POST['program'])) ? $_POST['program'] : null;
 
-            if (empty($title) || empty($description) || empty ($program)) {
+            if (empty($title) || empty ($program)) {
 
                 http_response_code(400);
                 header("Location: https://localhost/aucres/public/error.php?code=400");
@@ -130,14 +130,62 @@
 
             }
 
+            if (empty($description)) {
 
+                addCourse($conn, array(
+                    'title' => $title,
+                    'program' => $program,
+                    'created_by' => $_SESSION['user']['id']
+                ));
 
-            addCourse($conn, array(
-                'title' => $title,
-                'description' => $description,
-                'program' => $program,
-                'created_by' => $_SESSION['user']['id']
-            ));
+            } else {
+
+                addCourse($conn, array(
+                    'title' => $title,
+                    'description' => $description,
+                    'program' => $program,
+                    'created_by' => $_SESSION['user']['id']
+                ));
+
+            }
+            exit();
+
+        }
+
+        if (isset($action) && $action === 'accept-enrollment') {
+
+            $studentId = (isset($_POST['studentId'])) ? $_POST['studentId'] : null;
+            $courseId = (isset($_POST['courseId'])) ? $_POST['courseId'] : null;
+
+            if (empty($studentId) || empty($courseId)) {
+
+                http_response_code(400);
+                header("Location: https://localhost/aucres/public/error.php?code=400");
+                session_write_close();
+                exit();
+
+            }
+
+            enrollCourse($conn, $studentId, $courseId);
+            exit();
+
+        }
+
+        if (isset($action) && $action === 'pay-course') {
+
+            $studentId = (isset($_POST['studentId'])) ? $_POST['studentId'] : null;
+
+            if (empty($studentId)) {
+
+                http_response_code(400);
+                header("Location: https://localhost/aucres/public/error.php?code=400");
+                session_write_close();
+                exit();
+
+            }
+
+            error_log("meow");
+            payCourse($conn, $studentId);
             exit();
 
         }

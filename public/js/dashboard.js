@@ -26,7 +26,7 @@ const initializeTables = () => {
     $('#admin-accounts-table').DataTable(tableArgs);
     $('#faculty-dashboard-students-table').DataTable(tableArgs);
     $('#faculty-dashboard-courses-table').DataTable(tableArgs);
-    $('#faculty-dashboard-enrollees-table').DataTable(tableArgs);
+    $('#faculty-dashboard-enrolled-table').DataTable(tableArgs);
     $('#faculty-dashboard-manage-courses-table').DataTable(tableArgs);
     $('#enroll-courses-table').DataTable(tableArgs);
     $('#enrolled-courses-table').DataTable(tableArgs);
@@ -310,7 +310,7 @@ $(() => {
 
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input class="form-control single" type="text" name="description" placeholder="Description..." required>
+                        <input class="form-control single" type="text" name="description" placeholder="Description...">
                     </div>
                     <div class="form-group">
                         <label for="program"> Program </label>
