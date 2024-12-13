@@ -28,6 +28,9 @@ const initializeTables = () => {
     $('#faculty-dashboard-courses-table').DataTable(tableArgs);
     $('#faculty-dashboard-enrollees-table').DataTable(tableArgs);
     $('#faculty-dashboard-manage-courses-table').DataTable(tableArgs);
+    $('#enroll-courses-table').DataTable(tableArgs);
+    $('#enrolled-courses-table').DataTable(tableArgs);
+    $('#pay-unpaid-courses-table').DataTable(tableArgs);
 
 }
 
@@ -351,5 +354,81 @@ $(() => {
         })
 
     })
+
+    $('.accept-enrollment').on('click', async function() {
+
+        const entry = $(this).parent().parent();
+        const name = entry.find('h4').text();
+        const studentId = entry.attr('data-studentId');
+        const courseId = entry.attr('data-courseId');
+        const confirmationResult = await promptConfirmationDialog({
+            title: "Accept " + name + "?",
+            description: "By accepting this, you are going to be queued in the enrollment and you must proceed to payment immediately to not lose your slot (within 24 hours) and view the course content as well.",
+            options: {
+                no: "Cancel",
+                yes: "Enroll Course"
+            }
+        });
+
+        if (confirmationResult === 'yes') {
+
+            $.ajax({
+                url: 'https://localhost/aucres/api/dashboard.php',
+                method: 'POST',
+                data: { 
+                    action: 'accept-enrollment',
+                    studentId: studentId,
+                    courseId: courseId
+                },
+                success: function() { promptAlert("Successfully enrolled the course!"); },
+                error: function() {
+
+                    console.error("An error occured while processing the enrollment.");
+                    promptAlert("An error occured while processing the enrollment.");
+                
+                }
+            });
+
+
+        }
+        
+    });
+
+    $('.pay-course').on('click', async function() {
+
+        const entry = $(this).parent().parent();
+        const name = entry.find('h4').text();
+        const studentId = entry.attr('data-studentId');
+        const confirmationResult = await promptConfirmationDialog({
+            title: "Accept " + name + "?",
+            description: "You are about to pay the course that you are enrolled in!",
+            options: {
+                no: "Cancel",
+                yes: "Pay Course"
+            }
+        });
+
+        if (confirmationResult === 'yes') {
+
+            $.ajax({
+                url: 'https://localhost/aucres/api/dashboard.php',
+                method: 'POST',
+                data: { 
+                    action: 'pay-course',
+                    studentId: studentId
+                },
+                success: function() { promptAlert("Successfully enrolled the course!"); },
+                error: function() {
+
+                    console.error("An error occured while processing the enrollment.");
+                    promptAlert("An error occured while processing the enrollment.");
+                
+                }
+            });
+
+
+        }
+        
+    });
 
 })

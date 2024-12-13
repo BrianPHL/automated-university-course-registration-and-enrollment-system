@@ -168,7 +168,7 @@ body {
                 display: flex;
                 width: 70%;
         
-                .home, .user-profile, .student-accounts, .faculty-accounts, .admin-accounts, .manage-courses {
+                .home, .user-profile, .student-accounts, .faculty-accounts, .admin-accounts, .manage-courses, .enroll-courses, .pay-unpaid-courses, .enrolled-courses {
 
                     flex-direction: column;
                     display: flex;

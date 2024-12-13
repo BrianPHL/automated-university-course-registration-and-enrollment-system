@@ -204,4 +204,66 @@ function addCourse($pConn, $pData) {
     
 }
 
+function enrollCourse($pConn, $pStudentId, $pCourseId) {
+
+    $conn = (isset($pConn)) ? $pConn : null;
+    $studentId = (isset($pStudentId)) ? $pStudentId : null;
+    $courseId = (isset($pCourseId)) ? $pCourseId : null;
+
+    if (empty($conn) || empty($studentId) || empty($courseId)) return;
+
+    $stmt = $conn->prepare("SELECT * FROM enrolled WHERE student_id = :student_id");
+    $stmt->bindParam(":student_id", $studentId);
+    $stmt->execute();
+    $courseResult = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($courseResult) return;
+
+    $stmt = $conn->prepare("SELECT * FROM courses WHERE id = :id");
+    $stmt->bindParam(":id", $courseId);
+    $stmt->execute();
+    $courseResult = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $paid = 'false';
+    $stmt = $conn->prepare("INSERT INTO enrolled (course, student_id, paid) VALUES (:course, :student_id, :paid)");
+    $stmt->bindParam(":course", $courseResult['title']);
+    $stmt->bindParam(":student_id", $studentId);
+    $stmt->bindParam(":paid", $paid);
+    $stmt->execute();
+
+}
+
+function payCourse($pConn, $pStudentId) {
+
+    $conn = (isset($pConn)) ? $pConn : null;
+    $studentId = (isset($pStudentId)) ? $pStudentId : null;
+
+    if (empty($conn) || empty($studentId)) return;
+
+    $paid = 'true';
+    $stmt = $conn->prepare("UPDATE enrolled SET paid = :paid WHERE student_id = :student_id");
+    $stmt->bindParam(":paid", $paid);
+    $stmt->bindParam(":student_id", $studentId);
+    $stmt->execute();
+
+}
+
+function getPaidEnrolledCourses($pConn, $pId) {
+
+    $conn = (isset($pConn)) ? $pConn : null;
+    $id = (isset($pId)) ? $pId : null;
+    
+    if (empty($conn) || empty($id)) return;
+
+    $paid = "true";
+    $stmt = $conn->prepare("SELECT * FROM enrolled WHERE student_id = :student_id AND paid = :paid");
+    $stmt->bindParam(":student_id", $id);
+    $stmt->bindParam(":paid", $paid);
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+
+}
+
 ?>
